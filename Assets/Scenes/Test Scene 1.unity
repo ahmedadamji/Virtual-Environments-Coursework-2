@@ -1365,6 +1365,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1011bd6579b3dbc47b2f7cf2df691044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1308252506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308252504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622a8483fdb218a46b4238f6c53ecd91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5628267914881485254, guid: e9f76e5dc2ccf6a42be9f75307c68326, type: 3}
+  rightTransform: {fileID: 1236480946}
+  locked: 0
 --- !u!1001 &1348878992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2875,10 +2890,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cylinder
       objectReference: {fileID: 0}
-    - target: {fileID: 5628267914881485255, guid: e9f76e5dc2ccf6a42be9f75307c68326,
-        type: 3}
-      propertyPath: rightTransform
-      value: 
-      objectReference: {fileID: 1236480946}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f76e5dc2ccf6a42be9f75307c68326, type: 3}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Ubiq.Messaging;
 using Ubiq.XR;
@@ -7,6 +8,11 @@ using UnityEngine;
 public class Cylinder : MonoBehaviour, IGraspable, INetworkComponent, INetworkObject
 {
     private Hand grasped;
+
+    private void Awake()
+    {
+        throw new NotImplementedException();
+    }
 
     NetworkId INetworkObject.Id => new NetworkId(1001);
 
@@ -42,12 +48,14 @@ public class Cylinder : MonoBehaviour, IGraspable, INetworkComponent, INetworkOb
     // Update is called once per frame
     void Update()
     {
-        if (grasped)
-        {
-            transform.localPosition = grasped.transform.position;
-            Message message;
-            message.position = transform.localPosition;
-            context.SendJson(message);
-        }
+        
+            if (grasped)
+            {
+                transform.localPosition = grasped.transform.position;
+                Message message;
+                message.position = transform.localPosition;
+                context.SendJson(message);
+            }
+        
     }
 }
