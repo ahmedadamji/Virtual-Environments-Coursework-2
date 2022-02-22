@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Linq;
 using Ubiq.Messaging;
-using UnityEditor;
 using UnityEngine;
 
-namespace Ubiq.Samples.Boids
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Applications.Boids
 {
     [RequireComponent(typeof(Boids))]
     public class BoidsTransformsComponent : MonoBehaviour, INetworkComponent

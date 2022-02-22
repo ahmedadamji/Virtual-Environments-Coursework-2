@@ -1,12 +1,12 @@
 ﻿using Ubiq.Avatars;
 using UnityEngine;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     /// <summary>
     /// Recroom/rayman style avatar with hands, torso and head
     /// </summary>
-    [RequireComponent(typeof(Avatars.Avatar))]
+    [RequireComponent(typeof(global::Ubiq.Avatars.Avatar))]
     [RequireComponent(typeof(ThreePointTrackedAvatar))]
     public class FloatingAvatar : MonoBehaviour
     {
@@ -29,14 +29,14 @@ namespace Ubiq.Samples
 
         public TexturedAvatar texturedAvatar;
 
-        private Avatars.Avatar avatar;
+        private global::Ubiq.Avatars.Avatar avatar;
         private ThreePointTrackedAvatar trackedAvatar;
         private Vector3 footPosition;
         private Quaternion torsoFacing;
 
         private void Awake()
         {
-            avatar = GetComponent<Avatars.Avatar>();
+            avatar = GetComponent<global::Ubiq.Avatars.Avatar>();
             trackedAvatar = GetComponent<ThreePointTrackedAvatar>();
         }
 

@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Ubiq.XR;
 using UnityEngine;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     public interface IFirework
     {

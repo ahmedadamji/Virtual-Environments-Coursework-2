@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Ubiq.Rooms;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Ubiq.Samples.Minimal.Rooms
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Single.Rooms.Scripts
 {
     /// <summary>
     /// Joins all the RoomClients in a scene into one Room

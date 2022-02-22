@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
+using Ubiq.Logging;
 using Ubiq.Messaging;
 using Ubiq.Rooms;
-using Ubiq.Logging;
+using UnityEngine;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     public interface ISpawnable
     {

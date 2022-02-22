@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Ubiq.Samples.Boids
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Applications.Boids
 {
     public class BoidState : MonoBehaviour
     {

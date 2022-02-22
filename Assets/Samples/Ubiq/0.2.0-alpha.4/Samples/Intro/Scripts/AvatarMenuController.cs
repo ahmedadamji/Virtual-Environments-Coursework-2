@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Ubiq.Avatars;
+﻿using Ubiq.Avatars;
 using UnityEngine;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     public class AvatarMenuController : MonoBehaviour
     {

@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Security.Cryptography;
 using Ubiq.Messaging;
 using UnityEngine;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Single.Networking.Scripts
 {
     public class ThroughputBenchmark : MonoBehaviour, INetworkComponent, INetworkObject
     {

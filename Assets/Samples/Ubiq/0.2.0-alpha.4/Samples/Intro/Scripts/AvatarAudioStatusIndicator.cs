@@ -1,13 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Ubiq.Messaging;
-using Ubiq.Extensions;
+﻿using Ubiq.Messaging;
 using Ubiq.Voip;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Threading.Tasks;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     /// <summary>
     /// Shows a warning above the Avatar for a Remote player if an Audio Channel cannot be established.
@@ -18,13 +14,13 @@ namespace Ubiq.Samples
         public Color failedColor = Color.red;
         public Image indicator;
 
-        private Avatars.Avatar avatar;
+        private global::Ubiq.Avatars.Avatar avatar;
         private VoipPeerConnectionManager peerConnectionManager;
         private VoipPeerConnection peerConnection;
 
         private void Start()
         {
-            avatar = GetComponentInParent<Avatars.Avatar>();
+            avatar = GetComponentInParent<global::Ubiq.Avatars.Avatar>();
 
             if (!avatar || avatar.IsLocal)
             {

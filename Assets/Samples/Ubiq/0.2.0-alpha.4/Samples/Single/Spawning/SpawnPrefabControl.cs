@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Ubiq.Samples.Single.Spawning
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Single.Spawning
 {
     [RequireComponent(typeof(Button))]
     public class SpawnPrefabControl : MonoBehaviour

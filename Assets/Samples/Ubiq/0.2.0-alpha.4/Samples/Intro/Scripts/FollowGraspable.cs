@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Ubiq.XR;
 using UnityEngine;
-using Ubiq.XR;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     public class FollowGraspable : MonoBehaviour, IGraspable
     {

@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Ubiq.Messaging;
 using UnityEngine;
-using Ubiq.Messaging;
 
-namespace Ubiq.Samples.Boids
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Applications.Boids
 {
     public class Boids : MonoBehaviour, INetworkObject
     {

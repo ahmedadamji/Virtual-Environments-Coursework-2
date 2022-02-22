@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts;
 using UnityEngine;
 
-namespace Ubiq.Samples.Single.Spawning
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Single.Spawning
 {
     public class PrefabsMenu : MonoBehaviour
     {

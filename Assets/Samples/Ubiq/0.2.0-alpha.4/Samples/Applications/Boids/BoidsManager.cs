@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Ubiq.Rooms;
 using Ubiq.Messaging;
+using Ubiq.Rooms;
 using UnityEngine;
 
-namespace Ubiq.Samples.Boids
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Applications.Boids
 {
     /// <summary>
     /// Manages the flocks for a client

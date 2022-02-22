@@ -1,22 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Ubiq.Logging;
+﻿using Ubiq.Logging;
 using UnityEngine;
 
-public class LogCollectorCreator : MonoBehaviour
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Single.Questionnaire
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LogCollectorCreator : MonoBehaviour
     {
-        if(Application.isEditor)
+        // Start is called before the first frame update
+        void Start()
         {
-            gameObject.AddComponent<LogCollector>();
+            if(Application.isEditor)
+            {
+                gameObject.AddComponent<LogCollector>();
+            }
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Update is called once per frame
+        void Update()
+        {
         
+        }
     }
 }

@@ -1,10 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using Ubiq.Rooms;
 using UnityEngine;
 using UnityEngine.UI;
-using Ubiq.Rooms;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     public class CurrentRoomPanel : MonoBehaviour
     {

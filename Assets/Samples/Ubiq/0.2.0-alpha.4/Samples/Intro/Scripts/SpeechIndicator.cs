@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using Ubiq.Avatars;
+using UnityEngine;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     /// <summary>
     /// Displays an audio volume indicator for just-played audio samples from
@@ -27,7 +26,7 @@ namespace Ubiq.Samples
         public float minVolume;
         public float maxVolume;
 
-        private Avatars.Avatar avatar;
+        private global::Ubiq.Avatars.Avatar avatar;
         private VoipAvatar voipAvatar;
         private int lastSampleTimeMilliseconds;
 
@@ -37,7 +36,7 @@ namespace Ubiq.Samples
 
         private void Start()
         {
-            avatar = GetComponentInParent<Avatars.Avatar>();
+            avatar = GetComponentInParent<global::Ubiq.Avatars.Avatar>();
             voipAvatar = GetComponentInParent<VoipAvatar>();
         }
 

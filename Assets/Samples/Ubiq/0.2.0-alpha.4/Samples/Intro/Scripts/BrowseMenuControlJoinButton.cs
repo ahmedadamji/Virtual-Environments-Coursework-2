@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using Ubiq.Rooms;
+﻿using Ubiq.Rooms;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     public class BrowseMenuControlJoinButton : MonoBehaviour
     {

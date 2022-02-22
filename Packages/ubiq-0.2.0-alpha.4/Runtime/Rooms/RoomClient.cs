@@ -9,6 +9,7 @@ using Ubiq.XR.Notifications;
 using System.Linq;
 using Ubiq.Rooms.Messages;
 
+
 namespace Ubiq.Rooms
 {
     /// <summary>
@@ -273,7 +274,7 @@ namespace Ubiq.Rooms
             peers = new Dictionary<string, PeerInterfaceFriend>();
             actions = new List<Action>();
 
-            OnJoinedRoom.AddListener((room) => Debug.Log("Joined Room " + room.Name));
+            OnJoinedRoom.AddListener((room) => FindObjectOfType<Player>().Spawn);
 
             me = new PeerInterfaceFriend(Guid.NewGuid().ToString());
             OnPeerUpdated.SetExisting(me);
@@ -329,7 +330,7 @@ namespace Ubiq.Rooms
 
                             UpdatePeer(item);
                         }
-
+                        
                         OnJoinedRoom.Invoke(room);
                         OnRoomUpdated.Invoke(room);
                     }

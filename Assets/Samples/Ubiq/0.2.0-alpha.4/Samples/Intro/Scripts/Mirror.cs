@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Rendering;
-using Ubiq.Messaging;
-using Ubiq.Rooms;
+﻿using System.Collections.Generic;
 using Ubiq.Avatars;
+using Ubiq.Messaging;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
-namespace Ubiq.Samples.Social
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     [RequireComponent(typeof(RawImage))]
     public class Mirror : MonoBehaviour
@@ -42,7 +40,7 @@ namespace Ubiq.Samples.Social
         private RawImage image;
         private RenderTexture renderTexture;
         private Vector3[] cornersTmp = new Vector3[4];
-        private Ubiq.Avatars.Avatar avatarTmp;
+        private global::Ubiq.Avatars.Avatar avatarTmp;
         private CommandBuffer avatarRenderCommandBufferTmp;
         private List<Renderer> avatarRenderersTmp = new List<Renderer>();
 

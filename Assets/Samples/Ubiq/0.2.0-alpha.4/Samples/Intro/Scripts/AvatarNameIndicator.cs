@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using Ubiq.Messaging;
 using Ubiq.Rooms;
+using UnityEngine;
+using UnityEngine.UI;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     [RequireComponent(typeof(Text))]
     public class AvatarNameIndicator : MonoBehaviour
     {
         private Text text;
-        private Avatars.Avatar avatar;
+        private global::Ubiq.Avatars.Avatar avatar;
         private SocialMenu socialMenu;
 
         private void Awake()
@@ -21,7 +19,7 @@ namespace Ubiq.Samples
 
         private void Start()
         {
-            avatar = GetComponentInParent<Avatars.Avatar>();
+            avatar = GetComponentInParent<global::Ubiq.Avatars.Avatar>();
 
             if (!avatar || avatar.IsLocal)
             {

@@ -1,12 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Ubiq.Dictionaries;
-using Ubiq.Avatars;
-using UnityEngine.Events;
 using UnityEngine;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     [RequireComponent(typeof(TexturedAvatar))]
     public class SkinnedMeshAvatar : MonoBehaviour

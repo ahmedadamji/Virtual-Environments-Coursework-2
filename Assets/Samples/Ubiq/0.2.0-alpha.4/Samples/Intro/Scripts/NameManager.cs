@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using UnityEngine;
-using Ubiq.Rooms;
 using System.Text;
+using Ubiq.Rooms;
+using UnityEngine;
 
-namespace Ubiq.Samples.Social
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     public class NameManager : MonoBehaviour
     {

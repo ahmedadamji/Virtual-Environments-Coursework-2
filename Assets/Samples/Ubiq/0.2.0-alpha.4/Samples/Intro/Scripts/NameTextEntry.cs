@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Ubiq.Rooms;
 using UnityEngine;
-using Ubiq.Rooms;
 
-namespace Ubiq.Samples.Social
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     [RequireComponent(typeof(TextEntry))]
     public class NameTextEntry : MonoBehaviour

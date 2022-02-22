@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
         set => color = value;
     }
 
-    private void Start()
+    public void Spawn()
     {
         FindObjectOfType<PlayerSpawnManager>().SpawnPlayer(this);
     }

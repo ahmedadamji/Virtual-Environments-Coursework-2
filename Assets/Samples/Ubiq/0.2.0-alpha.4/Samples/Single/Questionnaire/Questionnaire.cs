@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Ubiq.Logging;
+﻿using Ubiq.Logging;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Ubiq.Samples.Single.Questionnaire
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Single.Questionnaire
 {
     public class Questionnaire : MonoBehaviour
     {

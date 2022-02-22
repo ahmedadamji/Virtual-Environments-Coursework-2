@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Ubiq.Messaging;
+using Ubiq.Rooms;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Ubiq.Rooms;
-using Ubiq.Messaging;
 
-namespace Ubiq.Samples
+namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 {
     public class RoomSceneManager : MonoBehaviour
     {
