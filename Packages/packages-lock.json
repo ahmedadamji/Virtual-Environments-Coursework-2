@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "com.ucl.ubiq": {
-      "version": "file:C:/Users/Ed/Desktop/ubiq-0.2.0-alpha.4",
+      "version": "file:ubiq-0.2.0-alpha.4",
       "depth": 0,
-      "source": "local",
+      "source": "embedded",
       "dependencies": {
         "com.unity.xr.management": "3.2.16"
       }
