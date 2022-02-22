@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class PlayerSpawnManager : MonoBehaviour
 {
+    public AvatarPagePanelController asmc;
     public enum PlayerColor
     {
         Red,
@@ -31,6 +33,10 @@ public class PlayerSpawnManager : MonoBehaviour
             playerTransform.position = availableSpots[i].transform.position;
             player.transform.rotation = Quaternion.LookRotation(-playerTransform.position);
             player.Color = availableSpots[i].Color;
+            
+            Debug.Log(asmc);
+            asmc.SetTexture(availableSpots[i].texture);
+
             availableSpots[i].SpotTaken = true;
             availableSpots.RemoveAt(i);
         }

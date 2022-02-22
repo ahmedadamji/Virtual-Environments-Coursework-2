@@ -25,8 +25,8 @@ namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 
         private void Start()
         {
-            SetPageCount(pageCount,force:true);
-            SetPage(page,force:true);
+            //SetPageCount(pageCount,force:true);
+            //SetPage(page,force:true);
         }
 
         private void SetPageCount(int pageCount, bool force)
@@ -54,7 +54,7 @@ namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
             }
 
             // If only one page, hide buttons
-            buttonsRoot.SetActive(pageCount > 1);
+            //buttonsRoot.SetActive(pageCount > 1);
 
             this.pageCount = pageCount;
             SetPage(page,force:true);

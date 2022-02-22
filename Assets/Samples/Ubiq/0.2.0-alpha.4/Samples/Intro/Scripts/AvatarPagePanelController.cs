@@ -26,8 +26,8 @@ namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
 
         private void OnEnable()
         {
-            UpdateOptions();
-            pagePanel.onPageChanged.AddListener(PagePanel_OnPageChanged);
+//            UpdateOptions();
+//            pagePanel.onPageChanged.AddListener(PagePanel_OnPageChanged);
         }
 
         private void OnDisable()
@@ -79,7 +79,7 @@ namespace Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts
             }
         }
 
-        private void SetTexture(Texture2D texture)
+        public void SetTexture(Texture2D texture)
         {
             if (!networkScene)
             {
