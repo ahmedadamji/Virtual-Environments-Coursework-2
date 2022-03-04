@@ -45,9 +45,9 @@ public class Bat : MonoBehaviour, IGraspable, INetworkComponent, INetworkObject
     {
         if (grasped)
         {
-            transform.localPosition = grasped.transform.position;
+            transform.position = grasped.transform.position;
             Message message;
-            message.position = transform.localPosition;
+            message.position = transform.position;
             context.SendJson(message);
         }
     }

@@ -45,9 +45,9 @@ public class AudioPin : MonoBehaviour, IGraspable, INetworkComponent, INetworkOb
     {
         if (grasped)
         {
-            transform.localPosition = grasped.transform.position;
+            transform.position = grasped.transform.position;
             Message message;
-            message.position = transform.localPosition;
+            message.position = transform.position;
             context.SendJson(message);
         }
     }

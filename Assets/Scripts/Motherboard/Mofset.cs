@@ -45,9 +45,9 @@ public class Mofset : MonoBehaviour, IGraspable, INetworkComponent, INetworkObje
     {
         if (grasped)
         {
-            transform.localPosition = grasped.transform.position;
+            transform.position = grasped.transform.position;
             Message message;
-            message.position = transform.localPosition;
+            message.position = transform.position;
             context.SendJson(message);
         }
     }

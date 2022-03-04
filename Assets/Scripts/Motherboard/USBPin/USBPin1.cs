@@ -45,9 +45,9 @@ public class USBPin1 : MonoBehaviour, IGraspable, INetworkComponent, INetworkObj
     {
         if (grasped)
         {
-            transform.localPosition = grasped.transform.position;
+            transform.position = grasped.transform.position;
             Message message;
-            message.position = transform.localPosition;
+            message.position = transform.position;
             context.SendJson(message);
         }
     }
