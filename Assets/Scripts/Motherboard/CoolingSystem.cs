@@ -8,6 +8,7 @@ using UnityEngine;
 public class CoolingSystem : MonoBehaviour, IGraspable, INetworkComponent, INetworkObject
 {
     private Hand grasped;
+    public int id;
 
     NetworkId INetworkObject.Id => new NetworkId(3229);
 
