@@ -1423,16 +1423,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145225825}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: -0}
-  m_LocalPosition: {x: 4.1888595, y: 0, z: -0.6228934}
-  m_LocalScale: {x: 0.4999998, y: 0.49999988, z: 0.49999988}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1887278254}
   - {fileID: 1698663321}
   - {fileID: 578239045}
   - {fileID: 1063039706}
-  m_Father: {fileID: 5501827996372879389}
-  m_RootOrder: 0
+  m_Father: {fileID: 1166824264}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1166824263
 GameObject:
@@ -1464,6 +1464,7 @@ Transform:
   m_Children:
   - {fileID: 1773670954}
   - {fileID: 803859132}
+  - {fileID: 1145225826}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3049,9 +3050,9 @@ GameObject:
   - component: {fileID: 7063076464032937349}
   - component: {fileID: 9021360768791319185}
   - component: {fileID: 7757227803058984496}
-  - component: {fileID: 89926742035332338}
   - component: {fileID: 89926742035332339}
   - component: {fileID: 89926742035332340}
+  - component: {fileID: 89926742035332338}
   m_Layer: 0
   m_Name: capaciitor.026
   m_TagString: Untagged
@@ -3068,9 +3069,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 89926742035332337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 939dd45febb34374bbb9bc873b2b3dab, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3227
 --- !u!54 &89926742035332339
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3122,7 +3124,7 @@ Transform:
   - {fileID: 323063770473779796}
   - {fileID: 4834214425526908019}
   m_Father: {fileID: 5501827996372879389}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &124175530503398837
 MeshFilter:
@@ -3143,9 +3145,9 @@ GameObject:
   - component: {fileID: 5996698926001269851}
   - component: {fileID: 5581892380399594543}
   - component: {fileID: 7367304736446641685}
-  - component: {fileID: 131290365583316411}
   - component: {fileID: 131290365583316412}
   - component: {fileID: 131290365583316413}
+  - component: {fileID: 131290365583316411}
   m_Layer: 0
   m_Name: usb 3.0
   m_TagString: Untagged
@@ -3162,9 +3164,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 131290365583316410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25f61be274e29234e858cdf221872590, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3245
 --- !u!54 &131290365583316412
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3356,9 +3359,9 @@ GameObject:
   - component: {fileID: 4977916172929328133}
   - component: {fileID: 2282933859472521782}
   - component: {fileID: 8309943843666060698}
-  - component: {fileID: 229647029799286685}
   - component: {fileID: 229647029799286686}
   - component: {fileID: 229647029799286687}
+  - component: {fileID: 229647029799286685}
   m_Layer: 0
   m_Name: capaciitor.008
   m_TagString: Untagged
@@ -3375,9 +3378,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 229647029799286684}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8c9ce961f353504ba7cdd8fca880315, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3209
 --- !u!54 &229647029799286686
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3419,9 +3423,9 @@ GameObject:
   - component: {fileID: 8803099284831657687}
   - component: {fileID: 783489595022565068}
   - component: {fileID: 2019020503600504587}
-  - component: {fileID: 244410728795261309}
   - component: {fileID: 244410728795261310}
   - component: {fileID: 244410728795261311}
+  - component: {fileID: 244410728795261309}
   m_Layer: 0
   m_Name: bilinmeyen pin
   m_TagString: Untagged
@@ -3438,9 +3442,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 244410728795261308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53d15cdfdb23b2246b55880c5892cfb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3199
 --- !u!54 &244410728795261310
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3611,9 +3616,9 @@ GameObject:
   - component: {fileID: 8357406813096751607}
   - component: {fileID: 6184182845149329011}
   - component: {fileID: 7969758835706330956}
-  - component: {fileID: 392365762166282522}
   - component: {fileID: 392365762166282523}
   - component: {fileID: 392365762166282524}
+  - component: {fileID: 392365762166282522}
   m_Layer: 0
   m_Name: capaciitor.015
   m_TagString: Untagged
@@ -3630,9 +3635,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 392365762166282521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c562d1da15b3c08419a2130398b1d32a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3216
 --- !u!54 &392365762166282523
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3774,9 +3780,9 @@ GameObject:
   - component: {fileID: 2936648931655443698}
   - component: {fileID: 4006799394441311129}
   - component: {fileID: 4441006216638672145}
-  - component: {fileID: 463387228221248446}
   - component: {fileID: 463387228221248447}
   - component: {fileID: 463387228221248448}
+  - component: {fileID: 463387228221248446}
   m_Layer: 0
   m_Name: capaciitor.003
   m_TagString: Untagged
@@ -3793,9 +3799,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 463387228221248445}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b3b6c9876c2ab34390e5511931e7ff4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3204
 --- !u!54 &463387228221248447
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4013,9 +4020,9 @@ GameObject:
   - component: {fileID: 5392956376664170346}
   - component: {fileID: 8730855629770908973}
   - component: {fileID: 396865639533273266}
-  - component: {fileID: 655903977439934258}
   - component: {fileID: 655903977439934259}
   - component: {fileID: 655903977439934260}
+  - component: {fileID: 655903977439934258}
   m_Layer: 0
   m_Name: Ellipse02
   m_TagString: Untagged
@@ -4032,9 +4039,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 655903977439934257}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fa9e7e9940f12f4e8e893547ee14664, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3211
 --- !u!54 &655903977439934259
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4116,9 +4124,9 @@ GameObject:
   - component: {fileID: 4254934587938578944}
   - component: {fileID: 1689529424265587790}
   - component: {fileID: 2026506772804446833}
-  - component: {fileID: 725678111423580932}
   - component: {fileID: 725678111423580933}
   - component: {fileID: 725678111423580934}
+  - component: {fileID: 725678111423580932}
   m_Layer: 0
   m_Name: sata port.003
   m_TagString: Untagged
@@ -4135,9 +4143,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 725678111423580931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 169ef6a3130213847982959c8c8aabc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3243
 --- !u!54 &725678111423580933
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4266,7 +4275,6 @@ GameObject:
   - component: {fileID: 8532093190727249908}
   - component: {fileID: 3764683852521319905}
   - component: {fileID: 8668626126054191709}
-  - component: {fileID: 820967703502363867}
   - component: {fileID: 820967703502363868}
   - component: {fileID: 820967703502363869}
   m_Layer: 0
@@ -4276,18 +4284,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &820967703502363867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820967703502363866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18298d548913b6d4898f7da3b4a7e639, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &820967703502363868
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4425,9 +4421,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000981121757577746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b85519ffa23e9e44bb7829d3d051a945, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3192
 --- !u!54 &1000981121757577748
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4796,9 +4793,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1379799410405175580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eabee0b1d24e79438424f624ce6d750, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 2261
 --- !u!1 &1450757956806339663
 GameObject:
   m_ObjectHideFlags: 0
@@ -4810,9 +4808,9 @@ GameObject:
   - component: {fileID: 3315538094688998308}
   - component: {fileID: 6422929935324554238}
   - component: {fileID: 1599374634763448878}
-  - component: {fileID: 1450757956806339664}
   - component: {fileID: 1450757956806339665}
   - component: {fileID: 1450757956806339666}
+  - component: {fileID: 1450757956806339664}
   m_Layer: 0
   m_Name: sata port.002
   m_TagString: Untagged
@@ -4829,9 +4827,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1450757956806339663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09461ec24316f7b43b89b3d7902cefa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3242
 --- !u!54 &1450757956806339665
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5007,9 +5006,9 @@ GameObject:
   - component: {fileID: 1242832607911133753}
   - component: {fileID: 2640797872406257872}
   - component: {fileID: 957348144143573066}
-  - component: {fileID: 1587498611336488235}
   - component: {fileID: 1587498611336488236}
   - component: {fileID: 1587498611336488237}
+  - component: {fileID: 1587498611336488235}
   m_Layer: 0
   m_Name: capaciitor.010
   m_TagString: Untagged
@@ -5026,9 +5025,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1587498611336488234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffb30580f1af7714a91185696f74f31f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3211
 --- !u!54 &1587498611336488236
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5277,9 +5277,9 @@ GameObject:
   - component: {fileID: 9133614828460308887}
   - component: {fileID: 2827499305590049413}
   - component: {fileID: 8109967883133590169}
-  - component: {fileID: 1890564976686211171}
   - component: {fileID: 1890564976686211172}
   - component: {fileID: 1890564976686211173}
+  - component: {fileID: 1890564976686211171}
   m_Layer: 0
   m_Name: capaciitor.011
   m_TagString: Untagged
@@ -5296,9 +5296,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1890564976686211170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3878c458ff5118c4597b6889590b2f74, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3212
 --- !u!54 &1890564976686211172
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5340,9 +5341,9 @@ GameObject:
   - component: {fileID: 5030793303782760686}
   - component: {fileID: 2143852897138451020}
   - component: {fileID: 789723891051952963}
-  - component: {fileID: 1906374458206937982}
   - component: {fileID: 1906374458206937983}
   - component: {fileID: 1906374458206937984}
+  - component: {fileID: 1906374458206937982}
   m_Layer: 0
   m_Name: bridge radiator
   m_TagString: Untagged
@@ -5359,9 +5360,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1906374458206937981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919943c12c53e5f47979e3c52c24a401, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3200
 --- !u!54 &1906374458206937983
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5613,9 +5615,9 @@ GameObject:
   - component: {fileID: 1284376247783854986}
   - component: {fileID: 1179447480120175828}
   - component: {fileID: 1022209508906955242}
-  - component: {fileID: 2235757651584390142}
   - component: {fileID: 2235757651584390143}
   - component: {fileID: 2235757651584390144}
+  - component: {fileID: 2235757651584390142}
   m_Layer: 0
   m_Name: bat
   m_TagString: Untagged
@@ -5632,9 +5634,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2235757651584390141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3b423db2784f148b078a9907a555be, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3197
 --- !u!54 &2235757651584390143
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5756,9 +5759,9 @@ GameObject:
   - component: {fileID: 482457471966820526}
   - component: {fileID: 4187105534683652365}
   - component: {fileID: 2095993439306490769}
-  - component: {fileID: 2423234783288493036}
   - component: {fileID: 2423234783288493037}
   - component: {fileID: 2423234783288493038}
+  - component: {fileID: 2423234783288493036}
   m_Layer: 0
   m_Name: Box07
   m_TagString: Untagged
@@ -5775,9 +5778,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2423234783288493035}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a44e9eae23a8540892d61670202166, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3209
 --- !u!54 &2423234783288493037
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5905,9 +5909,9 @@ GameObject:
   - component: {fileID: 454623624928793667}
   - component: {fileID: 7304800860356930185}
   - component: {fileID: 326381248682782742}
-  - component: {fileID: 2680234699901154311}
   - component: {fileID: 2680234699901154312}
   - component: {fileID: 2680234699901154313}
+  - component: {fileID: 2680234699901154311}
   m_Layer: 0
   m_Name: capaciitor.025
   m_TagString: Untagged
@@ -5924,9 +5928,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2680234699901154310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d18cea4ed6856e4181b5cbe4a1cfef9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3226
 --- !u!54 &2680234699901154312
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6056,9 +6061,9 @@ GameObject:
   - component: {fileID: 1849796731408414884}
   - component: {fileID: 2818518725287217757}
   - component: {fileID: 6731304667044127878}
-  - component: {fileID: 2812222575611693736}
   - component: {fileID: 2812222575611693737}
   - component: {fileID: 2812222575611693738}
+  - component: {fileID: 2812222575611693736}
   m_Layer: 0
   m_Name: audio pin
   m_TagString: Untagged
@@ -6075,9 +6080,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2812222575611693735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17c3c6bbf276d934b98f76bcb39287d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3196
 --- !u!54 &2812222575611693737
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6135,9 +6141,9 @@ GameObject:
   - component: {fileID: 7035019418832217445}
   - component: {fileID: 8154457294905120620}
   - component: {fileID: 761997696553016683}
-  - component: {fileID: 2831507497083907947}
   - component: {fileID: 2831507497083907948}
   - component: {fileID: 2831507497083907949}
+  - component: {fileID: 2831507497083907947}
   m_Layer: 0
   m_Name: hdmi
   m_TagString: Untagged
@@ -6154,9 +6160,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2831507497083907946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b0f1c2091397b4e949d691f81177a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3232
 --- !u!54 &2831507497083907948
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6214,9 +6221,9 @@ GameObject:
   - component: {fileID: 872957396818121320}
   - component: {fileID: 8540464835676033520}
   - component: {fileID: 3329677703740599408}
-  - component: {fileID: 2894865524029205129}
   - component: {fileID: 2894865524029205130}
   - component: {fileID: 2894865524029205131}
+  - component: {fileID: 2894865524029205129}
   m_Layer: 0
   m_Name: capaciitor.007
   m_TagString: Untagged
@@ -6233,9 +6240,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2894865524029205128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da15fb730a403354a9ddee0c19d8c541, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3208
 --- !u!54 &2894865524029205130
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6291,9 +6299,9 @@ GameObject:
   - component: {fileID: 1845543394273838552}
   - component: {fileID: 8773824532228970534}
   - component: {fileID: 4281414187038605409}
-  - component: {fileID: 3040473155492435365}
   - component: {fileID: 3040473155492435366}
   - component: {fileID: 3040473155492435367}
+  - component: {fileID: 3040473155492435365}
   m_Layer: 0
   m_Name: pci expres slot
   m_TagString: Untagged
@@ -6310,9 +6318,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3040473155492435364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be1fc920caca4e94fa6ff5a0c2742f17, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3236
 --- !u!54 &3040473155492435366
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6404,9 +6413,9 @@ GameObject:
   - component: {fileID: 5570621094700545375}
   - component: {fileID: 358860704075683107}
   - component: {fileID: 6844816356480433850}
-  - component: {fileID: 3234861254195481901}
   - component: {fileID: 3234861254195481902}
   - component: {fileID: 3234861254195481903}
+  - component: {fileID: 3234861254195481901}
   m_Layer: 0
   m_Name: Text02
   m_TagString: Untagged
@@ -6423,9 +6432,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3234861254195481900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aa97d7262b2210418acfe15eb3c71a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3213
 --- !u!54 &3234861254195481902
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6547,9 +6557,9 @@ GameObject:
   - component: {fileID: 8348103293990521978}
   - component: {fileID: 186514223698967512}
   - component: {fileID: 5179746326623958173}
-  - component: {fileID: 3455328307975404936}
   - component: {fileID: 3455328307975404937}
   - component: {fileID: 3455328307975404938}
+  - component: {fileID: 3455328307975404936}
   m_Layer: 0
   m_Name: mosfet
   m_TagString: Untagged
@@ -6566,9 +6576,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3455328307975404935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae92b1deae6a6e24c81289271c64dbfc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3234
 --- !u!54 &3455328307975404937
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6664,9 +6675,9 @@ GameObject:
   - component: {fileID: 7790751319211070622}
   - component: {fileID: 2208658287724504636}
   - component: {fileID: 6050922786299680328}
-  - component: {fileID: 3553372482417551559}
   - component: {fileID: 3553372482417551560}
   - component: {fileID: 3553372482417551561}
+  - component: {fileID: 3553372482417551559}
   m_Layer: 0
   m_Name: bat slot
   m_TagString: Untagged
@@ -6683,9 +6694,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3553372482417551558}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cb423f87ec8eb449ad4d201436c4ac9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3198
 --- !u!54 &3553372482417551560
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6735,9 +6747,9 @@ GameObject:
   - component: {fileID: 4102316821053352649}
   - component: {fileID: 5396065929370592882}
   - component: {fileID: 2733360241118017795}
-  - component: {fileID: 3598204900061116026}
   - component: {fileID: 3598204900061116027}
   - component: {fileID: 3598204900061116028}
+  - component: {fileID: 3598204900061116026}
   m_Layer: 0
   m_Name: capaciitor.009
   m_TagString: Untagged
@@ -6754,9 +6766,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3598204900061116025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b3fe96a3a2d1a749b4ed7ab0b3d80be, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3210
 --- !u!54 &3598204900061116027
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6798,9 +6811,9 @@ GameObject:
   - component: {fileID: 853285958076789013}
   - component: {fileID: 4281058225751813567}
   - component: {fileID: 4686266386364048486}
-  - component: {fileID: 3602444251610240783}
   - component: {fileID: 3602444251610240784}
   - component: {fileID: 3602444251610240785}
+  - component: {fileID: 3602444251610240783}
   m_Layer: 0
   m_Name: sata port
   m_TagString: Untagged
@@ -6817,9 +6830,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3602444251610240782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff9445f76bea544897e9e3d8ad2c277, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3240
 --- !u!54 &3602444251610240784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6884,9 +6898,9 @@ GameObject:
   - component: {fileID: 8155529932129044960}
   - component: {fileID: 1116743432814024946}
   - component: {fileID: 1211241647349348898}
-  - component: {fileID: 3635453295307184144}
   - component: {fileID: 3635453295307184145}
   - component: {fileID: 3635453295307184146}
+  - component: {fileID: 3635453295307184144}
   m_Layer: 0
   m_Name: Text01
   m_TagString: Untagged
@@ -6903,9 +6917,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3635453295307184143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e2e7b0c9750fd947a1431f74be871ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3212
 --- !u!54 &3635453295307184145
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6987,9 +7002,9 @@ GameObject:
   - component: {fileID: 6880265243985534625}
   - component: {fileID: 3846324792755435246}
   - component: {fileID: 7561675342364966290}
-  - component: {fileID: 3673911048756795252}
   - component: {fileID: 3673911048756795253}
   - component: {fileID: 3673911048756795254}
+  - component: {fileID: 3673911048756795252}
   m_Layer: 0
   m_Name: capaciitor.017
   m_TagString: Untagged
@@ -7006,9 +7021,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3673911048756795251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fa2614e69077f54b9660156232fa610, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3218
 --- !u!54 &3673911048756795253
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7086,9 +7102,9 @@ GameObject:
   - component: {fileID: 4834214425526908019}
   - component: {fileID: 7746738504228769103}
   - component: {fileID: 7414339801955739589}
-  - component: {fileID: 3814230697719185831}
   - component: {fileID: 3814230697719185832}
   - component: {fileID: 3814230697719185833}
+  - component: {fileID: 3814230697719185831}
   m_Layer: 0
   m_Name: Box06
   m_TagString: Untagged
@@ -7105,9 +7121,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3814230697719185830}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 485e77d188a87734fba5be3d735b9ad3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3208
 --- !u!54 &3814230697719185832
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7214,9 +7231,9 @@ GameObject:
   - component: {fileID: 100122058825844318}
   - component: {fileID: 6544869808668454535}
   - component: {fileID: 1202089461991950963}
-  - component: {fileID: 3862806776990545052}
   - component: {fileID: 3862806776990545053}
   - component: {fileID: 3862806776990545054}
+  - component: {fileID: 3862806776990545052}
   m_Layer: 0
   m_Name: Box01
   m_TagString: Untagged
@@ -7233,9 +7250,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3862806776990545051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c4d4140103daa94ab8fe1e0a9711ba0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3203
 --- !u!54 &3862806776990545053
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7354,9 +7372,9 @@ GameObject:
   - component: {fileID: 375000590659343425}
   - component: {fileID: 919356855469154694}
   - component: {fileID: 1197878351658569306}
-  - component: {fileID: 4176925528557668496}
   - component: {fileID: 4176925528557668497}
   - component: {fileID: 4176925528557668498}
+  - component: {fileID: 4176925528557668496}
   m_Layer: 0
   m_Name: capaciitor.014
   m_TagString: Untagged
@@ -7373,9 +7391,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4176925528557668495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0978612d247e354e9a0448e189714d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3215
 --- !u!54 &4176925528557668497
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7425,9 +7444,9 @@ GameObject:
   - component: {fileID: 3791627196449937862}
   - component: {fileID: 1642614387347616682}
   - component: {fileID: 5024316731959151937}
-  - component: {fileID: 4195421224943892049}
   - component: {fileID: 4195421224943892050}
   - component: {fileID: 4195421224943892051}
+  - component: {fileID: 4195421224943892049}
   m_Layer: 0
   m_Name: mosfet radiator
   m_TagString: Untagged
@@ -7444,9 +7463,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4195421224943892048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd50e2ef989c5be499ef917b13419d11, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3235
 --- !u!54 &4195421224943892050
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7502,9 +7522,9 @@ GameObject:
   - component: {fileID: 1757488660187104658}
   - component: {fileID: 8435958071495479940}
   - component: {fileID: 3660175666573216490}
-  - component: {fileID: 4239502739309780767}
   - component: {fileID: 4239502739309780768}
   - component: {fileID: 4239502739309780769}
+  - component: {fileID: 4239502739309780767}
   m_Layer: 0
   m_Name: capaciitor.013
   m_TagString: Untagged
@@ -7521,9 +7541,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4239502739309780766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec295b6b4c085a45bf7fac84db23533, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3214
 --- !u!54 &4239502739309780768
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7618,9 +7639,9 @@ GameObject:
   - component: {fileID: 5666696462482203389}
   - component: {fileID: 3125475191769578281}
   - component: {fileID: 5096400368658924916}
-  - component: {fileID: 4263190397297906539}
   - component: {fileID: 4263190397297906540}
   - component: {fileID: 4263190397297906541}
+  - component: {fileID: 4263190397297906539}
   m_Layer: 0
   m_Name: capaciitor.022
   m_TagString: Untagged
@@ -7637,9 +7658,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4263190397297906538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af3943a8c582de458ceae64711a7fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3223
 --- !u!54 &4263190397297906540
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7736,9 +7758,9 @@ GameObject:
   - component: {fileID: 3192634038727453654}
   - component: {fileID: 2008173750561472845}
   - component: {fileID: 6698967950378793589}
-  - component: {fileID: 4392945338549197805}
   - component: {fileID: 4392945338549197806}
   - component: {fileID: 4392945338549197807}
+  - component: {fileID: 4392945338549197805}
   m_Layer: 0
   m_Name: tpm pin
   m_TagString: Untagged
@@ -7755,9 +7777,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4392945338549197804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35cc003ea39e0a4e90227e35596694a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3244
 --- !u!54 &4392945338549197806
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7847,7 +7870,6 @@ GameObject:
   - component: {fileID: 323063770473779796}
   - component: {fileID: 545450056760542322}
   - component: {fileID: 6067249610918101120}
-  - component: {fileID: 4476242358357108325}
   - component: {fileID: 4476242358357108326}
   - component: {fileID: 4476242358357108327}
   m_Layer: 0
@@ -7857,18 +7879,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4476242358357108325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4476242358357108324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14805ebbeecf8d3479c15056f7befd4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &4476242358357108326
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7910,9 +7920,9 @@ GameObject:
   - component: {fileID: 7474201065575141981}
   - component: {fileID: 9165339775464405867}
   - component: {fileID: 4813361157171085777}
-  - component: {fileID: 4510825423993412972}
   - component: {fileID: 4510825423993412973}
   - component: {fileID: 4510825423993412974}
+  - component: {fileID: 4510825423993412972}
   m_Layer: 0
   m_Name: capaciitor.004
   m_TagString: Untagged
@@ -7929,9 +7939,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4510825423993412971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5c321f19687fb4e91572554d63c530, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3205
 --- !u!54 &4510825423993412973
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8148,7 +8159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5501827996372879389}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4834214425526908019
 Transform:
@@ -8175,9 +8186,9 @@ GameObject:
   - component: {fileID: 3480194820817639142}
   - component: {fileID: 7642802449821030944}
   - component: {fileID: 2384104819574662006}
-  - component: {fileID: 4835763832909654163}
   - component: {fileID: 4835763832909654164}
   - component: {fileID: 4835763832909654165}
+  - component: {fileID: 4835763832909654163}
   m_Layer: 0
   m_Name: capaciitor.002
   m_TagString: Untagged
@@ -8194,9 +8205,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4835763832909654162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c560487be12c77f4c8fd20f4045ce7c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3203
 --- !u!54 &4835763832909654164
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8277,9 +8289,9 @@ GameObject:
   - component: {fileID: 4827361114217633098}
   - component: {fileID: 5509890124976793914}
   - component: {fileID: 3532687536089770244}
-  - component: {fileID: 4903658402075245912}
   - component: {fileID: 4903658402075245913}
   - component: {fileID: 4903658402075245914}
+  - component: {fileID: 4903658402075245912}
   m_Layer: 0
   m_Name: Box02
   m_TagString: Untagged
@@ -8296,9 +8308,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4903658402075245911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce11c41ee2b51954bb5a6837eceedc49, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3204
 --- !u!54 &4903658402075245913
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8619,9 +8632,9 @@ GameObject:
   - component: {fileID: 3631988464116738923}
   - component: {fileID: 8994302692898793325}
   - component: {fileID: 4872776649042461377}
-  - component: {fileID: 5209538841642254936}
   - component: {fileID: 5209538841642254937}
   - component: {fileID: 5209538841642254938}
+  - component: {fileID: 5209538841642254936}
   m_Layer: 0
   m_Name: am4 socket
   m_TagString: Untagged
@@ -8638,9 +8651,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5209538841642254935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b2978a314244114eb76ac0aa1d1f8ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3195
 --- !u!54 &5209538841642254937
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8722,9 +8736,9 @@ GameObject:
   - component: {fileID: 1550602775222434106}
   - component: {fileID: 7075371665837667025}
   - component: {fileID: 3856679005542769297}
-  - component: {fileID: 5326073757306970085}
   - component: {fileID: 5326073757306970086}
   - component: {fileID: 5326073757306970087}
+  - component: {fileID: 5326073757306970085}
   m_Layer: 0
   m_Name: 24 pin connector
   m_TagString: Untagged
@@ -8741,9 +8755,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5326073757306970084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea5a16b940c6c64e9bdc9793528a280, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3193
 --- !u!54 &5326073757306970086
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8807,9 +8822,9 @@ GameObject:
   - component: {fileID: 8234532219528682651}
   - component: {fileID: 7748746979651541045}
   - component: {fileID: 9027988891927397786}
-  - component: {fileID: 5403137968340250656}
   - component: {fileID: 5403137968340250657}
   - component: {fileID: 5403137968340250658}
+  - component: {fileID: 5403137968340250656}
   m_Layer: 0
   m_Name: ram slot 1
   m_TagString: Untagged
@@ -8826,9 +8841,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5403137968340250655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6314eb4915122a47bc4c6ecbafba719, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3238
 --- !u!54 &5403137968340250657
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8870,9 +8886,9 @@ GameObject:
   - component: {fileID: 7774971885594506693}
   - component: {fileID: 4537237159643767361}
   - component: {fileID: 49166800994100341}
-  - component: {fileID: 5451414616797316974}
   - component: {fileID: 5451414616797316975}
   - component: {fileID: 5451414616797316976}
+  - component: {fileID: 5451414616797316974}
   m_Layer: 0
   m_Name: usb pin.001
   m_TagString: Untagged
@@ -8889,9 +8905,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5451414616797316973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb2a8bfbb3d9854a83d1a78622a52d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3249
 --- !u!54 &5451414616797316975
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8941,7 +8958,6 @@ Transform:
   m_LocalPosition: {x: 8.377717, y: 1.2457867, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
-  - {fileID: 1145225826}
   - {fileID: 100122058825844318}
   - {fileID: 4827361114217633098}
   m_Father: {fileID: 0}
@@ -8966,9 +8982,9 @@ GameObject:
   - component: {fileID: 244713065238353781}
   - component: {fileID: 5081127738841295751}
   - component: {fileID: 6338044537381582057}
-  - component: {fileID: 5561052926545138348}
   - component: {fileID: 5561052926545138349}
   - component: {fileID: 5561052926545138350}
+  - component: {fileID: 5561052926545138348}
   m_Layer: 0
   m_Name: sata port.001
   m_TagString: Untagged
@@ -8985,9 +9001,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5561052926545138347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89c569b7abfbae4489d6517ce94dbc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3241
 --- !u!54 &5561052926545138349
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9079,9 +9096,9 @@ GameObject:
   - component: {fileID: 1693274874780631306}
   - component: {fileID: 7612506468898287547}
   - component: {fileID: 4646282462794540145}
-  - component: {fileID: 5713197151590758495}
   - component: {fileID: 5713197151590758496}
   - component: {fileID: 5713197151590758497}
+  - component: {fileID: 5713197151590758495}
   m_Layer: 0
   m_Name: usb 3.0 2
   m_TagString: Untagged
@@ -9098,9 +9115,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5713197151590758494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e2fbd75d5ee2cd4387822da1c130928, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3246
 --- !u!54 &5713197151590758496
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9142,9 +9160,9 @@ GameObject:
   - component: {fileID: 4215533457865014013}
   - component: {fileID: 5466522641931110433}
   - component: {fileID: 7200649351050281313}
-  - component: {fileID: 5722201730197423877}
   - component: {fileID: 5722201730197423878}
   - component: {fileID: 5722201730197423879}
+  - component: {fileID: 5722201730197423877}
   m_Layer: 0
   m_Name: capaciitor.006
   m_TagString: Untagged
@@ -9161,9 +9179,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5722201730197423876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c671529da47c8af4ea830223f501b432, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3207
 --- !u!54 &5722201730197423878
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9205,9 +9224,9 @@ GameObject:
   - component: {fileID: 206137394444415658}
   - component: {fileID: 7810126237874721212}
   - component: {fileID: 142982464730916017}
-  - component: {fileID: 5727322046645168618}
   - component: {fileID: 5727322046645168619}
   - component: {fileID: 5727322046645168620}
+  - component: {fileID: 5727322046645168618}
   m_Layer: 0
   m_Name: usb pin
   m_TagString: Untagged
@@ -9224,9 +9243,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5727322046645168617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca697e21132f99c4f9fb39fca80d3654, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3248
 --- !u!54 &5727322046645168619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9368,9 +9388,9 @@ GameObject:
   - component: {fileID: 3735818917466463698}
   - component: {fileID: 5958966493111603389}
   - component: {fileID: 1489134095297887039}
-  - component: {fileID: 6048356547659497288}
   - component: {fileID: 6048356547659497289}
   - component: {fileID: 6048356547659497290}
+  - component: {fileID: 6048356547659497288}
   m_Layer: 0
   m_Name: dvi
   m_TagString: Untagged
@@ -9387,9 +9407,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6048356547659497287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9db2b148ce469474480e06ed692d1181, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3230
 --- !u!54 &6048356547659497289
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9470,9 +9491,9 @@ GameObject:
   - component: {fileID: 5673592559748384450}
   - component: {fileID: 4115078620131139487}
   - component: {fileID: 6389872951582075264}
-  - component: {fileID: 6059003331929645826}
   - component: {fileID: 6059003331929645827}
   - component: {fileID: 6059003331929645828}
+  - component: {fileID: 6059003331929645826}
   m_Layer: 0
   m_Name: capaciitor.005
   m_TagString: Untagged
@@ -9489,9 +9510,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6059003331929645825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c6ddaff8f8ab5b499dc9e8b22ae3b16, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3206
 --- !u!54 &6059003331929645827
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9612,9 +9634,9 @@ GameObject:
   - component: {fileID: 6768221006316741896}
   - component: {fileID: 7267568948449828438}
   - component: {fileID: 4798402564687476469}
-  - component: {fileID: 6092264000701644319}
   - component: {fileID: 6092264000701644320}
   - component: {fileID: 6092264000701644321}
+  - component: {fileID: 6092264000701644319}
   m_Layer: 0
   m_Name: Ellipse01
   m_TagString: Untagged
@@ -9631,9 +9653,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6092264000701644318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa84df3326404c54aac5d62b814e5031, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3210
 --- !u!54 &6092264000701644320
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9705,9 +9728,9 @@ GameObject:
   - component: {fileID: 3066660527973685792}
   - component: {fileID: 8838910921670234824}
   - component: {fileID: 4944556215222676061}
-  - component: {fileID: 6194279431028682352}
   - component: {fileID: 6194279431028682353}
   - component: {fileID: 6194279431028682354}
+  - component: {fileID: 6194279431028682352}
   m_Layer: 0
   m_Name: ps/2
   m_TagString: Untagged
@@ -9724,9 +9747,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6194279431028682351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e99c31957b987be4ba7d1b8a18c69720, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3237
 --- !u!54 &6194279431028682353
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9768,9 +9792,9 @@ GameObject:
   - component: {fileID: 6910142215905682304}
   - component: {fileID: 7899969390707406442}
   - component: {fileID: 8133899210692092616}
-  - component: {fileID: 6207625680743336849}
   - component: {fileID: 6207625680743336850}
   - component: {fileID: 6207625680743336851}
+  - component: {fileID: 6207625680743336849}
   m_Layer: 0
   m_Name: ethernet and usb 2.0
   m_TagString: Untagged
@@ -9787,9 +9811,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6207625680743336848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9434fb93ebae44346bafcd89f75ddafe, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3231
 --- !u!54 &6207625680743336850
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9910,9 +9935,9 @@ GameObject:
   - component: {fileID: 2860675462722920326}
   - component: {fileID: 215354634915838199}
   - component: {fileID: 268672375657829543}
-  - component: {fileID: 6403609140577589773}
   - component: {fileID: 6403609140577589774}
   - component: {fileID: 6403609140577589775}
+  - component: {fileID: 6403609140577589773}
   m_Layer: 0
   m_Name: ram slot 2
   m_TagString: Untagged
@@ -9929,9 +9954,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6403609140577589772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71c766a8d2143a241a1ac1ce20943ae5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3239
 --- !u!54 &6403609140577589774
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10436,9 +10462,9 @@ GameObject:
   - component: {fileID: 1014425848052078896}
   - component: {fileID: 3901993402240629750}
   - component: {fileID: 6077185408397933929}
-  - component: {fileID: 7127356325577311791}
   - component: {fileID: 7127356325577311792}
   - component: {fileID: 7127356325577311793}
+  - component: {fileID: 7127356325577311791}
   m_Layer: 0
   m_Name: capaciitor
   m_TagString: Untagged
@@ -10455,9 +10481,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7127356325577311790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84dc5ab213b71c7479c1647be3e1cee9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3201
 --- !u!54 &7127356325577311792
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10499,7 +10526,6 @@ GameObject:
   - component: {fileID: 2190346736954859864}
   - component: {fileID: 6520889974033577544}
   - component: {fileID: 3992848883973722288}
-  - component: {fileID: 7143544017746398457}
   - component: {fileID: 7143544017746398458}
   - component: {fileID: 7143544017746398459}
   m_Layer: 0
@@ -10509,18 +10535,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7143544017746398457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7143544017746398456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22c4557a12e04047ac9ff41dd89d2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &7143544017746398458
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10562,9 +10576,9 @@ GameObject:
   - component: {fileID: 6693970865650505750}
   - component: {fileID: 1648759431521121487}
   - component: {fileID: 1517361151104123066}
-  - component: {fileID: 7192470534035042755}
   - component: {fileID: 7192470534035042756}
   - component: {fileID: 7192470534035042757}
+  - component: {fileID: 7192470534035042755}
   m_Layer: 0
   m_Name: 24 pin connector.001
   m_TagString: Untagged
@@ -10581,9 +10595,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7192470534035042754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4b7f078b627e3c488f088fac5ffea0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3194
 --- !u!54 &7192470534035042756
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10665,9 +10680,9 @@ GameObject:
   - component: {fileID: 514860094247346896}
   - component: {fileID: 4754158322133806438}
   - component: {fileID: 167791376563261877}
-  - component: {fileID: 7230623104652497524}
   - component: {fileID: 7230623104652497525}
   - component: {fileID: 7230623104652497526}
+  - component: {fileID: 7230623104652497524}
   m_Layer: 0
   m_Name: capaciitor.021
   m_TagString: Untagged
@@ -10684,9 +10699,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7230623104652497523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3eca752d84d66c40a9d1dd26b43ff6f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3222
 --- !u!54 &7230623104652497525
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10754,9 +10770,9 @@ GameObject:
   - component: {fileID: 2603285588102032194}
   - component: {fileID: 3563435996498409489}
   - component: {fileID: 7808518552325144023}
-  - component: {fileID: 7303929480426495774}
   - component: {fileID: 7303929480426495775}
   - component: {fileID: 7303929480426495776}
+  - component: {fileID: 7303929480426495774}
   m_Layer: 0
   m_Name: usb 3.0 pin
   m_TagString: Untagged
@@ -10773,9 +10789,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7303929480426495773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca697e21132f99c4f9fb39fca80d3654, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3247
 --- !u!54 &7303929480426495775
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10825,9 +10842,9 @@ GameObject:
   - component: {fileID: 7596565291833406859}
   - component: {fileID: 6100040657298605206}
   - component: {fileID: 6501791767456865869}
-  - component: {fileID: 7308187254022514502}
   - component: {fileID: 7308187254022514503}
   - component: {fileID: 7308187254022514504}
+  - component: {fileID: 7308187254022514502}
   m_Layer: 0
   m_Name: mini pcie
   m_TagString: Untagged
@@ -10844,9 +10861,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7308187254022514501}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f996d8c0210534bbfd054ae6477bb5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3233
 --- !u!54 &7308187254022514503
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11000,9 +11018,9 @@ GameObject:
   - component: {fileID: 521826922824269591}
   - component: {fileID: 8098692386792035914}
   - component: {fileID: 683855704709379257}
-  - component: {fileID: 7469983723049024404}
   - component: {fileID: 7469983723049024405}
   - component: {fileID: 7469983723049024406}
+  - component: {fileID: 7469983723049024404}
   m_Layer: 0
   m_Name: vga
   m_TagString: Untagged
@@ -11019,9 +11037,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7469983723049024403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40c063c734fb216429f8e25ffdc59ba7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3250
 --- !u!54 &7469983723049024405
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11077,9 +11096,9 @@ GameObject:
   - component: {fileID: 1875360458655180519}
   - component: {fileID: 7672416857636380555}
   - component: {fileID: 175628780114289704}
-  - component: {fileID: 7541180061431493087}
   - component: {fileID: 7541180061431493088}
   - component: {fileID: 7541180061431493089}
+  - component: {fileID: 7541180061431493087}
   m_Layer: 0
   m_Name: capaciitor.019
   m_TagString: Untagged
@@ -11096,9 +11115,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7541180061431493086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f0caeb464c60234a8a9b40361ba3d92, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3220
 --- !u!54 &7541180061431493088
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11212,9 +11232,9 @@ GameObject:
   - component: {fileID: 2625936749142457362}
   - component: {fileID: 2633849126616712532}
   - component: {fileID: 8297414276760232582}
-  - component: {fileID: 7609981021060028308}
   - component: {fileID: 7609981021060028309}
   - component: {fileID: 7609981021060028310}
+  - component: {fileID: 7609981021060028308}
   m_Layer: 0
   m_Name: capaciitor.018
   m_TagString: Untagged
@@ -11231,9 +11251,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7609981021060028307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3c72d02ba9ac184a833ed426cdb08cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3219
 --- !u!54 &7609981021060028309
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11445,9 +11466,9 @@ GameObject:
   - component: {fileID: 7792007608055190709}
   - component: {fileID: 4326122402474139245}
   - component: {fileID: 4942365484878087352}
-  - component: {fileID: 7825300227455497206}
   - component: {fileID: 7825300227455497207}
   - component: {fileID: 7825300227455497208}
+  - component: {fileID: 7825300227455497206}
   m_Layer: 0
   m_Name: capaciitor.024
   m_TagString: Untagged
@@ -11464,9 +11485,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7825300227455497205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a939ef0a70e1434cb3b4d379c9b43f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3225
 --- !u!54 &7825300227455497207
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11863,9 +11885,9 @@ GameObject:
   - component: {fileID: 6163490379234771113}
   - component: {fileID: 1314372413555733227}
   - component: {fileID: 2017125044072665746}
-  - component: {fileID: 8341826846316393318}
   - component: {fileID: 8341826846316393319}
   - component: {fileID: 8341826846316393320}
+  - component: {fileID: 8341826846316393318}
   m_Layer: 0
   m_Name: capaciitor.012
   m_TagString: Untagged
@@ -11882,9 +11904,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8341826846316393317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ba867aa83b5094494f36f788f0a84a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3213
 --- !u!54 &8341826846316393319
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11954,9 +11977,9 @@ GameObject:
   - component: {fileID: 5124178051878834538}
   - component: {fileID: 6882380840305703280}
   - component: {fileID: 5322428017354282939}
-  - component: {fileID: 8370301538286868943}
   - component: {fileID: 8370301538286868944}
   - component: {fileID: 8370301538286868945}
+  - component: {fileID: 8370301538286868943}
   m_Layer: 0
   m_Name: capacitor
   m_TagString: Untagged
@@ -11973,9 +11996,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8370301538286868942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05deea37b641de24cb5a06f2b30005c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3228
 --- !u!54 &8370301538286868944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12126,9 +12150,9 @@ GameObject:
   - component: {fileID: 7079800759150109828}
   - component: {fileID: 7907032026371748607}
   - component: {fileID: 8629647785720778057}
-  - component: {fileID: 8730466085165468366}
   - component: {fileID: 8730466085165468367}
   - component: {fileID: 8730466085165468368}
+  - component: {fileID: 8730466085165468366}
   m_Layer: 0
   m_Name: capaciitor.016
   m_TagString: Untagged
@@ -12145,9 +12169,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8730466085165468365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b9790f600eb0c14eb9475b37c26d4a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3217
 --- !u!54 &8730466085165468367
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12219,9 +12244,9 @@ GameObject:
   - component: {fileID: 6928490832687839481}
   - component: {fileID: 3609812571910909905}
   - component: {fileID: 486808722576350814}
-  - component: {fileID: 8775521297606052563}
   - component: {fileID: 8775521297606052564}
   - component: {fileID: 8775521297606052565}
+  - component: {fileID: 8775521297606052563}
   m_Layer: 0
   m_Name: capaciitor.023
   m_TagString: Untagged
@@ -12238,9 +12263,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8775521297606052562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c76fa4f207805434198945c4516e0e2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3224
 --- !u!54 &8775521297606052564
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12351,9 +12377,9 @@ GameObject:
   - component: {fileID: 6865713636528233095}
   - component: {fileID: 2787888960288152620}
   - component: {fileID: 1545297261652315058}
-  - component: {fileID: 9001506440945643538}
   - component: {fileID: 9001506440945643539}
   - component: {fileID: 9001506440945643540}
+  - component: {fileID: 9001506440945643538}
   m_Layer: 0
   m_Name: capaciitor.001
   m_TagString: Untagged
@@ -12370,9 +12396,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9001506440945643537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ed84ffa7f477b248856fc5861e41df0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3202
 --- !u!54 &9001506440945643539
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12495,9 +12522,9 @@ GameObject:
   - component: {fileID: 2295948600673170871}
   - component: {fileID: 9056478685286607183}
   - component: {fileID: 2693888918123599578}
-  - component: {fileID: 9114601385442632076}
   - component: {fileID: 9114601385442632077}
   - component: {fileID: 9114601385442632078}
+  - component: {fileID: 9114601385442632076}
   m_Layer: 0
   m_Name: capaciitor.020
   m_TagString: Untagged
@@ -12514,9 +12541,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9114601385442632075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a84a5281d115f6546923c18849dcd301, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3221
 --- !u!54 &9114601385442632077
 Rigidbody:
   m_ObjectHideFlags: 0
