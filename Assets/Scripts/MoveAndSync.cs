@@ -5,12 +5,11 @@ using Ubiq.XR;
 using UnityEngine;
 
 
-public class CoolingSystem : MonoBehaviour, IGraspable, INetworkComponent, INetworkObject
+public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetworkObject
 {
     private Hand grasped;
     public uint id;
-
-    NetworkId INetworkObject.Id => new NetworkId(3229);
+    NetworkId INetworkObject.Id => new NetworkId(id);
 
     private NetworkContext context;
 

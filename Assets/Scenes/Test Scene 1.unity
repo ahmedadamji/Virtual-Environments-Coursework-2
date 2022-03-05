@@ -4779,6 +4779,7 @@ GameObject:
   - component: {fileID: 1760301538784193446}
   - component: {fileID: 3441316883670836227}
   - component: {fileID: 587425292185882825}
+  - component: {fileID: 1379799410405175581}
   m_Layer: 0
   m_Name: motherboard
   m_TagString: Untagged
@@ -4786,6 +4787,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1379799410405175581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379799410405175580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eabee0b1d24e79438424f624ce6d750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1450757956806339663
 GameObject:
   m_ObjectHideFlags: 0
@@ -11511,9 +11524,9 @@ GameObject:
   - component: {fileID: 7439179453210752085}
   - component: {fileID: 591749252012749004}
   - component: {fileID: 8893607354574058958}
-  - component: {fileID: 7925599766933071924}
   - component: {fileID: 7925599766933071925}
   - component: {fileID: 7925599766933071926}
+  - component: {fileID: 7925599766933071924}
   m_Layer: 0
   m_Name: cooling system
   m_TagString: Untagged
@@ -11530,10 +11543,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7925599766933071923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bf4cff3589953c41a8626b771ae275b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 3229
 --- !u!54 &7925599766933071925
 Rigidbody:
   m_ObjectHideFlags: 0
