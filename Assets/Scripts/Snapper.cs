@@ -12,6 +12,7 @@ public class Snapper : MonoBehaviour
     private void Start()
     {
         mas = GetComponent<MoveAndSync>();
+        
     }
 
 
