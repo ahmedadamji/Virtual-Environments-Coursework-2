@@ -9,6 +9,7 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 {
     [HideInInspector] public Hand grasped;
     [HideInInspector] public bool locked;
+    public double minDist = 1.0;
     public uint id;
     NetworkId INetworkObject.Id => new NetworkId(id);
 
@@ -66,9 +67,16 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         {
             var objTransform = transform;
             var handTransform = grasped.transform;
-            
-            objTransform.position = handTransform.position;
-            objTransform.rotation = handTransform.rotation;
+
+            //Mesh mesh = GetComponent<MeshFilter>().mesh;
+
+            //float distance = Math.Sqrt((Math.Pow(objTransform.position.x - handTransform.position.x, 2) + Math.Pow(y1 - y2, 2)));
+            float distance = Vector3.Distance(objTransform.position, handTransform.position);
+            if (distance <= minDist)
+            {
+                objTransform.position = handTransform.position;
+                objTransform.rotation = handTransform.rotation;
+            }
             
             Message message = new Message(objTransform);
             context.SendJson(message);
