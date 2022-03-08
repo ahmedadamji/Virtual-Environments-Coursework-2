@@ -3,17 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PuzzlePart : MonoBehaviour
+public class Snapper : MonoBehaviour
 {
     [SerializeField] private GameObject prefab;
     [SerializeField] private Transform rightTransform;
-    public bool locked = false;
+    //[HideInInspector] public bool locked = false;
     private float distance;
+    [SerializeField] private Material _material;
+    private MoveAndSync mas;
+
+    private void Start()
+    {
+        prefab.GetComponent<MeshFilter>().mesh = GetComponent<MeshFilter>().mesh;
+        prefab.GetComponent<MeshRenderer>().material = _material;
+        mas = GetComponent<MoveAndSync>();
+    }
 
 
     private void Update()
     {
-        if (locked)
+        if (!mas.grasped)
         {
             return;
         }
@@ -21,11 +30,14 @@ public class PuzzlePart : MonoBehaviour
         Debug.Log(distance);
         if (distance < 1f)
         {
-            Destroy(rightTransform.GetChild(0).gameObject);
-            transform.position = rightTransform.position;
-            transform.rotation = rightTransform.rotation;
-            locked = true;
-            
+            if (rightTransform.childCount != 0)
+            {
+                Destroy(rightTransform.GetChild(0).gameObject);
+                transform.position = rightTransform.position;
+                transform.rotation = rightTransform.rotation;
+                GetComponent<MoveAndSync>().ForceRelease();
+                //locked = true;
+            }
         }
         if (distance < 10.0f)
         {

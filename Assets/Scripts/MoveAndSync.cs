@@ -7,7 +7,8 @@ using UnityEngine;
 
 public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetworkObject
 {
-    private Hand grasped;
+    [HideInInspector] public Hand grasped;
+    [HideInInspector] public bool locked;
     public uint id;
     NetworkId INetworkObject.Id => new NetworkId(id);
 
@@ -15,13 +16,26 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 
     void IGraspable.Grasp(Hand controller)
     {
-        grasped = controller;
+        if (!locked)
+        {
+            grasped = controller;
+        }
+        
     }
 
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
         var msg = message.FromJson<Message>();
-        transform.localPosition = msg.position;
+        var objTransform = transform;
+        
+        objTransform.position = msg.Position;
+        objTransform.rotation = msg.Rotation;
+    }
+
+    public void ForceRelease()
+    {
+        grasped = null;
+        locked = true;
     }
 
     void IGraspable.Release(Hand controller)
@@ -29,7 +43,6 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         grasped = null;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         context = NetworkScene.Register(this);
@@ -37,17 +50,27 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 
     struct Message
     {
-        public Vector3 position;
-    }
+        public readonly Vector3 Position;
+        public readonly Quaternion Rotation;
 
-    // Update is called once per frame
+        public Message(Transform transform)
+        {
+            Position = transform.position;
+            Rotation = transform.rotation;
+        }
+    }
+    
     void Update()
     {
-        if (grasped)
+        if (grasped && !locked)
         {
-            transform.position = grasped.transform.position;
-            Message message;
-            message.position = transform.position;
+            var objTransform = transform;
+            var handTransform = grasped.transform;
+            
+            objTransform.position = handTransform.position;
+            objTransform.rotation = handTransform.rotation;
+            
+            Message message = new Message(objTransform);
             context.SendJson(message);
         }
     }
