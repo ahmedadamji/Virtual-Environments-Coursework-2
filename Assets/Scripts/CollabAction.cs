@@ -18,7 +18,8 @@ public class CollabAction : StateLight
             ChangeState(true);
             return true;
         }
-
+        
+        ChangeState(false);
         return false;
     }
 }
