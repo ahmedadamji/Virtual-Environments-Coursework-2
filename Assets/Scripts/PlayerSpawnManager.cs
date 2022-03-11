@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts;
+using Ubiq.Messaging;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class PlayerSpawnManager : MonoBehaviour
+public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObject
 {
     public AvatarPagePanelController asmc;
     public enum PlayerColor
@@ -14,14 +15,35 @@ public class PlayerSpawnManager : MonoBehaviour
         Red,
         Blue,
         Green,
-        Yellow
+        Yellow,
+        None
     }
 
     public static Material Black;
     public static Material Any;
     private SpawnSpot[] spawnSpots;
+    private int playerCount;
+    private bool spawned;
+
+    private NetworkContext context;
+
+    private void OnDisable()
+    {
+        playerCount--;
+        Message message = new Message(spawnSpots, playerCount);
+        context.SendJson(message);
+    }
+
+    private void Start()
+    {
+        context = NetworkScene.Register(this);
+        Message message = new Message(spawnSpots, playerCount);
+        context.SendJson(message);
+    }
+
     private void Awake()
     {
+        playerCount++;
         spawnSpots = GetComponentsInChildren<SpawnSpot>();
         Black = new Material(Shader.Find("Universal Render Pipeline/Lit"))
         {
@@ -58,4 +80,31 @@ public class PlayerSpawnManager : MonoBehaviour
         }
         
     }
+
+    public struct Message
+    {
+        public SpawnSpot[] SpawnSpots;
+        public int PlayerCount;
+
+        public Message(SpawnSpot[] spawnSpots, int playerCount)
+        {
+            SpawnSpots = spawnSpots;
+            PlayerCount = playerCount;
+        }
+    }
+
+    public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
+    {
+        var msg = message.FromJson<Message>();
+        spawnSpots = msg.SpawnSpots;
+        playerCount = msg.PlayerCount;
+        if (playerCount == 4 && !spawned)
+        {
+            spawned = true;
+            SpawnPlayer(FindObjectOfType<Player>());
+        }
+    }
+
+    public uint id;
+    NetworkId INetworkObject.Id => new NetworkId(id);
 }

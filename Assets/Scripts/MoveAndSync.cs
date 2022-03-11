@@ -31,10 +31,10 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         context = NetworkScene.Register(this);
         Player player = FindObjectOfType<Player>();
         PlayerSpawnManager.PlayerColor playerColor = player.Color;
-        if (playerColor == Color)
+        if (locked)
         {
-            movable = true;
-            ChangeMaterials(player.mat);
+            movable = false;
+            ChangeMaterials(PlayerSpawnManager.Black);
         }
         else if (shareable)
         {
@@ -43,7 +43,8 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         }
         else
         {
-            ChangeMaterials(PlayerSpawnManager.Black);
+            movable = true;
+            ChangeMaterials(player.mat);
         }
     }
 

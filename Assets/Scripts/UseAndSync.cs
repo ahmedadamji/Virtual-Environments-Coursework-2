@@ -33,19 +33,14 @@ public class UseAndSync : MonoBehaviour, IUseable, INetworkComponent, INetworkOb
         context = NetworkScene.Register(this);
         Player player = FindObjectOfType<Player>();
         PlayerSpawnManager.PlayerColor playerColor = player.Color;
-        if (playerColor == Color)
+        usable = true;
+        if (shareable)
         {
-            usable = true;
-            ChangeMaterials(player.mat);
-        }
-        else if (shareable)
-        {
-            usable = true;
             ChangeMaterials(PlayerSpawnManager.Any);
         }
         else
         {
-            ChangeMaterials(PlayerSpawnManager.Black);
+            ChangeMaterials(player.mat);
         }
     }
     

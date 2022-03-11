@@ -6,22 +6,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private PlayerSpawnManager.PlayerColor color;
-    public Material mat;
+    [HideInInspector] public Material mat;
 
-    public PlayerSpawnManager.PlayerColor Color
-    {
-        get => color;
-        set => color = value;
-    }
+    public PlayerSpawnManager.PlayerColor Color = PlayerSpawnManager.PlayerColor.None;
+    
 
     public void Start()
     {
-        FindObjectOfType<PlayerSpawnManager>().SpawnPlayer(this);
+        //FindObjectOfType<PlayerSpawnManager>().SpawnPlayer(this);
         mat = CreateMaterial();
     }
 
-    private Material CreateMaterial()
+    public Material CreateMaterial()
     {
         Material createMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"));
         switch (Color)
@@ -37,6 +33,9 @@ public class Player : MonoBehaviour
                 break;
             case PlayerSpawnManager.PlayerColor.Yellow:
                 createMaterial.color = UnityEngine.Color.yellow;
+                break;
+            case PlayerSpawnManager.PlayerColor.None:
+                createMaterial.color = UnityEngine.Color.black;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
