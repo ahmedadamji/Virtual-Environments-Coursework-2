@@ -11,13 +11,20 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
     [HideInInspector] public Hand grasped;
     [HideInInspector] public bool locked;
     [HideInInspector] public bool shareable;
-    private bool movable;
+    [HideInInspector] public bool movable;
     public PlayerSpawnManager.PlayerColor Color;
     private float distance;
     public uint id;
     NetworkId INetworkObject.Id => new NetworkId(id);
 
     private NetworkContext context;
+    
+    private HandController[] handControllers;
+
+    private void Awake()
+    {
+        handControllers = FindObjectsOfType<HandController>();
+    }
     
     void Start()
     {
@@ -62,6 +69,9 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         if (movable && !locked && grasped == null)
         {
             grasped = controller;
+            transform.parent = grasped.gameObject.transform;
+            GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<Rigidbody>().useGravity = false;
         }
         
     }
@@ -79,11 +89,17 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
     {
         grasped = null;
         locked = true;
+        transform.parent = null;
+        foreach (var handController in handControllers)
+        {
+            handController.Vibrate(0.3f, 0.2f);
+        }
+        
     }
 
     void IGraspable.Release(Hand controller)
     {
-        if (movable)
+        if (movable && !locked)
         {
             grasped = null;
             transform.parent = null;
@@ -110,10 +126,6 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
     {
         if (grasped)
         {
-            GetComponent<Rigidbody>().isKinematic = true;
-            GetComponent<Rigidbody>().useGravity = false;
-            transform.parent = grasped.gameObject.transform;
-
             Message message = new Message(transform);
             context.SendJson(message);
         }

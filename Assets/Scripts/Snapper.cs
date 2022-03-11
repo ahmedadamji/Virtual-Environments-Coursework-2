@@ -5,40 +5,57 @@ using UnityEngine;
 
 public class Snapper : MonoBehaviour
 {
-    [SerializeField] private GameObject rightTransform;
+    [SerializeField] private GameObject destination;
     private float distance;
     private MoveAndSync mas;
+    [SerializeField] private Material snapMaterial;
 
     private void Start()
     {
         mas = GetComponent<MoveAndSync>();
-        
+        ChangeMaterials(destination, snapMaterial);
+        destination.SetActive(false);
+
+    }
+    
+    void ChangeMaterials(GameObject target, Material material)
+    {
+        var children = target.GetComponentsInChildren<MeshRenderer>();
+        foreach (var rend in children)
+        {
+            var mats = new Material[rend.materials.Length];
+            for (var j = 0; j < rend.materials.Length; j++) 
+            { 
+                mats[j] = material; 
+            }
+            rend.materials = mats;
+        }
     }
 
 
     private void Update()
     {
-        if (!mas.grasped)
+        if (!mas.grasped || !mas.movable || mas.locked)
         {
             return;
         }
-        distance = Vector3.Distance(transform.position, rightTransform.transform.position);
-        if (distance < 1f)
+        distance = Vector3.Distance(transform.position, destination.transform.position);
+        if (distance < .5f)
         {
-            if (rightTransform.activeSelf)
-            {
-                transform.position = rightTransform.transform.position;
-                transform.rotation = rightTransform.transform.rotation;
+            
+                destination.SetActive(false);
+                transform.position = destination.transform.position;
+                transform.rotation = destination.transform.rotation;
                 GetComponent<MoveAndSync>().ForceRelease();
-            }
+
         }
-        if (distance < 10.0f)
+        else if (distance < 3.0f)
         {
-            rightTransform.SetActive(true);
+            destination.SetActive(true);
         }
         else
         {
-            rightTransform.SetActive(false);
+            destination.SetActive(false);
         }
     }
 }
