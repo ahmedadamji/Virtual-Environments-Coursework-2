@@ -9,6 +9,11 @@ public class UseAndSync : MonoBehaviour, IUseable, INetworkComponent, INetworkOb
 {
     [HideInInspector] public Hand used;
     [HideInInspector] public bool isOn;
+    
+    public PlayerSpawnManager.PlayerColor Color;
+    private bool usable;
+    [HideInInspector] public bool shareable;
+
 
     public StateLight indicator;
     
@@ -26,6 +31,38 @@ public class UseAndSync : MonoBehaviour, IUseable, INetworkComponent, INetworkOb
     void Start()
     {
         context = NetworkScene.Register(this);
+        Player player = FindObjectOfType<Player>();
+        PlayerSpawnManager.PlayerColor playerColor = player.Color;
+        if (playerColor == Color)
+        {
+            usable = true;
+            ChangeMaterials(player.mat);
+        }
+        else if (shareable)
+        {
+            usable = true;
+            ChangeMaterials(PlayerSpawnManager.Any);
+        }
+        else
+        {
+            ChangeMaterials(PlayerSpawnManager.Black);
+        }
+    }
+    
+    void ChangeMaterials(Material material)
+    {
+        MeshRenderer[] children;
+        children = GetComponentsInChildren<MeshRenderer>();
+        foreach (var rend in children)
+        {
+            var mats = new Material[rend.materials.Length];
+            for (var j = 0; j < rend.materials.Length; j++) 
+            { 
+                mats[j] = material; 
+            }
+            rend.materials = mats;
+        }
+
     }
 
     struct Message
@@ -41,10 +78,13 @@ public class UseAndSync : MonoBehaviour, IUseable, INetworkComponent, INetworkOb
 
     public void Use(Hand controller)
     {
-        isOn = !isOn;
-        indicator.ChangeState(isOn);
-        Message message = new Message(isOn);
-        context.SendJson(message);
+        if (usable)
+        {
+            isOn = !isOn;
+            indicator.ChangeState(isOn);
+            Message message = new Message(isOn);
+            context.SendJson(message);
+        }
     }
 
     public void UnUse(Hand controller)

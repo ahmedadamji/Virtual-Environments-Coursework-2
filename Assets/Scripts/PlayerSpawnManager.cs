@@ -16,10 +16,21 @@ public class PlayerSpawnManager : MonoBehaviour
         Green,
         Yellow
     }
+
+    public static Material Black;
+    public static Material Any;
     private SpawnSpot[] spawnSpots;
     private void Awake()
     {
         spawnSpots = GetComponentsInChildren<SpawnSpot>();
+        Black = new Material(Shader.Find("Universal Render Pipeline/Lit"))
+        {
+            color = Color.black
+        };
+        Any = new Material(Shader.Find("Universal Render Pipeline/Lit"))
+        {
+            color = Color.gray
+        };
     }
 
     public void SpawnPlayer(Player player)

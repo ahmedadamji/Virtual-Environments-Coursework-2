@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Ubiq.Messaging;
 using Ubiq.XR;
@@ -9,15 +10,56 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 {
     [HideInInspector] public Hand grasped;
     [HideInInspector] public bool locked;
-    public double minDist = 1.0;
+    [HideInInspector] public bool shareable;
+    private bool movable;
+    public PlayerSpawnManager.PlayerColor Color;
+    private float distance;
     public uint id;
     NetworkId INetworkObject.Id => new NetworkId(id);
 
     private NetworkContext context;
+    
+    void Start()
+    {
+        context = NetworkScene.Register(this);
+        Player player = FindObjectOfType<Player>();
+        PlayerSpawnManager.PlayerColor playerColor = player.Color;
+        if (playerColor == Color)
+        {
+            movable = true;
+            ChangeMaterials(player.mat);
+        }
+        else if (shareable)
+        {
+            movable = true;
+            ChangeMaterials(PlayerSpawnManager.Any);
+        }
+        else
+        {
+            ChangeMaterials(PlayerSpawnManager.Black);
+        }
+    }
+
+    void ChangeMaterials(Material material)
+    {
+        MeshRenderer[] children;
+        children = GetComponentsInChildren<MeshRenderer>();
+        foreach (var rend in children)
+        {
+            var mats = new Material[rend.materials.Length];
+            for (var j = 0; j < rend.materials.Length; j++) 
+            { 
+                mats[j] = material; 
+            }
+            rend.materials = mats;
+        }
+
+    }
 
     void IGraspable.Grasp(Hand controller)
     {
-        if (!locked)
+        //distance = Vector3.Distance(transform.position, controller.transform.parent.position);
+        if (movable && !locked && grasped == null)
         {
             grasped = controller;
         }
@@ -41,13 +83,16 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 
     void IGraspable.Release(Hand controller)
     {
-        grasped = null;
+        if (movable)
+        {
+            grasped = null;
+            transform.parent = null;
+            GetComponent<Rigidbody>().isKinematic = false;
+            GetComponent<Rigidbody>().useGravity = true;
+        }
     }
 
-    void Start()
-    {
-        context = NetworkScene.Register(this);
-    }
+    
 
     struct Message
     {
@@ -63,22 +108,13 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
     
     void Update()
     {
-        if (grasped && !locked)
+        if (grasped)
         {
-            var objTransform = transform;
-            var handTransform = grasped.transform;
+            GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<Rigidbody>().useGravity = false;
+            transform.parent = grasped.gameObject.transform;
 
-            //Mesh mesh = GetComponent<MeshFilter>().mesh;
-
-            //float distance = Math.Sqrt((Math.Pow(objTransform.position.x - handTransform.position.x, 2) + Math.Pow(y1 - y2, 2)));
-            float distance = Vector3.Distance(objTransform.position, handTransform.position);
-            if (distance <= minDist)
-            {
-                objTransform.position = handTransform.position;
-                objTransform.rotation = handTransform.rotation;
-            }
-            
-            Message message = new Message(objTransform);
+            Message message = new Message(transform);
             context.SendJson(message);
         }
     }
