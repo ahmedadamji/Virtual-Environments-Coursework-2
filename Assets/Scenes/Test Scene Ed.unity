@@ -11203,6 +11203,7 @@ MonoBehaviour:
   asmc: {fileID: 1112772153}
   sharedMaterialColor: {r: 0, g: 1, b: 0.9602337, a: 0}
   othersMaterialColor: {r: 0, g: 0, b: 0, a: 0}
+  id: 1500
 --- !u!1 &804752178
 GameObject:
   m_ObjectHideFlags: 0
@@ -17002,6 +17003,7 @@ MonoBehaviour:
   asmc: {fileID: 1135937731}
   sharedMaterialColor: {r: 0, g: 1, b: 0.9602337, a: 0}
   othersMaterialColor: {r: 0, g: 0, b: 0, a: 0}
+  id: 
 --- !u!1 &1222877896
 GameObject:
   m_ObjectHideFlags: 0
@@ -17908,6 +17910,7 @@ MonoBehaviour:
   asmc: {fileID: 163742903}
   sharedMaterialColor: {r: 0, g: 1, b: 0.9602337, a: 0}
   othersMaterialColor: {r: 0, g: 0, b: 0, a: 0}
+  id: 
 --- !u!4 &1287506242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5514386084912180037, guid: bb25b73aa11996046885b3fbcfa4587c,
@@ -29070,6 +29073,7 @@ MonoBehaviour:
   asmc: {fileID: 247369927}
   sharedMaterialColor: {r: 0, g: 1, b: 0.9602337, a: 0}
   othersMaterialColor: {r: 0, g: 0, b: 0, a: 0}
+  id: 
 --- !u!1 &1896788207
 GameObject:
   m_ObjectHideFlags: 0
@@ -32095,6 +32099,7 @@ MonoBehaviour:
   asmc: {fileID: 1760621970}
   sharedMaterialColor: {r: 0, g: 1, b: 0.9602337, a: 0}
   othersMaterialColor: {r: 0, g: 0, b: 0, a: 0}
+  id: 
 --- !u!1 &2124034497
 GameObject:
   m_ObjectHideFlags: 0

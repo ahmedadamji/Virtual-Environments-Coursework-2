@@ -57,7 +57,7 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
     {
         playerCount++;
         //Debug.Log("COUNT " + playerCount);
-        if (playerCount == 2)
+        if (playerCount == 3)
         {
             SpawnPlayer(FindObjectOfType<Player>());
         }
