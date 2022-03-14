@@ -20,7 +20,7 @@ public class SpawnSpot : MonoBehaviour
         if (!SpotTaken)
         {
             SpotTaken = true;
-            player.PlayerColor = spawnSpotColor;
+            player.PlayerMaterial.color = spawnSpotColor;
             player.PlayerNumber = transform.GetSiblingIndex();
             player.transform.position = transform.position;
         }

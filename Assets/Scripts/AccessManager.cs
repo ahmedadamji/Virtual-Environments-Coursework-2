@@ -14,9 +14,14 @@ public class AccessManager : MonoBehaviour
     
     public bool shareable;
 
+    private PlayerSpawnManager playerSpawnManager;
+
     private void Start()
     {
         Player player = FindObjectOfType<Player>();
+        playerSpawnManager = FindObjectOfType<PlayerSpawnManager>();
+        playerSpawnManager.OnGameStart.AddListener(OnGameStart);
+
         
         if (playerNumber == player.PlayerNumber)
         {
@@ -33,6 +38,11 @@ public class AccessManager : MonoBehaviour
             available = false;
             ChangeMaterials(PlayerSpawnManager.OthersMaterial);
         }
+    }
+
+    private void OnGameStart()
+    {
+        locked = false;
     }
     
     private void ChangeMaterials(Material material)

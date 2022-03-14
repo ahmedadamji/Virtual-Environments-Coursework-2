@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
 {
     [HideInInspector] public Material PlayerMaterial;
 
-    public Color PlayerColor;
     public PlayerNumber PlayerNumber;
 
     public void Start()

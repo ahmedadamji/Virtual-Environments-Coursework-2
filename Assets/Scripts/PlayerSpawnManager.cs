@@ -6,6 +6,7 @@ using Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts;
 using Ubiq.Messaging;
 using Ubiq.Rooms;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObject
@@ -30,6 +31,9 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
     NetworkId INetworkObject.Id => new NetworkId(id);
     
     private NetworkContext context;
+    
+    public UnityEvent OnGameStart = new UnityEvent();
+
     
     void Start()
     {
@@ -60,6 +64,7 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
         if (playerCount == 3)
         {
             SpawnPlayer(FindObjectOfType<Player>());
+            OnGameStart.Invoke();
         }
     }
     
