@@ -8,20 +8,33 @@ using Ubiq.Rooms;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class PlayerSpawnManager : MonoBehaviour
+public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObject
 {
     public AvatarPagePanelController asmc;
 
     private SpawnSpot[] spawnSpots;
     private int playerCount;
+    private int playerIndex;
     private bool spawned;
-    
+
     [SerializeField] private Color sharedMaterialColor;
     [SerializeField] private Color othersMaterialColor;
     public static Material SharedMaterial;
     public static Material OthersMaterial;
 
     private RoomClient roomClient;
+    
+    public string id;
+
+    private List<SpawnSpot> availableSpots;
+    NetworkId INetworkObject.Id => new NetworkId(id);
+    
+    private NetworkContext context;
+    
+    void Start()
+    {
+        context = NetworkScene.Register(this);
+    }
 
     private void Awake()
     {
@@ -43,7 +56,7 @@ public class PlayerSpawnManager : MonoBehaviour
     private void OnAdded(IPeer peer)
     {
         playerCount++;
-        Debug.Log("COUNT " + playerCount);
+        //Debug.Log("COUNT " + playerCount);
         if (playerCount == 2)
         {
             SpawnPlayer(FindObjectOfType<Player>());
@@ -52,16 +65,16 @@ public class PlayerSpawnManager : MonoBehaviour
     
     public void SpawnPlayer(Player player)
     {
-        List<SpawnSpot> availableSpots = spawnSpots.Where(spawnSpot => !spawnSpot.SpotTaken).ToList();
+        availableSpots = spawnSpots.Where(spawnSpot => !spawnSpot.SpotTaken).ToList();
 
         if (availableSpots.Count != 0)
         {
             int i = Random.Range(0, availableSpots.Count);
-            var playerTransform = player.transform;
             availableSpots[i].TakeSpot(player);
             
             asmc.SetTexture(availableSpots[i].texture);
             availableSpots.RemoveAt(i);
+            context.SendJson(new Message(availableSpots));
         }
 
         if (availableSpots.Count != 0)
@@ -70,4 +83,21 @@ public class PlayerSpawnManager : MonoBehaviour
         }
         
     }
+
+    public struct Message
+    {
+        public List<SpawnSpot> availableSpots;
+
+        public Message(List<SpawnSpot> anAvailableSpots)
+        {
+            availableSpots = anAvailableSpots;
+        }
+    }
+
+    public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
+    {
+        var msg = message.FromJson<Message>();
+        availableSpots = msg.availableSpots;
+    }
+
 }
