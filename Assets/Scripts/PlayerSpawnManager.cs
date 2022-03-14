@@ -44,7 +44,7 @@ public class PlayerSpawnManager : MonoBehaviour
     {
         playerCount++;
         Debug.Log("COUNT " + playerCount);
-        if (playerCount == 3)
+        if (playerCount == 2)
         {
             SpawnPlayer(FindObjectOfType<Player>());
         }
