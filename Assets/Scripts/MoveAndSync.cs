@@ -5,16 +5,14 @@ using Ubiq.Messaging;
 using Ubiq.XR;
 using UnityEngine;
 
+using PlayerNumber = System.Int32;
 
 public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetworkObject
 {
     [HideInInspector] public Hand grasped;
-    [HideInInspector] public bool locked;
-    [HideInInspector] public bool shareable;
-    [HideInInspector] public bool movable;
-    public PlayerSpawnManager.PlayerColor Color;
+    private AccessManager accessManager;
     private float distance;
-    public uint id;
+    public string id;
     NetworkId INetworkObject.Id => new NetworkId(id);
 
     private NetworkContext context;
@@ -23,74 +21,36 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 
     private void Awake()
     {
+        accessManager = GetComponent<AccessManager>();
         handControllers = FindObjectsOfType<HandController>();
     }
     
     void Start()
     {
         context = NetworkScene.Register(this);
-        Player player = FindObjectOfType<Player>();
-        PlayerSpawnManager.PlayerColor playerColor = player.Color;
-        if (locked)
-        {
-            movable = false;
-            ChangeMaterials(PlayerSpawnManager.Black);
-        }
-        else if (shareable)
-        {
-            movable = true;
-            ChangeMaterials(PlayerSpawnManager.Any);
-        }
-        else
-        {
-            movable = true;
-            ChangeMaterials(player.mat);
-        }
-    }
-
-    void ChangeMaterials(Material material)
-    {
-        MeshRenderer[] children;
-        children = GetComponentsInChildren<MeshRenderer>();
-        foreach (var rend in children)
-        {
-            var mats = new Material[rend.materials.Length];
-            for (var j = 0; j < rend.materials.Length; j++) 
-            { 
-                mats[j] = material; 
-            }
-            rend.materials = mats;
-        }
-
     }
 
     void IGraspable.Grasp(Hand controller)
     {
-        //distance = Vector3.Distance(transform.position, controller.transform.parent.position);
-        if (movable && !locked && grasped == null)
+        if (accessManager.available && !accessManager.locked && grasped == null)
         {
             grasped = controller;
-            transform.parent = grasped.gameObject.transform;
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<Rigidbody>().useGravity = false;
         }
-        
     }
 
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
         var msg = message.FromJson<Message>();
-        var objTransform = transform;
-        
-        objTransform.position = msg.Position;
-        objTransform.rotation = msg.Rotation;
+        transform.localPosition = msg.Transform.position;
+        transform.localRotation = msg.Transform.rotation;
     }
 
     public void ForceRelease()
     {
         grasped = null;
-        locked = true;
-        transform.parent = null;
+        accessManager.locked = true;
         foreach (var handController in handControllers)
         {
             handController.Vibrate(0.3f, 0.2f);
@@ -100,10 +60,9 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 
     void IGraspable.Release(Hand controller)
     {
-        if (movable && !locked)
+        if (grasped)
         {
             grasped = null;
-            transform.parent = null;
             GetComponent<Rigidbody>().isKinematic = false;
             GetComponent<Rigidbody>().useGravity = true;
         }
@@ -111,24 +70,22 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 
     
 
-    struct Message
+    public struct Message
     {
-        public readonly Vector3 Position;
-        public readonly Quaternion Rotation;
-
+        public TransformMessage Transform;
         public Message(Transform transform)
         {
-            Position = transform.position;
-            Rotation = transform.rotation;
+            this.Transform = new TransformMessage(transform);
         }
     }
     
     void Update()
     {
-        if (grasped)
+        if(grasped)
         {
-            Message message = new Message(transform);
-            context.SendJson(message);
+            transform.position = grasped.transform.position;
+            transform.rotation = grasped.transform.rotation;
+            context.SendJson(new Message(transform));
         }
     }
 }

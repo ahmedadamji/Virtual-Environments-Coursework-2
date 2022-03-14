@@ -10,16 +10,15 @@ public class CollabAction : StateLight
 
     public UnityEvent action;
 
-    public bool CheckAllButtons()
+    public void CheckAllButtons()
     {
         if (buttons.All(button => button.State))
         {
             action.Invoke();
             ChangeState(true);
-            return true;
+            return;
         }
-        
         ChangeState(false);
-        return false;
+        
     }
 }

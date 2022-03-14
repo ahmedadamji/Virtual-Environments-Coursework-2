@@ -9,11 +9,11 @@ public class StateLight : MonoBehaviour
 
     [SerializeField] private CollabAction collabAction;
     
-    private bool state;
+    protected bool state;
     
-    public void ChangeState(bool value)
+    public void ChangeState(bool aState)
     {
-        state = value;
+        state = aState;
         GetComponent<MeshRenderer>().material = state ? green : red;
         if (collabAction != null)
         {

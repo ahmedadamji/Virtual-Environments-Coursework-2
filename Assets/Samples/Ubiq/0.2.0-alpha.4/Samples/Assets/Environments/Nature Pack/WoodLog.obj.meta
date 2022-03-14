@@ -3,7 +3,22 @@ guid: 66a484c82365d884d9ecffaefc3ff858
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mushroom_Bottom
+    second: {fileID: 2100000, guid: 50291469923e7e844906b49916189d36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mushroom_Top
+    second: {fileID: 2100000, guid: 73abccf7ee37ac0478b05ff310a8ca9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: dc302b73e06da1649a0c8f55d0beb682, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

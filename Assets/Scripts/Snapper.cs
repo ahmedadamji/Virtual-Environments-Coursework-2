@@ -7,12 +7,14 @@ public class Snapper : MonoBehaviour
 {
     [SerializeField] private GameObject destination;
     private float distance;
-    private MoveAndSync mas;
+    private AccessManager accessManager;
+    private MoveAndSync moveAndSync;
     [SerializeField] private Material snapMaterial;
 
     private void Start()
     {
-        mas = GetComponent<MoveAndSync>();
+        accessManager = GetComponent<AccessManager>();
+        moveAndSync = GetComponent<MoveAndSync>();
         ChangeMaterials(destination, snapMaterial);
         destination.SetActive(false);
 
@@ -35,7 +37,7 @@ public class Snapper : MonoBehaviour
 
     private void Update()
     {
-        if (!mas.grasped || !mas.movable || mas.locked)
+        if (!moveAndSync.grasped || !accessManager.available || accessManager.locked)
         {
             return;
         }

@@ -4,57 +4,52 @@ using System.Collections.Generic;
 using System.Linq;
 using Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts;
 using Ubiq.Messaging;
+using Ubiq.Rooms;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObject
+public class PlayerSpawnManager : MonoBehaviour
 {
     public AvatarPagePanelController asmc;
-    public enum PlayerColor
-    {
-        Red,
-        Blue,
-        Green,
-        Yellow,
-        None
-    }
 
-    public static Material Black;
-    public static Material Any;
     private SpawnSpot[] spawnSpots;
     private int playerCount;
     private bool spawned;
+    
+    [SerializeField] private Color sharedMaterialColor;
+    [SerializeField] private Color othersMaterialColor;
+    public static Material SharedMaterial;
+    public static Material OthersMaterial;
 
-    private NetworkContext context;
-
-    private void OnDisable()
-    {
-        playerCount--;
-        Message message = new Message(spawnSpots, playerCount);
-        context.SendJson(message);
-    }
-
-    private void Start()
-    {
-        context = NetworkScene.Register(this);
-        Message message = new Message(spawnSpots, playerCount);
-        context.SendJson(message);
-    }
+    private RoomClient roomClient;
 
     private void Awake()
     {
-        playerCount++;
+        roomClient = FindObjectOfType<RoomClient>();
+        roomClient.OnPeerAdded.AddListener(OnAdded);
         spawnSpots = GetComponentsInChildren<SpawnSpot>();
-        Black = new Material(Shader.Find("Universal Render Pipeline/Lit"))
+        
+        SharedMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"))
         {
-            color = Color.black
+            color = Color.gray
         };
-        Any = new Material(Shader.Find("Universal Render Pipeline/Lit"))
+        
+        OthersMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"))
         {
             color = Color.gray
         };
     }
 
+    private void OnAdded(IPeer peer)
+    {
+        playerCount++;
+        Debug.Log("COUNT " + playerCount);
+        if (playerCount == 4)
+        {
+            SpawnPlayer(FindObjectOfType<Player>());
+        }
+    }
+    
     public void SpawnPlayer(Player player)
     {
         List<SpawnSpot> availableSpots = spawnSpots.Where(spawnSpot => !spawnSpot.SpotTaken).ToList();
@@ -65,7 +60,7 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
             var playerTransform = player.transform;
             playerTransform.position = availableSpots[i].transform.position;
             player.transform.rotation = Quaternion.LookRotation(-playerTransform.position);
-            player.Color = availableSpots[i].Color;
+            player.PlayerColor = availableSpots[i].SpawnSpotColor;
             
             Debug.Log(asmc);
             asmc.SetTexture(availableSpots[i].texture);
@@ -80,31 +75,4 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
         }
         
     }
-
-    public struct Message
-    {
-        public SpawnSpot[] SpawnSpots;
-        public int PlayerCount;
-
-        public Message(SpawnSpot[] spawnSpots, int playerCount)
-        {
-            SpawnSpots = spawnSpots;
-            PlayerCount = playerCount;
-        }
-    }
-
-    public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
-    {
-        var msg = message.FromJson<Message>();
-        spawnSpots = msg.SpawnSpots;
-        playerCount = msg.PlayerCount;
-        if (playerCount == 4 && !spawned)
-        {
-            spawned = true;
-            SpawnPlayer(FindObjectOfType<Player>());
-        }
-    }
-
-    public uint id;
-    NetworkId INetworkObject.Id => new NetworkId(id);
 }

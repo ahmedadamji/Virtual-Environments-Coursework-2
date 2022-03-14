@@ -1,18 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnSpot : MonoBehaviour
 {
-    private bool spotTaken;
     public Texture2D texture;
-    [SerializeField] private PlayerSpawnManager.PlayerColor color;
+    [SerializeField] private Color spawnSpotColor;
 
-    public bool SpotTaken
+    private void Awake()
     {
-        get => spotTaken;
-        set => spotTaken = value;
+        spawnSpotColor = GetComponentInChildren<Light>().color;
     }
 
-    public PlayerSpawnManager.PlayerColor Color => color;
+    public bool SpotTaken { get; set; }
+
+    public Color SpawnSpotColor => spawnSpotColor;
 }
