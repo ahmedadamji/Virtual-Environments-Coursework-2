@@ -15,5 +15,14 @@ public class SpawnSpot : MonoBehaviour
 
     public bool SpotTaken { get; set; }
 
-    public Color SpawnSpotColor => spawnSpotColor;
+    public void TakeSpot(Player player)
+    {
+        if (!SpotTaken)
+        {
+            SpotTaken = true;
+            player.PlayerColor = spawnSpotColor;
+            player.PlayerNumber = transform.GetSiblingIndex();
+            player.transform.position = transform.position;
+        }
+    }
 }

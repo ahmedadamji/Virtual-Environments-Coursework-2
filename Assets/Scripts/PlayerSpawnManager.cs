@@ -58,14 +58,9 @@ public class PlayerSpawnManager : MonoBehaviour
         {
             int i = Random.Range(0, availableSpots.Count);
             var playerTransform = player.transform;
-            playerTransform.position = availableSpots[i].transform.position;
-            player.transform.rotation = Quaternion.LookRotation(-playerTransform.position);
-            player.PlayerColor = availableSpots[i].SpawnSpotColor;
+            availableSpots[i].TakeSpot(player);
             
-            Debug.Log(asmc);
             asmc.SetTexture(availableSpots[i].texture);
-
-            availableSpots[i].SpotTaken = true;
             availableSpots.RemoveAt(i);
         }
 
