@@ -51,7 +51,7 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
     private void Awake()
     {
         roomClient = FindObjectOfType<RoomClient>();
-        roomClient.OnPeerAdded.AddListener(OnAdded);
+        roomClient.OnJoinedRoom.AddListener(OnAdded);
         spawnSpots = GetComponentsInChildren<SpawnSpot>();
         
         SharedMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"))
@@ -67,7 +67,7 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
         
     }
 
-    private void OnAdded(IPeer peer)
+    private void OnAdded(IRoom room)
     {
         context.SendJson(new Message(false));
         if (playerCount == 2)
