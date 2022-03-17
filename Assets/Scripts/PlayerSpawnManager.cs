@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts;
 using Ubiq.Avatars;
 using Ubiq.Messaging;
 using Ubiq.Rooms;
 using UnityEngine;
 
-public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObject
+public class PlayerSpawnManager : MonoBehaviour
 {
     private SpawnSpot[] spawnSpots;
     private int playerCount = 0;
@@ -21,9 +22,10 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
     private RoomClient roomClient;
     
     public string id;
-    NetworkId INetworkObject.Id => new NetworkId(id);
     
     private NetworkContext context;
+
+    [SerializeField] private GameObject avatarManager;
     
     public static event Action OnGameStart;
 
@@ -34,7 +36,6 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
 
     void Start()
     {
-        context = NetworkScene.Register(this);
         if (debugMode)
         {
             StartCoroutine(StartGame());
@@ -49,17 +50,17 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
             yield return new WaitForSeconds(1);
         }
 
-        int index = 0;
-        foreach (var id in IDs)
+        char[] charsToTrim = { '-', ' ', '\''};
+        int[] values = {0, 0, 0, 0};
+        for (int i = 0; i < 4; i++)
         {
-            index++;
-            if (id == NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id.ToString())
-            {
-                SpawnPlayer(FindObjectOfType<Player>(), index);
-                break;
-            }
+            string str = avatarManager.transform.GetChild(i).name;
+            string hexValue = str.Substring(str.IndexOf("-") - 5, str.IndexOf("-") + 5);
+            values[i] = int.Parse(hexValue, System.Globalization.NumberStyles.HexNumber);
         }
         
+        
+
         if (OnGameStart != null) OnGameStart();
     }
 
@@ -84,11 +85,8 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
 
     private void OnAdded(IPeer peer)
     {
-        string _id = NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id.ToString();
-        Debug.Log("HELLO UUID " + _id);
-        //IDs.Add(NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id.ToString());
-        context.SendJson(new Message(_id));
-        if (IDs.Count == 3)
+        int playerCount = avatarManager.transform.childCount;
+        if (playerCount == 4)
         {
             StartCoroutine(StartGame());
         }
@@ -98,22 +96,6 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
     {
         spawnSpots[number].TakeSpot(player);
     }
-
-    private struct Message
-    {
-        public readonly string ID;
-
-        public Message(string anID)
-        {
-            ID = anID;
-        }
-    }
-
-    public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
-    {
-        var msg = message.FromJson<Message>();
-        IDs.Add(msg.ID);
-        ;
-    }
-
+    
+    
 }
