@@ -55,7 +55,7 @@ public class PlayerSpawnManager : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             string _str = avatarManager.transform.GetChild(i).name;
-            string _value = str.Substring(str.Length - 17, 17);
+            string _value = _str.Substring(_str.Length - 17, 17);
             values.Add(_value, i);
         }
 
