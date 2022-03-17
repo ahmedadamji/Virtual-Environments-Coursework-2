@@ -12,7 +12,7 @@ public class PlayerSpawnManager : MonoBehaviour
 {
     private SpawnSpot[] spawnSpots;
     private int playerCount = 0;
-    private bool spawned;
+    private bool isSpawned;
 
     [SerializeField] private Color sharedMaterialColor;
     [SerializeField] private Color othersMaterialColor;
@@ -49,8 +49,6 @@ public class PlayerSpawnManager : MonoBehaviour
             Debug.Log("HELLO: Game starts in " + i);
             yield return new WaitForSeconds(1);
         }
-        playerCount = avatarManager.transform.childCount;
-
         SortedDictionary<string, int> values = new SortedDictionary<string, int>();
         string str = avatarManager.transform.GetChild(0).name;
         string value = str.Substring(str.Length - 17, 17);
@@ -91,11 +89,14 @@ public class PlayerSpawnManager : MonoBehaviour
 
     private void Update()
     {
-        if (!spawned)
+        if (!isSpawned)
         {
-            spawned = true;
+            playerCount = avatarManager.transform.childCount;
+
             if (playerCount == 4)
             {
+                isSpawned = true;
+
                 StartCoroutine(StartGame());
             }
             
