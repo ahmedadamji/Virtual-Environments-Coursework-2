@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts;
+using Ubiq.Avatars;
 using Ubiq.Messaging;
 using Ubiq.Rooms;
 using UnityEngine;
@@ -52,7 +53,7 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
         foreach (var id in IDs)
         {
             index++;
-            //if (id == NetworkScene.FindNetworkScene(this).)
+            if (id == NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id.ToString())
             {
                 SpawnPlayer(FindObjectOfType<Player>(), index);
                 break;
@@ -83,10 +84,10 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
 
     private void OnAdded(IPeer peer)
     {
-        Debug.Log("HELLO UUID " + peer.NetworkObjectId);
-        IDs.Add(peer.UUID);
-        context.SendJson(new Message(peer.NetworkObjectId.ToString()));
-        if (playerCount == 3)
+        Debug.Log("HELLO UUID " + NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id);
+        IDs.Add(NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id.ToString());
+        context.SendJson(new Message(NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id.ToString()));
+        if (IDs.Count == 3)
         {
             StartCoroutine(StartGame());
         }
