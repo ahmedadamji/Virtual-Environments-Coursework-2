@@ -16,7 +16,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   distance:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.141
     min: 0
     max: 1
   cropToFit:
@@ -40,15 +40,15 @@ MonoBehaviour:
   m_AdvancedMode: 0
   type:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 8
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.423
     min: 0
     max: 1
   response:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.569
     min: 0
     max: 1
   texture:
@@ -92,11 +92,11 @@ MonoBehaviour:
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 2
     min: 0
   scatter:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.444
     min: 0
     max: 1
   clamp:
@@ -104,8 +104,8 @@ MonoBehaviour:
     m_Value: 65472
     min: 0
   tint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.32378072, g: 0.6415094, b: 0.5878811, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.22
+    m_Value: 0
     min: -1
     max: 1
   xMultiplier:
@@ -171,9 +171,9 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   master:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 2
+      <length>k__BackingField: 4
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -183,6 +183,24 @@ MonoBehaviour:
         - serializedVersion: 3
           time: 0
           value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.18166384
+          value: 0.03873241
+          inSlope: 0.0016074595
+          outSlope: 0.0016074595
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.27504244
+          value: 0.052816927
           inSlope: 1
           outSlope: 1
           tangentMode: 0
