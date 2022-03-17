@@ -49,6 +49,7 @@ public class PlayerSpawnManager : MonoBehaviour
             Debug.Log("HELLO: Game starts in " + i);
             yield return new WaitForSeconds(1);
         }
+        playerCount = avatarManager.transform.childCount;
 
         SortedDictionary<string, int> values = new SortedDictionary<string, int>();
         string str = avatarManager.transform.GetChild(0).name;
@@ -62,14 +63,12 @@ public class PlayerSpawnManager : MonoBehaviour
 
         SpawnPlayer(values[value]);
         
-
         if (OnGameStart != null) OnGameStart();
     }
 
     private void Awake()
     {
         roomClient = FindObjectOfType<RoomClient>();
-        roomClient.OnJoinedRoom.AddListener(OnAdded);
         spawnSpots = GetComponentsInChildren<SpawnSpot>();
         
         SharedMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"))
@@ -85,19 +84,21 @@ public class PlayerSpawnManager : MonoBehaviour
         
     }
 
-    private void OnAdded(IRoom peer)
-    {
-        playerCount = avatarManager.transform.childCount;
-        if (playerCount == 4)
-        {
-            StartCoroutine(StartGame());
-        }
-    }
-    
     private void SpawnPlayer(int number)
     {
         spawnSpots[number].TakeSpot(FindObjectOfType<Player>());
     }
-    
-    
+
+    private void Update()
+    {
+        if (!spawned)
+        {
+            spawned = true;
+            if (playerCount == 4)
+            {
+                StartCoroutine(StartGame());
+            }
+            
+        }
+    }
 }
