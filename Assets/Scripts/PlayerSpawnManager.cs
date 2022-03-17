@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObject
 {
     private SpawnSpot[] spawnSpots;
-    private int playerCount = 1;
+    private int playerCount = -1;
     private bool spawned;
 
     [SerializeField] private Color sharedMaterialColor;
@@ -70,7 +70,7 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
     private void OnAdded(IPeer peer)
     {
         context.SendJson(new Message(false));
-        if (playerCount == 3)
+        if (playerCount == 2)
         {
             context.SendJson(new Message(true));
             if (OnGameStart != null) OnGameStart.Invoke();
