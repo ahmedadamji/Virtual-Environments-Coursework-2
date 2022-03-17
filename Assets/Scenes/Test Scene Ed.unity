@@ -5128,6 +5128,7 @@ MonoBehaviour:
   sharedMaterialColor: {r: 1, g: 1, b: 1, a: 0}
   othersMaterialColor: {r: 0, g: 0, b: 0, a: 0}
   id: 1500
+  avatarManager: {fileID: 0}
   debugMode: 1
 --- !u!1 &578239044
 GameObject:
@@ -6400,6 +6401,7 @@ MonoBehaviour:
   sharedMaterialColor: {r: 1, g: 1, b: 1, a: 0}
   othersMaterialColor: {r: 0, g: 0, b: 0, a: 0}
   id: 1500
+  avatarManager: {fileID: 1934518140}
   debugMode: 0
 --- !u!1 &814514178
 GameObject:
@@ -15162,6 +15164,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d70251440f1d78a459dbd42a1ae5eb4d, type: 3}
+--- !u!1 &1934518140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7068762446826474295, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1348878992}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1937243421
 GameObject:
   m_ObjectHideFlags: 0

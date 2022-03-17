@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts;
 using Ubiq.Avatars;
 using Ubiq.Messaging;
 using Ubiq.Rooms;
 using UnityEngine;
 
-public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObject
+public class PlayerSpawnManager : MonoBehaviour
 {
     private SpawnSpot[] spawnSpots;
     private int playerCount = 0;
-    private bool spawned;
+    private bool isSpawned;
 
     [SerializeField] private Color sharedMaterialColor;
     [SerializeField] private Color othersMaterialColor;
@@ -21,9 +22,10 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
     private RoomClient roomClient;
     
     public string id;
-    NetworkId INetworkObject.Id => new NetworkId(id);
     
     private NetworkContext context;
+
+    [SerializeField] private GameObject avatarManager;
     
     public static event Action OnGameStart;
 
@@ -34,7 +36,6 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
 
     void Start()
     {
-        context = NetworkScene.Register(this);
         if (debugMode)
         {
             StartCoroutine(StartGame());
@@ -48,25 +49,30 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
             Debug.Log("HELLO: Game starts in " + i);
             yield return new WaitForSeconds(1);
         }
-
-        int index = 0;
-        foreach (var id in IDs)
+        List<string> values = new List<string>();
+        string str = avatarManager.transform.GetChild(0).name;
+        string value = str.Substring(str.Length - 17, 17);
+        for (int i = 0; i < 4; i++)
         {
-            index++;
-            if (id == NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id.ToString())
+            string _str = avatarManager.transform.GetChild(i).name;
+            string _value = _str.Substring(str.Length - 17, 17);
+            values.Add(_value);
+        }
+        values.Sort();
+        for (int i = 0; i < 4; i++)
+        {
+            if (values[i] == value)
             {
-                SpawnPlayer(FindObjectOfType<Player>(), index);
+                SpawnPlayer(i);
                 break;
             }
         }
-        
         if (OnGameStart != null) OnGameStart();
     }
 
     private void Awake()
     {
         roomClient = FindObjectOfType<RoomClient>();
-        roomClient.OnPeerAdded.AddListener(OnAdded);
         spawnSpots = GetComponentsInChildren<SpawnSpot>();
         
         SharedMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"))
@@ -82,38 +88,24 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
         
     }
 
-    private void OnAdded(IPeer peer)
+    private void SpawnPlayer(int number)
     {
-        string _id = NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id.ToString();
-        Debug.Log("HELLO UUID " + _id);
-        //IDs.Add(NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id.ToString());
-        context.SendJson(new Message(_id));
-        if (IDs.Count == 3)
+        spawnSpots[number].TakeSpot(FindObjectOfType<Player>());
+    }
+
+    private void Update()
+    {
+        if (!isSpawned)
         {
-            StartCoroutine(StartGame());
+            playerCount = avatarManager.transform.childCount;
+
+            if (playerCount == 4)
+            {
+                isSpawned = true;
+
+                StartCoroutine(StartGame());
+            }
+            
         }
     }
-    
-    private void SpawnPlayer(Player player, int number)
-    {
-        spawnSpots[number].TakeSpot(player);
-    }
-
-    private struct Message
-    {
-        public readonly string ID;
-
-        public Message(string anID)
-        {
-            ID = anID;
-        }
-    }
-
-    public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
-    {
-        var msg = message.FromJson<Message>();
-        IDs.Add(msg.ID);
-        ;
-    }
-
 }
