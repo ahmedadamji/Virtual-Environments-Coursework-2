@@ -85,7 +85,7 @@ public class PlayerSpawnManager : MonoBehaviour
 
     private void OnAdded(IPeer peer)
     {
-        int playerCount = avatarManager.transform.childCount;
+        playerCount = avatarManager.transform.childCount;
         if (playerCount == 4)
         {
             StartCoroutine(StartGame());
