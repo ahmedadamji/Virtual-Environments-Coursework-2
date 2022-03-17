@@ -84,9 +84,10 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
 
     private void OnAdded(IPeer peer)
     {
-        Debug.Log("HELLO UUID " + NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id);
+        string _id = NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id.ToString();
+        Debug.Log("HELLO UUID " + _id);
         //IDs.Add(NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id.ToString());
-        context.SendJson(new Message(NetworkScene.FindNetworkScene(this).GetComponentInChildren<AvatarManager>().LocalAvatar.Id.ToString()));
+        context.SendJson(new Message(_id));
         if (IDs.Count == 3)
         {
             StartCoroutine(StartGame());
@@ -112,6 +113,7 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
     {
         var msg = message.FromJson<Message>();
         IDs.Add(msg.ID);
+        ;
     }
 
 }
