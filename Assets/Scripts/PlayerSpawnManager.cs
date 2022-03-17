@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts;
 using Ubiq.Messaging;
 using Ubiq.Rooms;
@@ -27,7 +28,9 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
 
     [SerializeField] private bool debugMode;
 
-    
+    private HashSet<string> IDs = new HashSet<string>();
+
+
     void Start()
     {
         context = NetworkScene.Register(this);
@@ -44,7 +47,18 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
             Debug.Log("HELLO: Game starts in " + i);
             yield return new WaitForSeconds(1);
         }
-        SpawnPlayer(FindObjectOfType<Player>());
+
+        int index = 0;
+        foreach (var id in IDs)
+        {
+            index++;
+            //if (id == NetworkScene.FindNetworkScene(this).)
+            {
+                SpawnPlayer(FindObjectOfType<Player>(), index);
+                break;
+            }
+        }
+        
         if (OnGameStart != null) OnGameStart();
     }
 
@@ -69,44 +83,34 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
 
     private void OnAdded(IPeer peer)
     {
-        Debug.Log("HELLO " + peer.UUID);
-        context.SendJson(new Message(false));
+        Debug.Log(peer.UUID);
+        IDs.Add(peer.UUID);
+        context.SendJson(new Message(peer.UUID));
         if (playerCount == 3)
         {
-            context.SendJson(new Message(true));
-            if (OnGameStart != null) OnGameStart.Invoke();
+            StartCoroutine(StartGame());
         }
     }
     
-    private void SpawnPlayer(Player player)
+    private void SpawnPlayer(Player player, int number)
     {
-        spawnSpots[playerCount].TakeSpot(player);
+        spawnSpots[number].TakeSpot(player);
     }
 
     private struct Message
     {
-        public readonly bool IsEveryoneHere;
+        public readonly string ID;
 
-        public Message(bool isEveryoneHere)
+        public Message(string anID)
         {
-            IsEveryoneHere = isEveryoneHere;
+            ID = anID;
         }
     }
 
     public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
         var msg = message.FromJson<Message>();
-        if (msg.IsEveryoneHere)
-        {
-            StartCoroutine(StartGame());
-
-        }
-        else
-        {            
-            playerCount++;
-        }
-
-        Debug.Log("HELLO: Is Everyone Here: " + msg.IsEveryoneHere + ". If Not, Player Added: " + playerCount);
+        IDs.Add(msg.ID);
     }
 
 }
