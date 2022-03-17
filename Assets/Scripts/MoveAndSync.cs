@@ -11,6 +11,7 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 {
     [HideInInspector] public Hand grasped;
     private AccessManager accessManager;
+    private bool isOwned;
     private float distance;
     public string id;
     NetworkId INetworkObject.Id => new NetworkId(id);
@@ -45,6 +46,10 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         var msg = message.FromJson<Message>();
         transform.localPosition = msg.Transform.position;
         transform.localRotation = msg.Transform.rotation;
+        if (msg.Owned)
+        {
+            isOwned = true;
+        }
     }
 
     public void ForceRelease()
@@ -55,7 +60,6 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         {
             handController.Vibrate(0.3f, 0.2f);
         }
-        
     }
 
     void IGraspable.Release(Hand controller)
@@ -67,25 +71,27 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
             GetComponent<Rigidbody>().useGravity = true;
         }
     }
-
     
-
     public struct Message
     {
         public TransformMessage Transform;
+        public bool Owned;
         public Message(Transform transform)
         {
             this.Transform = new TransformMessage(transform);
+            Owned = true;
         }
     }
     
-    void Update()
+    void LateUpdate()
     {
-        if(grasped)
+        if(grasped && !isOwned)
         {
             transform.position = grasped.transform.position;
             transform.rotation = grasped.transform.rotation;
             context.SendJson(new Message(transform));
         }
+
+        isOwned = false;
     }
 }

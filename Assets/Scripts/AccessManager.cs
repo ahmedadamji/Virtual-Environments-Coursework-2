@@ -9,40 +9,48 @@ public class AccessManager : MonoBehaviour
 {
     public PlayerNumber playerNumber;
 
-    [HideInInspector] public bool locked = true;
-    [HideInInspector] public bool available;
+    [HideInInspector] 
+    public bool locked = true;
+    [HideInInspector] 
+    public bool available;
     
     public bool shareable;
 
     private PlayerSpawnManager playerSpawnManager;
+    private Player player;
+
+    private void Awake()
+    {
+        PlayerSpawnManager.OnGameStart += OnGameStart;
+    }
 
     private void Start()
     {
-        Player player = FindObjectOfType<Player>();
+        player = FindObjectOfType<Player>();
         playerSpawnManager = FindObjectOfType<PlayerSpawnManager>();
-        playerSpawnManager.OnGameStart.AddListener(OnGameStart);
+        ChangeMaterials(PlayerSpawnManager.OthersMaterial);
 
-        
-        if (playerNumber == player.PlayerNumber)
+        if (playerNumber == player.PlayerNumber || shareable)
         {
             available = true;
-            ChangeMaterials(player.PlayerMaterial);
-        }
-        else if (shareable)
-        {
-            available = true;
-            ChangeMaterials(PlayerSpawnManager.SharedMaterial); // change to shared material
         }
         else
         {
             available = false;
-            ChangeMaterials(PlayerSpawnManager.OthersMaterial);
         }
     }
 
-    private void OnGameStart()
+    void OnGameStart()
     {
         locked = false;
+        if (available && !shareable)
+        {
+            ChangeMaterials(player.PlayerMaterial);
+        }
+        else if (shareable)
+        {
+            ChangeMaterials(PlayerSpawnManager.SharedMaterial);
+        }
     }
     
     private void ChangeMaterials(Material material)

@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts;
 using Ubiq.Messaging;
 using Ubiq.Rooms;
 using UnityEngine;
-using UnityEngine.Events;
-using Random = UnityEngine.Random;
 
 public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObject
 {
-    public AvatarPagePanelController asmc;
-
     private SpawnSpot[] spawnSpots;
-    private int playerCount;
-    private int playerIndex;
+    private int playerCount = 1;
     private bool spawned;
 
     [SerializeField] private Color sharedMaterialColor;
@@ -26,18 +19,33 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
     private RoomClient roomClient;
     
     public string id;
-
-    private List<SpawnSpot> availableSpots;
     NetworkId INetworkObject.Id => new NetworkId(id);
     
     private NetworkContext context;
     
-    public UnityEvent OnGameStart = new UnityEvent();
+    public static event Action OnGameStart;
+
+    [SerializeField] private bool debugMode;
 
     
     void Start()
     {
         context = NetworkScene.Register(this);
+        if (debugMode)
+        {
+            StartCoroutine(StartGame());
+        }
+    }
+
+    IEnumerator StartGame()
+    {
+        for (int i = 3; i > 0; i--)
+        {
+            Debug.Log("HELLO: Game starts in " + i);
+            yield return new WaitForSeconds(1);
+        }
+        SpawnPlayer(FindObjectOfType<Player>());
+        if (OnGameStart != null) OnGameStart();
     }
 
     private void Awake()
@@ -48,61 +56,56 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
         
         SharedMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"))
         {
-            color = Color.gray
+            color = sharedMaterialColor
         };
         
         OthersMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"))
         {
-            color = Color.gray
+            color = othersMaterialColor
         };
+        
+        
     }
 
     private void OnAdded(IPeer peer)
     {
-        playerCount++;
-        //Debug.Log("COUNT " + playerCount);
+        context.SendJson(new Message(false));
         if (playerCount == 3)
         {
-            SpawnPlayer(FindObjectOfType<Player>());
-            OnGameStart.Invoke();
+            context.SendJson(new Message(true));
+            if (OnGameStart != null) OnGameStart.Invoke();
         }
     }
     
-    public void SpawnPlayer(Player player)
+    private void SpawnPlayer(Player player)
     {
-        availableSpots = spawnSpots.Where(spawnSpot => !spawnSpot.SpotTaken).ToList();
-
-        if (availableSpots.Count != 0)
-        {
-            int i = Random.Range(0, availableSpots.Count);
-            availableSpots[i].TakeSpot(player);
-            
-            asmc.SetTexture(availableSpots[i].texture);
-            availableSpots.RemoveAt(i);
-            context.SendJson(new Message(availableSpots));
-        }
-
-        if (availableSpots.Count != 0)
-        {
-            // Start Game;
-        }
-        
+        spawnSpots[playerCount].TakeSpot(player);
     }
 
-    public struct Message
+    private struct Message
     {
-        public List<SpawnSpot> availableSpots;
+        public readonly bool IsEveryoneHere;
 
-        public Message(List<SpawnSpot> anAvailableSpots)
+        public Message(bool isEveryoneHere)
         {
-            availableSpots = anAvailableSpots;
+            IsEveryoneHere = isEveryoneHere;
         }
     }
 
     public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
         var msg = message.FromJson<Message>();
-        availableSpots = msg.availableSpots;
+        if (msg.IsEveryoneHere)
+        {
+            StartCoroutine(StartGame());
+
+        }
+        else
+        {            
+            playerCount++;
+        }
+
+        Debug.Log("HELLO: Is Everyone Here: " + msg.IsEveryoneHere + ". If Not, Player Added: " + playerCount);
     }
 
 }

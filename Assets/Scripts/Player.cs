@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     public PlayerNumber PlayerNumber;
 
-    public void Start()
+    public void Awake()
     {
         CreateMaterial();
     }
@@ -23,26 +23,6 @@ public class Player : MonoBehaviour
         {
             color = UnityEngine.Color.grey
         };
-        // switch (Color)
-        // {
-        //     case PlayerSpawnManager.PlayerColor.Red:
-        //         createMaterial.color = UnityEngine.Color.red;
-        //         break;
-        //     case PlayerSpawnManager.PlayerColor.Green:
-        //         createMaterial.color = UnityEngine.Color.green;
-        //         break;
-        //     case PlayerSpawnManager.PlayerColor.Blue:
-        //         createMaterial.color = UnityEngine.Color.blue;
-        //         break;
-        //     case PlayerSpawnManager.PlayerColor.Yellow:
-        //         createMaterial.color = UnityEngine.Color.yellow;
-        //         break;
-        //     case PlayerSpawnManager.PlayerColor.None:
-        //         createMaterial.color = UnityEngine.Color.black;
-        //         break;
-        //     default:
-        //         throw new ArgumentOutOfRangeException();
-        // }
     }
 
 }
