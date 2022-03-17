@@ -83,7 +83,7 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
 
     private void OnAdded(IPeer peer)
     {
-        Debug.Log(peer.UUID);
+        Debug.Log("HELLO UUID " + peer.UUID);
         IDs.Add(peer.UUID);
         context.SendJson(new Message(peer.UUID));
         if (playerCount == 3)
