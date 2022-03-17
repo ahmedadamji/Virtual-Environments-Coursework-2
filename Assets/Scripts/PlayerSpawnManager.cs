@@ -49,18 +49,24 @@ public class PlayerSpawnManager : MonoBehaviour
             Debug.Log("HELLO: Game starts in " + i);
             yield return new WaitForSeconds(1);
         }
-        SortedDictionary<string, int> values = new SortedDictionary<string, int>();
+        List<string> values = new List<string>();
         string str = avatarManager.transform.GetChild(0).name;
         string value = str.Substring(str.Length - 17, 17);
         for (int i = 0; i < 4; i++)
         {
             string _str = avatarManager.transform.GetChild(i).name;
-            string _value = _str.Substring(_str.Length - 17, 17);
-            values.Add(_value, i);
+            string _value = _str.Substring(str.Length - 17, 17);
+            values.Add(_value);
         }
-
-        SpawnPlayer(values[value]);
-        
+        values.Sort();
+        for (int i = 0; i < 4; i++)
+        {
+            if (values[i] == value)
+            {
+                SpawnPlayer(i);
+                break;
+            }
+        }
         if (OnGameStart != null) OnGameStart();
     }
 
