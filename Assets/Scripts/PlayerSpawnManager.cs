@@ -53,8 +53,9 @@ public class PlayerSpawnManager : MonoBehaviour
         SortedDictionary<string, int> values = new SortedDictionary<string, int>();
         for (int i = 0; i < 4; i++)
         {
-            //char str = avatarManager.transform.GetChild(i).name[avatarManager.transform.GetChild(i).name.Length - 1];
-            values[avatarManager.transform.GetChild(i).name] = i;
+            string str = avatarManager.transform.GetChild(i).name;
+            string value = str.Substring(str.Length - 17, 17);
+            values[value] = i;
         }
 
         for (int i = 0; i < 4; i++)
