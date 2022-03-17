@@ -60,10 +60,8 @@ public class PlayerSpawnManager : MonoBehaviour
             values[_value] = i;
         }
 
-        for (int i = 0; i < 4; i++)
-        {
-            SpawnPlayer(values[value]);
-        }
+        SpawnPlayer(values[value]);
+        
 
         if (OnGameStart != null) OnGameStart();
     }
