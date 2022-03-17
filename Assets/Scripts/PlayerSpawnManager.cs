@@ -83,9 +83,9 @@ public class PlayerSpawnManager : MonoBehaviour, INetworkComponent, INetworkObje
 
     private void OnAdded(IPeer peer)
     {
-        Debug.Log("HELLO UUID " + peer.UUID);
+        Debug.Log("HELLO UUID " + peer.NetworkObjectId);
         IDs.Add(peer.UUID);
-        context.SendJson(new Message(peer.UUID));
+        context.SendJson(new Message(peer.NetworkObjectId.ToString()));
         if (playerCount == 3)
         {
             StartCoroutine(StartGame());
