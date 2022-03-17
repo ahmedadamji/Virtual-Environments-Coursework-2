@@ -50,16 +50,17 @@ public class PlayerSpawnManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
 
-        char[] charsToTrim = { '-', ' ', '\''};
-        int[] values = {0, 0, 0, 0};
+        SortedDictionary<string, int> values = new SortedDictionary<string, int>();
         for (int i = 0; i < 4; i++)
         {
-            string str = avatarManager.transform.GetChild(i).name;
-            string hexValue = str.Substring(str.IndexOf("-") - 5, str.IndexOf("-") + 5);
-            values[i] = int.Parse(hexValue, System.Globalization.NumberStyles.HexNumber);
+            //char str = avatarManager.transform.GetChild(i).name[avatarManager.transform.GetChild(i).name.Length - 1];
+            values[avatarManager.transform.GetChild(i).name] = i;
         }
-        
-        
+
+        for (int i = 0; i < 4; i++)
+        {
+            SpawnPlayer(i);
+        }
 
         if (OnGameStart != null) OnGameStart();
     }
@@ -67,7 +68,7 @@ public class PlayerSpawnManager : MonoBehaviour
     private void Awake()
     {
         roomClient = FindObjectOfType<RoomClient>();
-        roomClient.OnPeerAdded.AddListener(OnAdded);
+        roomClient.OnJoinedRoom.AddListener(OnAdded);
         spawnSpots = GetComponentsInChildren<SpawnSpot>();
         
         SharedMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"))
@@ -83,7 +84,7 @@ public class PlayerSpawnManager : MonoBehaviour
         
     }
 
-    private void OnAdded(IPeer peer)
+    private void OnAdded(IRoom peer)
     {
         playerCount = avatarManager.transform.childCount;
         if (playerCount == 4)
@@ -92,9 +93,9 @@ public class PlayerSpawnManager : MonoBehaviour
         }
     }
     
-    private void SpawnPlayer(Player player, int number)
+    private void SpawnPlayer(int number)
     {
-        spawnSpots[number].TakeSpot(player);
+        spawnSpots[number].TakeSpot(FindObjectOfType<Player>());
     }
     
     
