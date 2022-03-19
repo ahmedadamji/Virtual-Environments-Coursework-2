@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -326,7 +326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab271435691494399c5a1cf8bbd7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used: {fileID: 0}
   indicator: {fileID: 2061028969}
   id: 1303
 --- !u!136 &12588670
@@ -1042,7 +1041,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab271435691494399c5a1cf8bbd7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used: {fileID: 0}
   indicator: {fileID: 1400595272}
   id: 1303
 --- !u!136 &48483032
@@ -4774,6 +4772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f9c16bed553a41856c0146824e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
+  SpotTaken: 0
 --- !u!1 &315351194
 GameObject:
   m_ObjectHideFlags: 0
@@ -9874,7 +9874,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sharedMaterialColor: {r: 1, g: 1, b: 1, a: 0}
   othersMaterialColor: {r: 0, g: 0, b: 0, a: 0}
+  PlayerMaterials: []
   id: 1500
+  avatarManager: {fileID: 0}
   debugMode: 1
 --- !u!1 &576113657
 GameObject:
@@ -10722,6 +10724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f9c16bed553a41856c0146824e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
+  SpotTaken: 0
 --- !u!1 &621747012
 GameObject:
   m_ObjectHideFlags: 0
@@ -12222,8 +12226,8 @@ Transform:
   - {fileID: 1727458775}
   - {fileID: 1542406029}
   - {fileID: 2118444903}
-  - {fileID: 814113782}
   - {fileID: 1890784803}
+  - {fileID: 814113782}
   - {fileID: 1939467325}
   m_Father: {fileID: 1166824264}
   m_RootOrder: 2
@@ -13683,7 +13687,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sharedMaterialColor: {r: 1, g: 1, b: 1, a: 0}
   othersMaterialColor: {r: 0, g: 0, b: 0, a: 0}
+  PlayerMaterials: []
   id: 1500
+  avatarManager: {fileID: 0}
   debugMode: 0
 --- !u!1001 &814113781
 PrefabInstance:
@@ -13827,7 +13833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab271435691494399c5a1cf8bbd7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used: {fileID: 0}
   indicator: {fileID: 2146581907}
   id: 1301
 --- !u!136 &814514181
@@ -14443,6 +14448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f9c16bed553a41856c0146824e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
+  SpotTaken: 0
 --- !u!1 &957978814
 GameObject:
   m_ObjectHideFlags: 0
@@ -14744,43 +14751,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971533893}
   m_Mesh: {fileID: -5766879069465129118, guid: 5a4514741075f234b852df5dd43cd081, type: 3}
---- !u!1 &992593454 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1206544754330353986, guid: 33cb6d2a29abed346b39b957a9e24d34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606687432}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &992593456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992593454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1 &993215952
 GameObject:
   m_ObjectHideFlags: 0
@@ -15713,6 +15683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f9c16bed553a41856c0146824e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
+  SpotTaken: 0
 --- !u!1 &1062076774
 GameObject:
   m_ObjectHideFlags: 0
@@ -17375,6 +17347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f9c16bed553a41856c0146824e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
+  SpotTaken: 0
 --- !u!1 &1249014055
 GameObject:
   m_ObjectHideFlags: 0
@@ -17531,7 +17505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab271435691494399c5a1cf8bbd7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used: {fileID: 0}
   indicator: {fileID: 51155789}
   id: 1301
 --- !u!136 &1251435723
@@ -20439,32 +20412,32 @@ PrefabInstance:
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -22.5
       objectReference: {fileID: 0}
     - target: {fileID: 2498275750688688664, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
@@ -23526,6 +23499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f9c16bed553a41856c0146824e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
+  SpotTaken: 0
 --- !u!1 &1485642323
 GameObject:
   m_ObjectHideFlags: 0
@@ -24498,7 +24473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab271435691494399c5a1cf8bbd7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used: {fileID: 0}
   indicator: {fileID: 1962830800}
   id: 1304
 --- !u!136 &1583047520
@@ -25183,7 +25157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab271435691494399c5a1cf8bbd7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used: {fileID: 0}
   indicator: {fileID: 2124922245}
   id: 1302
 --- !u!136 &1664527042
@@ -26176,7 +26149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab271435691494399c5a1cf8bbd7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used: {fileID: 0}
   indicator: {fileID: 1111578752}
   id: 1304
 --- !u!136 &1730754307
@@ -26605,6 +26577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f9c16bed553a41856c0146824e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
+  SpotTaken: 0
 --- !u!1 &1778976360
 GameObject:
   m_ObjectHideFlags: 0
@@ -27280,6 +27254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f9c16bed553a41856c0146824e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
+  SpotTaken: 0
 --- !u!1 &1843862779
 GameObject:
   m_ObjectHideFlags: 0
@@ -28006,7 +27982,7 @@ Transform:
   - {fileID: 1990067779}
   - {fileID: 395844217}
   m_Father: {fileID: 705716298}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: -90}
 --- !u!1 &1893072906
 GameObject:
@@ -32304,7 +32280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab271435691494399c5a1cf8bbd7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used: {fileID: 0}
   indicator: {fileID: 1688253447}
   id: 1302
 --- !u!136 &2124034500
