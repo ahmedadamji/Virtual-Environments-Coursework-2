@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Ubiq.Messaging;
+﻿using Ubiq.Messaging;
 using Ubiq.XR;
 using UnityEngine;
 
@@ -9,8 +6,6 @@ using PlayerNumber = System.Int32;
 
 public class UseAndSync : MonoBehaviour, IUseable, INetworkComponent, INetworkObject
 {
-    [HideInInspector] public Hand used;
-    
     public StateLight indicator;
     private AccessManager accessManager;
 
@@ -30,15 +25,14 @@ public class UseAndSync : MonoBehaviour, IUseable, INetworkComponent, INetworkOb
         accessManager = GetComponent<AccessManager>();
     }
 
-    void Start()
+    private void Start()
     {
         context = NetworkScene.Register(this);
-        Player player = FindObjectOfType<Player>();
     }
 
     struct Message
     {
-        public bool State;
+        public readonly bool State;
 
         public Message(bool aState)
         {

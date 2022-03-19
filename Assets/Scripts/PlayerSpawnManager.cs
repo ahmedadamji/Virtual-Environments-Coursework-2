@@ -1,25 +1,19 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using Samples.Ubiq._0._2._0_alpha._4.Samples.Intro.Scripts;
-using Ubiq.Avatars;
 using Ubiq.Messaging;
-using Ubiq.Rooms;
 using UnityEngine;
 
 public class PlayerSpawnManager : MonoBehaviour
 {
     private SpawnSpot[] spawnSpots;
-    private int playerCount = 0;
     private bool isSpawned;
 
     [SerializeField] private Color sharedMaterialColor;
     [SerializeField] private Color othersMaterialColor;
     public static Material SharedMaterial;
     public static Material OthersMaterial;
-
-    private RoomClient roomClient;
+    public Material[] PlayerMaterials;
     
     public string id;
     
@@ -31,9 +25,7 @@ public class PlayerSpawnManager : MonoBehaviour
 
     [SerializeField] private bool debugMode;
 
-    private HashSet<string> IDs = new HashSet<string>();
-
-
+    
     void Start()
     {
         if (debugMode)
@@ -47,33 +39,15 @@ public class PlayerSpawnManager : MonoBehaviour
         for (int i = 3; i > 0; i--)
         {
             Debug.Log("HELLO: Game starts in " + i);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(.1f);
         }
-        List<string> values = new List<string>();
-        string str = avatarManager.transform.GetChild(0).name;
-        string value = str.Substring(str.Length - 17, 17);
-        for (int i = 0; i < 4; i++)
-        {
-            string _str = avatarManager.transform.GetChild(i).name;
-            string _value = _str.Substring(str.Length - 17, 17);
-            values.Add(_value);
-        }
-        values.Sort();
-        for (int i = 0; i < 4; i++)
-        {
-            if (values[i] == value)
-            {
-                SpawnPlayer(i);
-                break;
-            }
-        }
+
         if (OnGameStart != null) OnGameStart();
     }
 
     private void Awake()
     {
-        roomClient = FindObjectOfType<RoomClient>();
-        spawnSpots = GetComponentsInChildren<SpawnSpot>();
+        spawnSpots = GetComponentsInChildren<SpawnSpot>(false);
         
         SharedMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit"))
         {
@@ -84,26 +58,23 @@ public class PlayerSpawnManager : MonoBehaviour
         {
             color = othersMaterialColor
         };
-        
-        
     }
 
-    private void SpawnPlayer(int number)
-    {
-        spawnSpots[number].TakeSpot(FindObjectOfType<Player>());
-    }
 
     private void Update()
     {
         if (!isSpawned)
         {
-            playerCount = avatarManager.transform.childCount;
+            int playerCount = avatarManager.transform.childCount;
 
             if (playerCount == 4)
             {
-                isSpawned = true;
-
-                StartCoroutine(StartGame());
+                if (spawnSpots.All(ss => ss.SpotTaken == 1))
+                {
+                    isSpawned = true;
+                    StartCoroutine(StartGame());
+                }
+                
             }
             
         }

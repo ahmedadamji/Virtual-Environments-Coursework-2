@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-using PlayerNumber = System.Int32;
 
 public class AccessManager : MonoBehaviour
 {
-    public PlayerNumber playerNumber;
+    public int playerNumber;
 
-    [HideInInspector] 
+    //[HideInInspector] 
     public bool locked = true;
-    [HideInInspector] 
-    public bool available;
+    //[HideInInspector] 
+    public bool available = true;
     
     public bool shareable;
 
-    private PlayerSpawnManager playerSpawnManager;
+    //private PlayerSpawnManager playerSpawnManager;
     private Player player;
 
     private void Awake()
@@ -27,9 +23,14 @@ public class AccessManager : MonoBehaviour
     private void Start()
     {
         player = FindObjectOfType<Player>();
-        playerSpawnManager = FindObjectOfType<PlayerSpawnManager>();
+        //playerSpawnManager = FindObjectOfType<PlayerSpawnManager>();
         ChangeMaterials(PlayerSpawnManager.OthersMaterial);
+    }
 
+    void OnGameStart()
+    {
+        locked = false;
+        
         if (playerNumber == player.PlayerNumber || shareable)
         {
             available = true;
@@ -38,16 +39,10 @@ public class AccessManager : MonoBehaviour
         {
             available = false;
         }
-    }
-
-    void OnGameStart()
-    {
-        locked = false;
-        if (available && !shareable)
-        {
-            ChangeMaterials(player.PlayerMaterial);
-        }
-        else if (shareable)
+        
+        ChangeMaterials(FindObjectOfType<PlayerSpawnManager>().PlayerMaterials[playerNumber]);
+        
+        if (shareable)
         {
             ChangeMaterials(PlayerSpawnManager.SharedMaterial);
         }
@@ -55,11 +50,11 @@ public class AccessManager : MonoBehaviour
     
     private void ChangeMaterials(Material material)
     {
-        MeshRenderer[] children = GetComponentsInChildren<MeshRenderer>();
+        var children = GetComponentsInChildren<MeshRenderer>();
         foreach (var rend in children)
         {
             var mats = new Material[rend.materials.Length];
-            for (var j = 0; j < rend.materials.Length; j++) 
+            for (int j = 0; j < rend.materials.Length; j++) 
             { 
                 mats[j] = material; 
             }
