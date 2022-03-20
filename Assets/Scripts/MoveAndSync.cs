@@ -30,9 +30,9 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
     {
         if (grasped)
         {
-            transform.position = grasped.transform.position;
-            transform.rotation = grasped.transform.rotation;
-            context.SendJson(new Message(transform, true));
+            transform.parent = grasped.transform;
+            //transform.rotation = grasped.transform.rotation;
+            context.SendJson(new Message(transform.position, transform.rotation, true));
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().isKinematic = true;
             return;
@@ -67,9 +67,10 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 
     void IGraspable.Release(Hand controller)
     {
+        transform.parent = null;
         grasped = null;
         isOwned = false;
-        context.SendJson(new Message(transform, false));
+        context.SendJson(new Message(transform.position, transform.rotation, false));
         
     }
 
@@ -78,9 +79,9 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         var msg = message.FromJson<Message>();
         if (!grasped)
         {
-            transform.localPosition = msg.Transform.position;
-            transform.localRotation = msg.Transform.rotation;
-            //grasped = msg.Hand;
+            transform.localPosition = msg.Position;
+            transform.localRotation = msg.Rotation;
+            //transform.localRotation = msg.Transform.rotation;
             isOwned = msg.IsOwned;
             Debug.Log(grasped);
         }
@@ -96,14 +97,14 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 
     public struct Message
     {
-        public TransformMessage Transform;
-        //public Hand Hand;
+        public Vector3 Position;
+        public Quaternion Rotation;
         public bool IsOwned;
 
-        public Message(Transform transform, bool isOwned)
+        public Message(Vector3 position, Quaternion rotation, bool isOwned)
         {
-            Transform = new TransformMessage(transform);
-            //Hand = hand;
+            Position = position;
+            Rotation = rotation;
             IsOwned = isOwned;
         }
     }
