@@ -91,6 +91,7 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 
     public void ForceRelease()
     {
+        isOwned = false;
         grasped = null;
         foreach (var handController in handControllers) handController.Vibrate(0.3f, 0.2f);
     }
