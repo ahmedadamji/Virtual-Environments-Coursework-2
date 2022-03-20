@@ -5,7 +5,7 @@ using PlayerNumber = System.Int32;
 
 public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetworkObject
 {
-    [HideInInspector] public Hand grasped;
+    public Hand grasped;
     public string id;
     private AccessManager accessManager;
 
@@ -33,6 +33,19 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
             transform.position = grasped.transform.position;
             transform.rotation = grasped.transform.rotation;
             context.SendJson(new Message(transform, true));
+            GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            return;
+        }
+
+        if (isOwned && grasped == null)
+        {
+            GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+        }
+        else {
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
@@ -42,32 +55,34 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         {
             grasped = controller;
             isOwned = true;
-            //GetComponent<Rigidbody>().isKinematic = true;
-            //GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+        }
+        else
+        {
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
     void IGraspable.Release(Hand controller)
     {
-        if (grasped)
-        {
-            context.SendJson(new Message(transform, false));
-            isOwned = false;
-            grasped = null;
-            //GetComponent<Rigidbody>().isKinematic = false;
-            //GetComponent<Rigidbody>().useGravity = true;
-        }
+        grasped = null;
+        isOwned = false;
+        context.SendJson(new Message(transform, false));
+        
     }
 
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
         var msg = message.FromJson<Message>();
-        isOwned = msg.IsOwned;
-        if (isOwned)
+        if (!grasped)
         {
             transform.localPosition = msg.Transform.position;
             transform.localRotation = msg.Transform.rotation;
-            Debug.Log("changed from server:" + msg.IsOwned);
+            //grasped = msg.Hand;
+            isOwned = msg.IsOwned;
+            Debug.Log(grasped);
         }
     }
 
@@ -82,12 +97,14 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
     public struct Message
     {
         public TransformMessage Transform;
+        //public Hand Hand;
         public bool IsOwned;
 
-        public Message(Transform transform, bool aIsOwned)
+        public Message(Transform transform, bool isOwned)
         {
             Transform = new TransformMessage(transform);
-            IsOwned = aIsOwned;
+            //Hand = hand;
+            IsOwned = isOwned;
         }
     }
 }
