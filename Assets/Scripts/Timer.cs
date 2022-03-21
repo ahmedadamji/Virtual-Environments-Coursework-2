@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using System.Collections.Generic;
 using Ubiq.Messaging;
 using Ubiq.XR;
@@ -56,7 +57,7 @@ public class Timer : MonoBehaviour, INetworkComponent, INetworkObject
             seconds_str = "0" + seconds_str;
         }
 
-        GetComponent<TextMesh>().text = minute_str + ":" + seconds_str;
+        GetComponent<TextMeshPro>().text = minute_str + ":" + seconds_str;
 
         Message message;
         message.time = timeValue;

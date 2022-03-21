@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -167,10 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab271435691494399c5a1cf8bbd7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used: {fileID: 0}
-  isOn: 0
-  Color: 1
-  shareable: 0
   indicator: {fileID: 2061028969}
   id: 1301
 --- !u!136 &12588670
@@ -1204,8 +1200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f9c16bed553a41856c0146824e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texture: {fileID: 2800000, guid: 6d55dee9cf4956a4984b921d8221cca1, type: 3}
-  color: 3
+  id: 
+  SpotTaken: 0
 --- !u!1 &621747012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,10 +1330,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 1111
 --- !u!64 &717342242
 MeshCollider:
@@ -1629,8 +1621,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc96063257a2084a9c0625772b8cd9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asmc: {fileID: 1112772153}
+  sharedMaterialColor: {r: 0, g: 0, b: 0, a: 0}
+  othersMaterialColor: {r: 0, g: 0, b: 0, a: 0}
+  PlayerMaterials: []
   id: 0
+  avatarManager: {fileID: 0}
+  debugMode: 0
 --- !u!1 &814514178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,10 +1673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab271435691494399c5a1cf8bbd7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used: {fileID: 0}
-  isOn: 0
-  Color: 3
-  shareable: 0
   indicator: {fileID: 2146581907}
   id: 1301
 --- !u!136 &814514181
@@ -1975,45 +1967,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f9c16bed553a41856c0146824e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texture: {fileID: 2800000, guid: 68187abd81a0cea44a1d6132c1aa8f09, type: 3}
-  color: 0
---- !u!1 &992593454 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1206544754330353986, guid: 33cb6d2a29abed346b39b957a9e24d34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606687432}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &992593456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992593454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
+  id: 
+  SpotTaken: 0
 --- !u!1 &1002921750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,8 +2629,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f9c16bed553a41856c0146824e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texture: {fileID: 2800000, guid: a1ebafa55f7b2514f9c7e3f2df853288, type: 3}
-  color: 1
+  id: 
+  SpotTaken: 0
 --- !u!1 &1327290344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2710,10 +2665,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 2
   id: 1113
 --- !u!64 &1327290346
 MeshCollider:
@@ -3532,32 +3483,32 @@ PrefabInstance:
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -22.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5008203254811411548, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
@@ -3807,32 +3758,32 @@ PrefabInstance:
     - target: {fileID: 8458716006735372860, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8458716006735372860, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8458716006735372860, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8458716006735372860, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8458716006735372860, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 53
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8458716006735372860, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -22.5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb25b73aa11996046885b3fbcfa4587c, type: 3}
@@ -3970,10 +3921,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 1
   id: 1112
 --- !u!64 &1515229857
 MeshCollider:
@@ -4178,10 +4125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab271435691494399c5a1cf8bbd7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used: {fileID: 0}
-  isOn: 0
-  Color: 0
-  shareable: 0
   indicator: {fileID: 1962830800}
   id: 1301
 --- !u!136 &1583047520
@@ -4317,11 +4260,6 @@ PrefabInstance:
       propertyPath: jumpHeight.y
       value: 300
       objectReference: {fileID: 0}
-    - target: {fileID: 1206544754330353990, guid: 33cb6d2a29abed346b39b957a9e24d34,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33cb6d2a29abed346b39b957a9e24d34, type: 3}
 --- !u!1 &1675249337
@@ -4358,10 +4296,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 3
   id: 1114
 --- !u!64 &1675249339
 MeshCollider:
@@ -4736,8 +4670,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e135bee8d7c4040aa6d43c72a11d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 0}
-  Color: 4
+  PlayerMaterial: {fileID: 0}
+  PlayerNumber: 0
 --- !u!54 &1727733735
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4830,8 +4764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f9c16bed553a41856c0146824e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texture: {fileID: 2800000, guid: 631dfb49343a71747921f99b5be4e46c, type: 3}
-  color: 2
+  id: 
+  SpotTaken: 0
 --- !u!114 &1870776244 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7068762446378101731, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
@@ -5360,10 +5294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab271435691494399c5a1cf8bbd7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used: {fileID: 0}
-  isOn: 0
-  Color: 2
-  shareable: 0
   indicator: {fileID: 1688253447}
   id: 1301
 --- !u!136 &2124034500
@@ -5611,10 +5541,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3227
 --- !u!54 &89926742035332339
 Rigidbody:
@@ -5711,10 +5637,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3245
 --- !u!54 &131290365583316412
 Rigidbody:
@@ -5930,10 +5852,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3209
 --- !u!54 &229647029799286686
 Rigidbody:
@@ -5999,10 +5917,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3199
 --- !u!54 &244410728795261310
 Rigidbody:
@@ -6197,10 +6111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3216
 --- !u!54 &392365762166282523
 Rigidbody:
@@ -6366,10 +6276,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3204
 --- !u!54 &463387228221248447
 Rigidbody:
@@ -6611,10 +6517,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3211
 --- !u!54 &655903977439934259
 Rigidbody:
@@ -6720,10 +6622,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3243
 --- !u!54 &725678111423580933
 Rigidbody:
@@ -7003,10 +6901,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3192
 --- !u!54 &1000981121757577748
 Rigidbody:
@@ -7382,10 +7276,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 2261
 --- !u!64 &1379799410405175582
 MeshCollider:
@@ -7451,10 +7341,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3242
 --- !u!54 &1450757956806339665
 Rigidbody:
@@ -7654,10 +7540,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3211
 --- !u!54 &1587498611336488236
 Rigidbody:
@@ -7930,10 +7812,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3212
 --- !u!54 &1890564976686211172
 Rigidbody:
@@ -7999,10 +7877,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3200
 --- !u!54 &1906374458206937983
 Rigidbody:
@@ -8278,10 +8152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3197
 --- !u!54 &2235757651584390143
 Rigidbody:
@@ -8427,10 +8297,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3209
 --- !u!54 &2423234783288493037
 Rigidbody:
@@ -8582,10 +8448,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3226
 --- !u!54 &2680234699901154312
 Rigidbody:
@@ -8739,10 +8601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3196
 --- !u!54 &2812222575611693737
 Rigidbody:
@@ -8824,10 +8682,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3232
 --- !u!54 &2831507497083907948
 Rigidbody:
@@ -8909,10 +8763,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3208
 --- !u!54 &2894865524029205130
 Rigidbody:
@@ -8992,10 +8842,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3236
 --- !u!54 &3040473155492435366
 Rigidbody:
@@ -9111,10 +8957,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3213
 --- !u!54 &3234861254195481902
 Rigidbody:
@@ -9260,10 +9102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3234
 --- !u!54 &3455328307975404937
 Rigidbody:
@@ -9383,10 +9221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3198
 --- !u!54 &3553372482417551560
 Rigidbody:
@@ -9460,10 +9294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3210
 --- !u!54 &3598204900061116027
 Rigidbody:
@@ -9529,10 +9359,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3240
 --- !u!54 &3602444251610240784
 Rigidbody:
@@ -9621,10 +9447,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3212
 --- !u!54 &3635453295307184145
 Rigidbody:
@@ -9730,10 +9552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3218
 --- !u!54 &3673911048756795253
 Rigidbody:
@@ -9835,10 +9653,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3208
 --- !u!54 &3814230697719185832
 Rigidbody:
@@ -9969,10 +9783,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3203
 --- !u!54 &3862806776990545053
 Rigidbody:
@@ -10115,10 +9925,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3215
 --- !u!54 &4176925528557668497
 Rigidbody:
@@ -10192,10 +9998,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3235
 --- !u!54 &4195421224943892050
 Rigidbody:
@@ -10275,10 +10077,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3214
 --- !u!54 &4239502739309780768
 Rigidbody:
@@ -10397,10 +10195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3223
 --- !u!54 &4263190397297906540
 Rigidbody:
@@ -10521,10 +10315,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3244
 --- !u!54 &4392945338549197806
 Rigidbody:
@@ -10688,10 +10478,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3205
 --- !u!54 &4510825423993412973
 Rigidbody:
@@ -11043,10 +10829,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3203
 --- !u!54 &4835763832909654164
 Rigidbody:
@@ -11151,10 +10933,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3204
 --- !u!54 &4903658402075245913
 Rigidbody:
@@ -11568,10 +11346,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3195
 --- !u!54 &5209538841642254937
 Rigidbody:
@@ -11677,10 +11451,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3193
 --- !u!54 &5326073757306970086
 Rigidbody:
@@ -11768,10 +11538,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3238
 --- !u!54 &5403137968340250657
 Rigidbody:
@@ -11837,10 +11603,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3249
 --- !u!54 &5451414616797316975
 Rigidbody:
@@ -11938,10 +11700,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3241
 --- !u!54 &5561052926545138349
 Rigidbody:
@@ -12057,10 +11815,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3246
 --- !u!54 &5713197151590758496
 Rigidbody:
@@ -12126,10 +11880,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3207
 --- !u!54 &5722201730197423878
 Rigidbody:
@@ -12195,10 +11945,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3248
 --- !u!54 &5727322046645168619
 Rigidbody:
@@ -12364,10 +12110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3230
 --- !u!54 &6048356547659497289
 Rigidbody:
@@ -12472,10 +12214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3206
 --- !u!54 &6059003331929645827
 Rigidbody:
@@ -12620,10 +12358,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3210
 --- !u!54 &6092264000701644320
 Rigidbody:
@@ -12719,10 +12453,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3237
 --- !u!54 &6194279431028682353
 Rigidbody:
@@ -12788,10 +12518,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3231
 --- !u!54 &6207625680743336850
 Rigidbody:
@@ -12936,10 +12662,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3239
 --- !u!54 &6403609140577589774
 Rigidbody:
@@ -13468,10 +13190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3201
 --- !u!54 &7127356325577311792
 Rigidbody:
@@ -13587,10 +13305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3194
 --- !u!54 &7192470534035042756
 Rigidbody:
@@ -13696,10 +13410,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3222
 --- !u!54 &7230623104652497525
 Rigidbody:
@@ -13791,10 +13501,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3247
 --- !u!54 &7303929480426495775
 Rigidbody:
@@ -13868,10 +13574,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3233
 --- !u!54 &7308187254022514503
 Rigidbody:
@@ -14049,10 +13751,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3250
 --- !u!54 &7469983723049024405
 Rigidbody:
@@ -14132,10 +13830,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3220
 --- !u!54 &7541180061431493088
 Rigidbody:
@@ -14273,10 +13967,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3219
 --- !u!54 &7609981021060028309
 Rigidbody:
@@ -14512,10 +14202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3225
 --- !u!54 &7825300227455497207
 Rigidbody:
@@ -14597,10 +14283,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3229
 --- !u!54 &7925599766933071925
 Rigidbody:
@@ -14941,10 +14623,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3213
 --- !u!54 &8341826846316393319
 Rigidbody:
@@ -15038,10 +14716,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3228
 --- !u!54 &8370301538286868944
 Rigidbody:
@@ -15216,10 +14890,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3217
 --- !u!54 &8730466085165468367
 Rigidbody:
@@ -15315,10 +14985,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3224
 --- !u!54 &8775521297606052564
 Rigidbody:
@@ -15453,10 +15119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3202
 --- !u!54 &9001506440945643539
 Rigidbody:
@@ -15603,10 +15265,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
-  locked: 0
-  shareable: 0
-  movable: 0
-  Color: 0
   id: 3221
 --- !u!54 &9114601385442632077
 Rigidbody:
