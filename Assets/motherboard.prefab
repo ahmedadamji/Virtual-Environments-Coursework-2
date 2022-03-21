@@ -553,6 +553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103979241530736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,6 +841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103979293526762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1585,6 +1587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103979385643754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1854,6 +1857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103979435192249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2219,6 +2223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103979481028325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2458,6 +2463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103979499642099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3190,6 +3196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103979638928351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3475,6 +3482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103979694619371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5745,6 +5753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103980240469556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6744,6 +6753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103980599533580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7315,6 +7325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103980723417143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7474,6 +7485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103980724940392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7760,6 +7772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103980772187067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7999,6 +8012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103980781155746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8491,6 +8505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103980802651053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8778,6 +8793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103980888783242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8937,6 +8953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103980891768018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9569,6 +9586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
+  isMotherboard: 0
 --- !u!114 &7511103980954835922
 MonoBehaviour:
   m_ObjectHideFlags: 0
