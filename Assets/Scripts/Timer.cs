@@ -45,6 +45,17 @@ public class Timer : MonoBehaviour, INetworkComponent, INetworkObject
 
         string minute_str = minutes.ToString();
         string seconds_str = seconds.ToString();
+
+        if(minutes < 10)
+        {
+            minute_str = "0" + minute_str;
+        }
+
+        if(seconds < 10)
+        {
+            seconds_str = "0" + seconds_str;
+        }
+
         GetComponent<TextMesh>().text = minute_str + ":" + seconds_str;
 
         Message message;
