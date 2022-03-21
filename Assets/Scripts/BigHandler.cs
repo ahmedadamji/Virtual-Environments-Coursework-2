@@ -37,17 +37,18 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
 
     public void Move()
     {
+        Debug.Log(movers.Count);
         if (movers.Count == nOfMoversNeeded)
         {
             Vector3 movement = Vector3.zero;
             foreach (var mover in movers)
             {
-                movement += mover.grasped.velocity;
+                movement += mover.grasped.transform.position;
             }
 
             movement /= nOfMoversNeeded;
 
-            transform.position += movement;
+            transform.localPosition = movement;
             context.SendJson(new Message(transform.position, movers));
         }
     }
