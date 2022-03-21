@@ -17,7 +17,7 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     public void MoverReady(MoveAndSyncBig mover)
     {
         movers.Add(mover);
-        
+        Move(mover);
     }
     
     public void MoverReleased(MoveAndSyncBig mover)
@@ -32,10 +32,10 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
 
     private void Update()
     {
-        Move();
+        
     }
 
-    public void Move()
+    public void Move(MoveAndSyncBig _mover)
     {
         Debug.Log(movers.Count);
         if (movers.Count == nOfMoversNeeded)
@@ -49,16 +49,16 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
             movement /= nOfMoversNeeded;
 
             transform.localPosition = movement;
-            context.SendJson(new Message(transform.position, movers));
+            context.SendJson(new Message(transform.position, _mover));
         }
     }
 
     private struct Message
     {
         public Vector3 Position;
-        public HashSet<MoveAndSyncBig> Movers;
+        public MoveAndSyncBig Movers;
 
-        public Message(Vector3 position, HashSet<MoveAndSyncBig> movers)
+        public Message(Vector3 position, MoveAndSyncBig movers)
         {
             Movers = movers;
             Position = position;
@@ -69,7 +69,7 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     {
         var msg = message.FromJson<Message>();
         transform.localPosition = msg.Position;
-        movers = msg.Movers;
+        movers.Add(msg.Movers);
     }
 
 }
