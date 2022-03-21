@@ -32,7 +32,7 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         {
             transform.parent = grasped.transform;
             //transform.rotation = grasped.transform.rotation;
-            context.SendJson(new Message(transform.position, transform.rotation, true));
+            context.SendJson(new Message(transform.position, transform.rotation, true, Vector3.zero));
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().isKinematic = true;
             return;
@@ -70,8 +70,8 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         transform.parent = null;
         grasped = null;
         isOwned = false;
-        context.SendJson(new Message(transform.position, transform.rotation, false));
-        
+        context.SendJson(new Message(transform.position, transform.rotation, false, controller.velocity));
+        GetComponent<Rigidbody>().velocity = controller.velocity;
     }
 
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)
@@ -84,6 +84,10 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
             //transform.localRotation = msg.Transform.rotation;
             isOwned = msg.IsOwned;
             Debug.Log(grasped);
+            if (isOwned)
+            {
+                GetComponent<Rigidbody>().velocity = msg.Velocity;
+            }
         }
     }
 
@@ -101,12 +105,14 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         public Vector3 Position;
         public Quaternion Rotation;
         public bool IsOwned;
+        public Vector3 Velocity;
 
-        public Message(Vector3 position, Quaternion rotation, bool isOwned)
+        public Message(Vector3 position, Quaternion rotation, bool isOwned, Vector3 velocity)
         {
             Position = position;
             Rotation = rotation;
             IsOwned = isOwned;
+            Velocity = velocity;
         }
     }
 }

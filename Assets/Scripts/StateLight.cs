@@ -8,8 +8,8 @@ public class StateLight : MonoBehaviour
     [SerializeField] private Material green;
 
     [SerializeField] private CollabAction collabAction;
-    
-    protected bool state;
+
+    private bool state;
     
     public void ChangeState(bool aState)
     {

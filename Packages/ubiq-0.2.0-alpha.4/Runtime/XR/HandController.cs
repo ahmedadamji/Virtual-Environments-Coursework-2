@@ -38,6 +38,7 @@ namespace Ubiq.XR
         public bool TriggerState;
         public bool PrimaryButtonState;
         public bool MenuButtonState;
+        public Vector3 ControllerVelocity;
 
         private bool initialised;
 
@@ -144,6 +145,11 @@ namespace Ubiq.XR
                 {
                     item.TryGetFeatureValue(CommonUsages.primary2DAxis, out Joystick);
                 }
+                
+                // foreach (var item in controllers)
+                // {
+                //     item.TryGetFeatureValue(CommonUsages.deviceVelocity, out ControllerVelocity);
+                // }
             }
 
             TriggerPress.Update(TriggerState);
