@@ -38,6 +38,7 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     public void Move(MoveAndSyncBig _mover)
     {
         Debug.Log(movers.Count);
+        context.SendJson(new Message(transform.position, _mover));
         if (movers.Count == nOfMoversNeeded)
         {
             Vector3 movement = Vector3.zero;
@@ -49,7 +50,6 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
             movement /= nOfMoversNeeded;
 
             transform.localPosition = movement;
-            context.SendJson(new Message(transform.position, _mover));
         }
     }
 
