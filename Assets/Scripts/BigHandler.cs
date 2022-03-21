@@ -17,12 +17,14 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     public void MoverReady(MoveAndSyncBig mover)
     {
         movers.Add(mover);
-        Move(mover);
+        context.SendJson(new Message(transform.position, mover, true));
     }
     
     public void MoverReleased(MoveAndSyncBig mover)
     {
         movers.Remove(mover);
+        context.SendJson(new Message(transform.position, mover, false));
+
     }
     
     private void Start()
@@ -32,13 +34,12 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
 
     private void Update()
     {
-        
+        Move();
     }
 
-    public void Move(MoveAndSyncBig _mover)
+    public void Move()
     {
         Debug.Log(movers.Count);
-        context.SendJson(new Message(transform.position, _mover));
         if (movers.Count == nOfMoversNeeded)
         {
             Vector3 movement = Vector3.zero;
@@ -57,11 +58,13 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     {
         public Vector3 Position;
         public MoveAndSyncBig Movers;
+        public bool IsGrasp;
 
-        public Message(Vector3 position, MoveAndSyncBig movers)
+        public Message(Vector3 position, MoveAndSyncBig movers, bool isGrasp)
         {
             Movers = movers;
             Position = position;
+            IsGrasp = isGrasp;
         }
     }
     
@@ -69,7 +72,14 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     {
         var msg = message.FromJson<Message>();
         transform.localPosition = msg.Position;
-        movers.Add(msg.Movers);
+        if (msg.IsGrasp)
+        {
+            movers.Add(msg.Movers);
+        }
+        else
+        {
+            movers.Remove(msg.Movers);
+        }
     }
 
 }
