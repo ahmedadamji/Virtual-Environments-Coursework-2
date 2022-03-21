@@ -70,8 +70,13 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         transform.parent = null;
         grasped = null;
         isOwned = false;
-        context.SendJson(new Message(transform.position, transform.rotation, false, controller.velocity));
-        GetComponent<Rigidbody>().velocity = controller.velocity;
+        Vector3 velocity = Vector3.zero;
+        if (controller != null)
+        {
+            velocity = controller.velocity;
+        }
+        context.SendJson(new Message(transform.position, transform.rotation, false, velocity));
+        GetComponent<Rigidbody>().velocity = velocity;
     }
 
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)
