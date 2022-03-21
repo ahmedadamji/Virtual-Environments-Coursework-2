@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Ubiq.Messaging;
 using Ubiq.XR;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class Timer : MonoBehaviour, INetworkComponent, INetworkObject
     public float timeValue = 0;
 
     public TextHandler textHandler;
+
+    public bool isStarted;
 
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
@@ -31,12 +34,19 @@ public class Timer : MonoBehaviour, INetworkComponent, INetworkObject
         public float time;
     }
 
+    public void StartTimer()
+    {
+        isStarted = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        //Score += 1;
-        timeValue += Time.deltaTime;
-        DisplayText(timeValue);
+        if (isStarted)
+        {
+            timeValue += Time.deltaTime;
+            DisplayText(timeValue);
+        }
     }
     void DisplayText(float timeToDisplay)
     {
@@ -56,7 +66,7 @@ public class Timer : MonoBehaviour, INetworkComponent, INetworkObject
             seconds_str = "0" + seconds_str;
         }
 
-        GetComponent<TextMesh>().text = minute_str + ":" + seconds_str;
+        GetComponent<TextMeshPro>().text = minute_str + ":" + seconds_str;
 
         Message message;
         message.time = timeValue;
