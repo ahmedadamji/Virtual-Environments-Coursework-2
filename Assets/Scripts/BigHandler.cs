@@ -7,25 +7,19 @@ using UnityEngine;
 
 public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
 {
-    public HashSet<MoveAndSyncBig> movers = new HashSet<MoveAndSyncBig>();
+    public HashSet<Hand> movers = new HashSet<Hand>();
 
     public int nOfMoversNeeded;
     
     private NetworkContext context;
     NetworkId INetworkObject.Id => new NetworkId(123456789);
 
-    public void MoverReady(MoveAndSyncBig mover)
+    public void MoverReady(Hand mover)
     {
         movers.Add(mover);
         context.SendJson(new Message(transform.position, mover, true));
     }
-    
-    public void MoverReleased(MoveAndSyncBig mover)
-    {
-        movers.Remove(mover);
-        context.SendJson(new Message(transform.position, mover, false));
 
-    }
     
     private void Start()
     {
@@ -45,7 +39,7 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
             Vector3 movement = Vector3.zero;
             foreach (var mover in movers)
             {
-                movement += mover.grasped.transform.position;
+                movement += mover.transform.position;
             }
 
             movement /= nOfMoversNeeded;
@@ -57,10 +51,10 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     private struct Message
     {
         public Vector3 Position;
-        public MoveAndSyncBig Movers;
+        public Hand Movers;
         public bool IsGrasp;
 
-        public Message(Vector3 position, MoveAndSyncBig movers, bool isGrasp)
+        public Message(Vector3 position, Hand movers, bool isGrasp)
         {
             Movers = movers;
             Position = position;

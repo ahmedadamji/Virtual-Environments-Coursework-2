@@ -32,11 +32,7 @@ public class MoveAndSyncBig : MonoBehaviour, IGraspable, INetworkComponent, INet
     {
         if (grasped)
         {
-            bigHandler.MoverReady(this);
-        }
-        else
-        {
-            bigHandler.MoverReleased(this);
+            bigHandler.MoverReady(grasped);
         }
     }
 
