@@ -38,7 +38,6 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
 
     public void Move()
     {
-        Debug.Log(movers.Count);
         if (movers.Count == nOfMoversNeeded)
         {
             Vector3 movement = Vector3.zero;
