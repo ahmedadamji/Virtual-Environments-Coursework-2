@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
 {
-    public HashSet<Hand> movers = new HashSet<Hand>();
+    public HashSet<GameObject> movers = new HashSet<GameObject>();
 
     public int nOfMoversNeeded;
     
@@ -16,8 +16,8 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
 
     public void MoverReady(Hand mover)
     {
-        movers.Add(mover);
-        context.SendJson(new Message(transform.position, mover, true));
+        movers.Add(mover.gameObject);
+        context.SendJson(new Message(transform.position, mover.gameObject, true));
     }
 
     
@@ -51,10 +51,10 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     private struct Message
     {
         public Vector3 Position;
-        public Hand Movers;
+        public GameObject Movers;
         public bool IsGrasp;
 
-        public Message(Vector3 position, Hand movers, bool isGrasp)
+        public Message(Vector3 position, GameObject movers, bool isGrasp)
         {
             Movers = movers;
             Position = position;
