@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
 {
-    public List<Vector3> movers = new List<Vector3>();
+    public List<Vector3> movers = new List<Vector3>(2);
 
     public int nOfMoversNeeded;
     
