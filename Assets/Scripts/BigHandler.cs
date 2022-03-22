@@ -14,13 +14,18 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     private NetworkContext context;
     NetworkId INetworkObject.Id => new NetworkId(123456789);
 
-    public void MoverReady(Hand mover)
+    public void MoverReady(GameObject mover)
     {
         movers.Add(mover.gameObject);
         context.SendJson(new Message(transform.position, mover.gameObject, true));
     }
-
     
+    public void MoverNot(GameObject mover)
+    {
+        movers.Remove(mover.gameObject);
+        context.SendJson(new Message(transform.position, mover.gameObject, false));
+    }
+
     private void Start()
     {
         context = NetworkScene.Register(this);
@@ -65,10 +70,11 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
         var msg = message.FromJson<Message>();
-        transform.localPosition = msg.Position;
         if (msg.IsGrasp)
         {
             movers.Add(msg.Movers);
+            transform.localPosition = msg.Position;
+
         }
         else
         {
