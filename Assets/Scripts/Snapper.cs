@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Snapper : MonoBehaviour
@@ -11,6 +12,8 @@ public class Snapper : MonoBehaviour
     private MoveAndSync moveAndSync;
     [SerializeField] private Material snapMaterial;
     public bool isMotherboard;
+
+    [CanBeNull] public Transform brokenPart;
 
     private void Start()
     {
@@ -40,6 +43,14 @@ public class Snapper : MonoBehaviour
 
     private void Update()
     {
+        if (brokenPart == null)
+        {
+            return;
+        }
+        if (Vector3.Distance(destination.transform.position, brokenPart.position) < 1.0f)
+        {
+            return;
+        }
         if (destination == null)
         {
             return;
@@ -62,7 +73,7 @@ public class Snapper : MonoBehaviour
                 ChangeMaterials(GetComponent<MeshRenderer>().material);
                 gameObject.SetActive(false);
         }
-        else if (distance < 3.0f)
+        else if (distance < 10.0f)
         {
             destination.SetActive(true);
         }
