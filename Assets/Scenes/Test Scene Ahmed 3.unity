@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.555
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2799809, g: 0.28594354, b: 0.26871952, a: 0.555}
+  m_IndirectSpecularColor: {r: 0.2799812, g: 0.28594396, b: 0.26872012, a: 0.555}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 629876}
   - component: {fileID: 629878}
   - component: {fileID: 629877}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: select_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 11247353}
   - component: {fileID: 11247355}
   - component: {fileID: 11247354}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Plane009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1264,7 +1264,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 957978814}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &51820924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1407,7 +1406,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1362841294}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &54388697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1835,7 +1833,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1570991655}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &72147526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2183,7 +2180,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1821828276}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &96832589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2332,7 +2328,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1984306313}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &105809707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2474,7 +2469,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1459750422}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &116887872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2744,7 +2738,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 712979000}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &133489727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2848,7 +2841,7 @@ GameObject:
   - component: {fileID: 134226690}
   - component: {fileID: 134226692}
   - component: {fileID: 134226691}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: channel_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3077,6 +3070,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b76d4f0f3915e41bb1ba13af4257a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start_instruction: 
+  textHandler: {fileID: 0}
 --- !u!114 &176714697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3286,7 +3281,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 2080268525}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &181579358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4205,7 +4199,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 750260266}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &220517174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4662,7 +4655,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &253644084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4859,7 +4851,7 @@ GameObject:
   - component: {fileID: 306860904}
   - component: {fileID: 306860906}
   - component: {fileID: 306860905}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: chip_new
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8437,7 +8429,7 @@ GameObject:
   - component: {fileID: 395844217}
   - component: {fileID: 395844219}
   - component: {fileID: 395844218}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: volumeBox_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8982,7 +8974,7 @@ GameObject:
   - component: {fileID: 465372575}
   - component: {fileID: 465372577}
   - component: {fileID: 465372576}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: switch_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9061,7 +9053,7 @@ GameObject:
   - component: {fileID: 467855223}
   - component: {fileID: 467855225}
   - component: {fileID: 467855224}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: dviMetal_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9272,7 +9264,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1533396014}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &498204914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10088,7 +10079,7 @@ GameObject:
   - component: {fileID: 576113658}
   - component: {fileID: 576113660}
   - component: {fileID: 576113659}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: dviPart_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10505,7 +10496,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 535827730}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &604782359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10648,7 +10638,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1643067833}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &606176132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10790,7 +10779,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 243556321}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &611723736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11533,7 +11521,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &642757844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11636,7 +11623,7 @@ GameObject:
   - component: {fileID: 647244419}
   - component: {fileID: 647244421}
   - component: {fileID: 647244420}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: dviSmall_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11996,7 +11983,7 @@ GameObject:
   - component: {fileID: 679271083}
   - component: {fileID: 679271085}
   - component: {fileID: 679271084}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: chip_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12117,7 +12104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 2064206465}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &689023251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12307,7 +12293,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1362841294}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &704855181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13496,7 +13481,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 70990572}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &785329645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14368,7 +14352,7 @@ GameObject:
   - component: {fileID: 862413293}
   - component: {fileID: 862413295}
   - component: {fileID: 862413294}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: screenHolder_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14532,7 +14516,7 @@ GameObject:
   - component: {fileID: 937422728}
   - component: {fileID: 937422727}
   - component: {fileID: 937422726}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: a_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14971,7 +14955,7 @@ GameObject:
   - component: {fileID: 993215953}
   - component: {fileID: 993215955}
   - component: {fileID: 993215954}
-  m_Layer: 9
+  m_Layer: 1
   m_Name: base_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15050,7 +15034,7 @@ GameObject:
   - component: {fileID: 996669298}
   - component: {fileID: 996669300}
   - component: {fileID: 996669299}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: battery_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15168,7 +15152,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1255961498}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1000290272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15327,7 +15310,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1024610481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15626,7 +15608,7 @@ GameObject:
   - component: {fileID: 1050308124}
   - component: {fileID: 1050308123}
   - component: {fileID: 1050308122}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: lockOpen_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15759,7 +15741,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 728242508}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1054540940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16125,7 +16106,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 506451627}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1079108657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16269,7 +16249,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1150482608}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1085898345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16776,7 +16755,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 531195924}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1134663241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17206,7 +17184,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 2095859021}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1167011069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17348,7 +17325,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 33356089}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1208793207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17961,7 +17937,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 2138827302}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1255136712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18144,7 +18119,7 @@ GameObject:
   - component: {fileID: 1280306586}
   - component: {fileID: 1280306588}
   - component: {fileID: 1280306587}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: backvent_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18223,7 +18198,7 @@ GameObject:
   - component: {fileID: 1280851828}
   - component: {fileID: 1280851830}
   - component: {fileID: 1280851829}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: dviBox_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18561,7 +18536,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 2049554871}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1294962867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18665,7 +18639,7 @@ GameObject:
   - component: {fileID: 1311727042}
   - component: {fileID: 1311727044}
   - component: {fileID: 1311727043}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cartridge_new
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20630,32 +20604,32 @@ PrefabInstance:
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148568306718, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -22.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2498275750688688664, guid: bb25b73aa11996046885b3fbcfa4587c,
         type: 3}
@@ -23338,7 +23312,7 @@ GameObject:
   - component: {fileID: 1426904527}
   - component: {fileID: 1426904526}
   - component: {fileID: 1426904525}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: cartridge_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23353,7 +23327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426904523}
   m_LocalRotation: {x: 3.621977e-15, y: 1, z: -0.00000008146034, w: 0.00000004371139}
-  m_LocalPosition: {x: 0.0012687702, y: 0.0419, z: -0.0088}
+  m_LocalPosition: {x: 0.0012687702, y: 0.041918337, z: -0.008775861}
   m_LocalScale: {x: 0.981017, y: 0.981017, z: 0.981017}
   m_Children:
   - {fileID: 679271083}
@@ -25128,7 +25102,7 @@ GameObject:
   - component: {fileID: 1623860795}
   - component: {fileID: 1623860794}
   - component: {fileID: 1623860793}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: screen_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26251,7 +26225,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 530153615}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1703728325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26764,7 +26737,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1642278492}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1753330324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27663,7 +27635,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 396291627}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1843862782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28112,7 +28083,7 @@ GameObject:
   - component: {fileID: 1879421101}
   - component: {fileID: 1879421100}
   - component: {fileID: 1879421099}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: movement_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28296,7 +28267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1890784803}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sketchfab Game Boy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28669,7 +28640,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 2033895109}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1914588759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28917,7 +28887,7 @@ GameObject:
   - component: {fileID: 1930678427}
   - component: {fileID: 1930678429}
   - component: {fileID: 1930678428}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: lock_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29323,7 +29293,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1497319543}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1937421566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29660,7 +29629,7 @@ GameObject:
   - component: {fileID: 1953377995}
   - component: {fileID: 1953377997}
   - component: {fileID: 1953377996}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cylinder010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29778,7 +29747,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 957978814}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1953937483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30065,7 +30033,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1959513169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30279,7 +30246,7 @@ GameObject:
   - component: {fileID: 1981199117}
   - component: {fileID: 1981199116}
   - component: {fileID: 1981199115}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: b_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30451,7 +30418,7 @@ GameObject:
   - component: {fileID: 1990067779}
   - component: {fileID: 1990067781}
   - component: {fileID: 1990067780}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: vol_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30569,7 +30536,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 29615046}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &1992950023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30712,7 +30678,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 69622741}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &2016283413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31044,7 +31009,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &2028322839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31266,7 +31230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1898398864}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
 --- !u!114 &2036297285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31994,7 +31957,7 @@ GameObject:
   - component: {fileID: 2066306545}
   - component: {fileID: 2066306547}
   - component: {fileID: 2066306546}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: movementknobs_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
