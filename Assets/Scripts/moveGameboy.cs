@@ -9,6 +9,10 @@ public class moveGameboy : MonoBehaviour, IUseable, INetworkComponent, INetworkO
     //public StateLight indicator;
     private AccessManager accessManager;
     public GameObject Gameboy;
+    public GameObject Lid;
+
+    private Vector3 lidPos;
+    
 
     public bool isUp;
 
@@ -33,6 +37,7 @@ public class moveGameboy : MonoBehaviour, IUseable, INetworkComponent, INetworkO
     private void Start()
     {
         context = NetworkScene.Register(this);
+        lidPos = Lid.transform.position;
     }
 
     struct Message
@@ -50,11 +55,13 @@ public class moveGameboy : MonoBehaviour, IUseable, INetworkComponent, INetworkO
 
             if (isUp)
             {
-                Gameboy.transform.position = Gameboy.transform.position + new Vector3(0, 3, 0);
+                Gameboy.transform.position = Gameboy.transform.position + new Vector3(0, 1.5f, 0);
+                Lid.transform.position = lidPos + new Vector3(0, 1.5f, -4);
             }
             else
             {
-                Gameboy.transform.position = Gameboy.transform.position - new Vector3(0, 3, 0);
+                Gameboy.transform.position = Gameboy.transform.position - new Vector3(0, 1.5f, 0);
+                Lid.transform.position = lidPos + new Vector3(0, -1.5f, 4);;
             }
 
             position = Gameboy.transform.position;

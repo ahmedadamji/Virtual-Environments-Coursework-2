@@ -25,5 +25,6 @@ public class Motherboard : MonoBehaviour
         //GetComponent<Rigidbody>().useGravity = false;
         GetComponent<BoxCollider>().enabled = true;
         GetComponent<Snapper>().enabled = true;
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
     }
 }
