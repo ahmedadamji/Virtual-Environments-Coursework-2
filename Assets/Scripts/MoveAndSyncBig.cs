@@ -32,7 +32,7 @@ public class MoveAndSyncBig : MonoBehaviour, IGraspable, INetworkComponent, INet
     {
         if (grasped)
         {
-            bigHandler.MoverReady(grasped.gameObject);
+            bigHandler.MoverReady(grasped.transform.position, transform.GetSiblingIndex());
         }
     }
 
@@ -44,8 +44,7 @@ public class MoveAndSyncBig : MonoBehaviour, IGraspable, INetworkComponent, INet
     void IGraspable.Release(Hand controller)
     {
         grasped = null;
-        bigHandler.MoverNot(controller.gameObject);
-
+        bigHandler.MoverReady(Vector3.zero, transform.GetSiblingIndex());
     }
 
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)

@@ -7,23 +7,17 @@ using UnityEngine;
 
 public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
 {
-    public HashSet<GameObject> movers = new HashSet<GameObject>();
+    public List<Vector3> movers = new List<Vector3>();
 
     public int nOfMoversNeeded;
     
     private NetworkContext context;
     NetworkId INetworkObject.Id => new NetworkId(123456789);
 
-    public void MoverReady(GameObject mover)
+    public void MoverReady(Vector3 mover, int index)
     {
-        movers.Add(mover.gameObject);
-        context.SendJson(new Message(transform.position, mover.gameObject, true));
-    }
-    
-    public void MoverNot(GameObject mover)
-    {
-        movers.Remove(mover.gameObject);
-        context.SendJson(new Message(transform.position, mover.gameObject, false));
+        movers[index] = mover;
+        context.SendJson(new Message(mover, index));
     }
 
     private void Start()
@@ -34,6 +28,7 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     private void Update()
     {
         Move();
+        movers.Clear();
     }
 
     public void Move()
@@ -43,10 +38,13 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
             Vector3 movement = Vector3.zero;
             foreach (var mover in movers)
             {
-                movement += mover.transform.position;
+                if (mover != Vector3.zero)
+                {
+                    movement += mover;
+                }
             }
 
-            movement /= nOfMoversNeeded;
+            movement /= movers.Count;
 
             transform.localPosition = movement;
         }
@@ -55,30 +53,19 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     private struct Message
     {
         public Vector3 Position;
-        public GameObject Movers;
-        public bool IsGrasp;
-
-        public Message(Vector3 position, GameObject movers, bool isGrasp)
+        public int Index;
+        
+        public Message(Vector3 position, int index)
         {
-            Movers = movers;
             Position = position;
-            IsGrasp = isGrasp;
+            Index = index;
         }
     }
     
     public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
         var msg = message.FromJson<Message>();
-        if (msg.IsGrasp)
-        {
-            movers.Add(msg.Movers);
-            transform.localPosition = msg.Position;
-
-        }
-        else
-        {
-            movers.Remove(msg.Movers);
-        }
+        movers[msg.Index] = msg.Position;
     }
 
 }
