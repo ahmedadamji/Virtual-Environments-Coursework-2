@@ -7,17 +7,23 @@ using UnityEngine;
 
 public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
 {
-    public List<Vector3> movers = new List<Vector3>(2);
+    public Dictionary<string, Vector3> movers = new Dictionary<string, Vector3>(2);
 
     public int nOfMoversNeeded;
     
     private NetworkContext context;
     NetworkId INetworkObject.Id => new NetworkId(123456789);
 
-    public void MoverReady(Vector3 mover, int index)
+    public void GraspMover(string id, Vector3 mover)
     {
-        movers[index] = mover;
-        context.SendJson(new Message(mover, index));
+        movers[id] = mover;
+        context.SendJson(new Message(id, mover, true));
+    }
+
+    public void ReleaseMover(string id, Vector3 mover)
+    {
+        movers.Remove(id);
+        context.SendJson(new Message(id, mover, false));
     }
 
     private void Start()
@@ -28,44 +34,55 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
     private void Update()
     {
         Move();
-        movers.Clear();
     }
 
     public void Move()
     {
+        Debug.Log(movers.Count);
         if (movers.Count == nOfMoversNeeded)
         {
             Vector3 movement = Vector3.zero;
             foreach (var mover in movers)
             {
-                if (mover != Vector3.zero)
-                {
-                    movement += mover;
-                }
+                // if (mover.Value.magnitude < 5)
+                // {
+                //     movement = Vector3.zero;
+                //     break;
+                // }
+                movement += mover.Value;
             }
 
-            movement /= movers.Count;
+            movement /= nOfMoversNeeded;
 
-            transform.localPosition = movement;
+            transform.GetComponent<Rigidbody>().velocity = movement;
         }
     }
 
     private struct Message
     {
-        public Vector3 Position;
-        public int Index;
+        public string Id;
+        public Vector3 Mover;
+        public bool IsAdd;
         
-        public Message(Vector3 position, int index)
+        public Message(string id, Vector3 mover, bool isAdd)
         {
-            Position = position;
-            Index = index;
+            Id = id;
+            Mover = mover;
+            IsAdd = isAdd;
         }
     }
     
     public void ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
         var msg = message.FromJson<Message>();
-        movers[msg.Index] = msg.Position;
+        if (msg.IsAdd)
+        {
+            movers[msg.Id] = msg.Mover;
+        }
+        else
+        {
+            movers.Remove(msg.Id);
+        }
     }
 
 }

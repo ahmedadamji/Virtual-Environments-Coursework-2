@@ -32,7 +32,7 @@ public class MoveAndSyncBig : MonoBehaviour, IGraspable, INetworkComponent, INet
     {
         if (grasped)
         {
-            bigHandler.MoverReady(grasped.transform.position, accessManager.playerNumber);
+            bigHandler.GraspMover(id, grasped.velocity);
         }
     }
 
@@ -43,14 +43,13 @@ public class MoveAndSyncBig : MonoBehaviour, IGraspable, INetworkComponent, INet
 
     void IGraspable.Release(Hand controller)
     {
+        bigHandler.ReleaseMover(id, controller.velocity);
         grasped = null;
-        bigHandler.MoverReady(Vector3.zero, transform.GetSiblingIndex());
     }
 
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
         var msg = message.FromJson<Message>();
-        grasped = msg.Grasped;
     }
 
     NetworkId INetworkObject.Id => new NetworkId(id);
