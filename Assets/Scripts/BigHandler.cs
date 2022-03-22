@@ -54,7 +54,7 @@ public class BigHandler : MonoBehaviour, INetworkComponent, INetworkObject
 
             movement /= nOfMoversNeeded;
 
-            transform.GetComponent<Rigidbody>().velocity = movement;
+            transform.localPosition = movement;
         }
     }
 

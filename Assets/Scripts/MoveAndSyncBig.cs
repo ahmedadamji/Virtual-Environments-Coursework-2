@@ -32,7 +32,7 @@ public class MoveAndSyncBig : MonoBehaviour, IGraspable, INetworkComponent, INet
     {
         if (grasped)
         {
-            bigHandler.GraspMover(id, grasped.velocity);
+            bigHandler.GraspMover(id, grasped.transform.position);
         }
     }
 
@@ -43,7 +43,7 @@ public class MoveAndSyncBig : MonoBehaviour, IGraspable, INetworkComponent, INet
 
     void IGraspable.Release(Hand controller)
     {
-        bigHandler.ReleaseMover(id, controller.velocity);
+        bigHandler.ReleaseMover(id, controller.transform.position);
         grasped = null;
     }
 
