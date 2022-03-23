@@ -13,9 +13,7 @@ public class Timer : MonoBehaviour, INetworkComponent, INetworkObject
     private NetworkContext context;
 
     public float timeValue = 0;
-
-    public TextHandler textHandler;
-
+    
     public bool isStarted;
 
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)
