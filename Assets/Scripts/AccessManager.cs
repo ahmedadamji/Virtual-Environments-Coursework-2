@@ -26,7 +26,10 @@ public class AccessManager : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         //playerSpawnManager = FindObjectOfType<PlayerSpawnManager>();
-        ChangeMaterials(PlayerSpawnManager.OthersMaterial);
+        if (!isMotherboard)
+        {
+            ChangeMaterials(PlayerSpawnManager.OthersMaterial);
+        }
     }
 
     void OnGameStart()
@@ -45,12 +48,12 @@ public class AccessManager : MonoBehaviour
         if (!isMotherboard)
         {
             ChangeMaterials(FindObjectOfType<PlayerSpawnManager>().PlayerMaterials[playerNumber]);
+            if (shareable)
+            {
+                ChangeMaterials(PlayerSpawnManager.SharedMaterial);
+            }
         }
 
-        if (shareable)
-        {
-            ChangeMaterials(PlayerSpawnManager.SharedMaterial);
-        }
     }
     
     private void ChangeMaterials(Material material)

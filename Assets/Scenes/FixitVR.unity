@@ -249,10 +249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 3
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!114 &2760489
 MonoBehaviour:
@@ -665,10 +665,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 3
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!114 &66727098
 MonoBehaviour:
@@ -1838,13 +1838,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7839560383857558230, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
+      propertyPath: locked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560383857558230, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
       propertyPath: shareable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7839560383873552261, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
+      propertyPath: locked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560383873552261, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
       propertyPath: shareable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560383919470297, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
+      propertyPath: locked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7839560383919470297, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
@@ -1855,6 +1870,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playerNumber
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560383946472655, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
+      propertyPath: locked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7839560383946472655, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
@@ -1868,8 +1888,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7839560384225019212, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
+      propertyPath: locked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560384225019212, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
       propertyPath: shareable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560384302525142, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
+      propertyPath: locked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7839560384302525142, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
@@ -1880,6 +1910,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playerNumber
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560384666750987, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
+      propertyPath: locked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7839560384666750987, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
@@ -1893,8 +1928,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7839560384668372564, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
+      propertyPath: locked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560384668372564, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
       propertyPath: shareable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560384707115911, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
+      propertyPath: locked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7839560384707115911, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
@@ -1908,12 +1953,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7839560384737465233, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
+      propertyPath: locked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560384737465233, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
       propertyPath: shareable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7839560384737465233, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
       propertyPath: playerNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560384790272438, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
+      propertyPath: locked
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7839560384790272438, guid: 377c424e877b646499784f6b8b56bae1,
@@ -1925,6 +1980,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playerNumber
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560384834987246, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
+      propertyPath: locked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7839560384834987246, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
@@ -2003,6 +2063,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7839560385080033328, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
+      propertyPath: locked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560385080033328, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
       propertyPath: shareable
       value: 0
       objectReference: {fileID: 0}
@@ -2010,6 +2075,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playerNumber
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560385215766024, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
+      propertyPath: locked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7839560385215766024, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
@@ -2701,10 +2771,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 3
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!23 &540703494
 MeshRenderer:
@@ -3106,10 +3176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 3
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!114 &592888031
 MonoBehaviour:
@@ -4024,10 +4094,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 2
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &740817949 stripped
 GameObject:
@@ -4357,10 +4427,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 2
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1001 &814113781
 PrefabInstance:
@@ -4787,10 +4857,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 2
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &937422724
 GameObject:
@@ -5093,9 +5163,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  locked: 0
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &951469856
 GameObject:
@@ -5644,32 +5714,32 @@ PrefabInstance:
     - target: {fileID: 2403359148538582191, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148538582191, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148538582191, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148538582191, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148538582191, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148538582191, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -22.5
       objectReference: {fileID: 0}
     - target: {fileID: 5008203254840423661, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
@@ -6266,10 +6336,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 1
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &1114323495
 GameObject:
@@ -6866,9 +6936,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  locked: 0
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &1192212982
 GameObject:
@@ -7193,9 +7263,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  locked: 0
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &1272582013
 GameObject:
@@ -7498,10 +7568,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 3
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!114 &1282767437
 MonoBehaviour:
@@ -7767,10 +7837,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 1
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &1311727041
 GameObject:
@@ -7869,10 +7939,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 3
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!114 &1311727046
 MonoBehaviour:
@@ -8319,10 +8389,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 2
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!4 &1405663401 stripped
 Transform:
@@ -8678,10 +8748,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 2
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &1499474107
 GameObject:
@@ -9270,10 +9340,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 1
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &1623860791
 GameObject:
@@ -9713,9 +9783,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  locked: 0
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &1726859180 stripped
 GameObject:
@@ -10022,10 +10092,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 1
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &1813383823
 GameObject:
@@ -10204,7 +10274,7 @@ MonoBehaviour:
   playerNumber: 0
   locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 1
 --- !u!114 &1853830719
 MonoBehaviour:
@@ -11035,9 +11105,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  locked: 0
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &1953377994
 GameObject:
@@ -11499,10 +11569,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8084276503f3c4f8ba79f46e2fc487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  locked: 0
+  playerNumber: 1
+  locked: 1
   available: 1
-  shareable: 1
+  shareable: 0
   isMotherboard: 0
 --- !u!1 &2029827259
 GameObject:
