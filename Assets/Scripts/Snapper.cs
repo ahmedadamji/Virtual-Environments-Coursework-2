@@ -73,6 +73,7 @@ public class Snapper : MonoBehaviour
 
                 var mr = GetComponent<MeshRenderer>();
                 transform.position = destination.transform.position;
+                transform.rotation = destination.transform.rotation;
                 
                 if (mr != null)
                 {
