@@ -17,6 +17,7 @@ public class UseAndSync : MonoBehaviour, IUseable, INetworkComponent, INetworkOb
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
         var msg = message.FromJson<Message>();
+        Debug.Log(msg.State);
         indicator.ChangeState(msg.State);
     }
 
