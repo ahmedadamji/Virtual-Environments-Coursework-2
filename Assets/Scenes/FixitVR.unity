@@ -1200,7 +1200,7 @@ GameObject:
   - component: {fileID: 210126575}
   - component: {fileID: 210126574}
   - component: {fileID: 210126573}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Floor
   m_TagString: Teleport
   m_Icon: {fileID: 0}
@@ -1837,6 +1837,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: motherboard new
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839560384856341484, guid: 377c424e877b646499784f6b8b56bae1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7839560384856341487, guid: 377c424e877b646499784f6b8b56bae1,
         type: 3}
@@ -3786,7 +3791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1915616920}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 1872669728}
 --- !u!114 &730950267
 MonoBehaviour:
@@ -4118,7 +4123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 523234209}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 1405663401}
 --- !u!114 &798774209
 MonoBehaviour:
@@ -4546,7 +4551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 496445916}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 991788152}
 --- !u!114 &926514538
 MonoBehaviour:
@@ -4850,7 +4855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1726859180}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 269540842}
 --- !u!114 &948710317
 MonoBehaviour:
@@ -5506,32 +5511,32 @@ PrefabInstance:
     - target: {fileID: 2403359148538582191, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148538582191, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148538582191, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148538582191, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148538582191, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2403359148538582191, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -22.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5008203254840423661, guid: 2fb578800afc87244b5ba3a0fbbd11c0,
         type: 3}
@@ -6022,7 +6027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1203087023}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 1138884031}
 --- !u!114 &1109611214
 MonoBehaviour:
@@ -6621,7 +6626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1458769157}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 1529467080}
 --- !u!114 &1179720317
 MonoBehaviour:
@@ -6947,7 +6952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 305665461}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 275557069}
 --- !u!114 &1236553812
 MonoBehaviour:
@@ -7519,7 +7524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 740817949}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 1896682833}
 --- !u!114 &1305371524
 MonoBehaviour:
@@ -8069,7 +8074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 439225785}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 439225786}
 --- !u!114 &1374289597
 MonoBehaviour:
@@ -8427,7 +8432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 670456877}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 1407195994}
 --- !u!114 &1495637862
 MonoBehaviour:
@@ -9019,7 +9024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 785723202}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 608858469}
 --- !u!114 &1611872326
 MonoBehaviour:
@@ -9460,7 +9465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1492950201}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 0}
 --- !u!114 &1655884052
 MonoBehaviour:
@@ -9768,7 +9773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1609738588}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 2038652755}
 --- !u!114 &1782788421
 MonoBehaviour:
@@ -10035,7 +10040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622a8483fdb218a46b4238f6c53ecd91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {fileID: 0}
+  destination: {fileID: 2115613823}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
   isMotherboard: 0
   brokenPart: {fileID: 0}
@@ -10067,8 +10072,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3700897700da44e48a5cf120e183e7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partsReplacedCount: 0
+  partsReplacedCount: 14
   totalPartsNumber: 15
+--- !u!114 &1853830721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853830715}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c520ab4168f70d46ae97b7ec26678bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grasped: {fileID: 0}
+  id: 99565656
+--- !u!54 &1853830722
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853830715}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1857707723
 GameObject:
   m_ObjectHideFlags: 0
@@ -10507,6 +10542,7 @@ Transform:
   - {fileID: 395844217}
   - {fileID: 951469857}
   - {fileID: 788901930}
+  - {fileID: 2115613826}
   m_Father: {fileID: 705716298}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: -90}
@@ -10745,7 +10781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 227524427}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 299841735}
 --- !u!114 &1942832045
 MonoBehaviour:
@@ -11208,7 +11244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 584569991}
   snapMaterial: {fileID: 2100000, guid: 8a258fc0bc5aba646b7368277add1bb2, type: 2}
-  isMotherboard: 0
+  isMotherboard: 1
   brokenPart: {fileID: 709268985}
 --- !u!114 &1999758796
 MonoBehaviour:
@@ -11478,3 +11514,82 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066306544}
   m_Mesh: {fileID: -4563921074518671376, guid: d70251440f1d78a459dbd42a1ae5eb4d, type: 3}
+--- !u!1 &2115613823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2115613826}
+  - component: {fileID: 2115613825}
+  - component: {fileID: 2115613824}
+  m_Layer: 9
+  m_Name: pcb dest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &2115613824
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115613823}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: daad273eb89731c4393bf0f49dec636b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &2115613825
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115613823}
+  m_Mesh: {fileID: -8334996418462451117, guid: 5a4514741075f234b852df5dd43cd081, type: 3}
+--- !u!4 &2115613826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115613823}
+  m_LocalRotation: {x: 0.00000005960465, y: -0.00000005960465, z: 0.7071068, w: -0.7071068}
+  m_LocalPosition: {x: 0.0005, y: 0.0325, z: 0.0002}
+  m_LocalScale: {x: 2.966754, y: 3.5189514, z: 2.8029432}
+  m_Children: []
+  m_Father: {fileID: 1890784803}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
