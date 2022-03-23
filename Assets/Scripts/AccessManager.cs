@@ -46,9 +46,7 @@ public class AccessManager : MonoBehaviour
         {
             ChangeMaterials(FindObjectOfType<PlayerSpawnManager>().PlayerMaterials[playerNumber]);
         }
-        
-        
-        
+
         if (shareable)
         {
             ChangeMaterials(PlayerSpawnManager.SharedMaterial);
