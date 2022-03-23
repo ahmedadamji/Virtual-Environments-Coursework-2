@@ -13,7 +13,7 @@ public class SpawnSpot : MonoBehaviour, INetworkComponent, INetworkObject
     NetworkId INetworkObject.Id => new NetworkId(id);
 
     private NetworkContext context;
-    private bool isSpawned;
+    [SerializeField] private bool isSpawned;
 
     public int SpotTaken;
 
