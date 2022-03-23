@@ -31,8 +31,7 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         if (grasped)
         {
             transform.parent = grasped.transform;
-            //transform.rotation = grasped.transform.rotation;
-            context.SendJson(new Message(transform.position, transform.rotation, true, Vector3.zero));
+            context.SendJson(new Message(transform.position, transform.rotation, true, grasped.velocity));
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().isKinematic = true;
             return;
@@ -103,9 +102,6 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         Debug.Log("force release");
         isOwned = false;
         grasped = null;
-        //GetComponent<Rigidbody>().isKinematic = true;
-        //GetComponent<Rigidbody>().useGravity = false;
-        //GetComponent<BoxCollider>().enabled = false;
         foreach (var handController in handControllers) handController.Vibrate(0.3f, 0.2f);
     }
 
