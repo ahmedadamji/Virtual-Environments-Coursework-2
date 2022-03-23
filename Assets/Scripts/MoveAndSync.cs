@@ -30,6 +30,8 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
     {
         if (accessManager.locked)
         {
+            GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<Rigidbody>().useGravity = false;
             return;
         }
         if (grasped)
