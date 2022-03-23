@@ -24,13 +24,11 @@ public class moveGameboy : MonoBehaviour, IUseable, INetworkComponent, INetworkO
 
         if (isUp)
         {
-            Gameboy.transform.position = Gameboy.transform.position + new Vector3(0, 1.5f, 0);
-            Lid.transform.position = lidPos + new Vector3(0, 1.5f, -4);
+            Gameboy.transform.position = Gameboy.transform.position + new Vector3(0, 3, 0);
         }
         else
         {
-            Gameboy.transform.position = Gameboy.transform.position - new Vector3(0, 1.5f, 0);
-            Lid.transform.position = lidPos + new Vector3(0, -1.5f, 4);
+            Gameboy.transform.position = Gameboy.transform.position - new Vector3(0, 3, 0);
         }
     }
 
@@ -57,13 +55,11 @@ public class moveGameboy : MonoBehaviour, IUseable, INetworkComponent, INetworkO
 
             if (isUp)
             {
-                Gameboy.transform.position = Gameboy.transform.position + new Vector3(0, 1.5f, 0);
-                Lid.transform.position = lidPos + new Vector3(0, 1.5f, -4);
+                Gameboy.transform.position = Gameboy.transform.position + new Vector3(0, 3, 0);
             }
             else
             {
-                Gameboy.transform.position = Gameboy.transform.position - new Vector3(0, 1.5f, 0);
-                Lid.transform.position = lidPos + new Vector3(0, -1.5f, 4);
+                Gameboy.transform.position = Gameboy.transform.position - new Vector3(0, 3, 0);
             }
 
             position = Gameboy.transform.position;
