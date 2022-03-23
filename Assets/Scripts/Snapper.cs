@@ -73,12 +73,15 @@ public class Snapper : MonoBehaviour
                 if (mr != null)
                 {
                     ChangeMaterials(mr.material);
+                    GetComponent<AccessManager>().locked = true;
+                    GetComponent<MoveAndSync>().ForceRelease();
                     gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 }
                 else
                 {
-                    GetComponent<AccessManager>().locked = true;
                     GetComponent<MoveAndSync>().ForceRelease();
+                    gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+                    GetComponent<AccessManager>().locked = true;
                 }
 
         }
