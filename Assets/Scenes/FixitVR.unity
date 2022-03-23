@@ -7051,7 +7051,7 @@ MonoBehaviour:
   playerNumber: 3
   locked: 1
   available: 1
-  shareable: 0
+  shareable: 1
   isMotherboard: 0
 --- !u!114 &1311727046
 MonoBehaviour:
