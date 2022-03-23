@@ -44,8 +44,9 @@ public class UseAndSync : MonoBehaviour, IUseable, INetworkComponent, INetworkOb
     {
         if (accessManager.available && !accessManager.locked)
         {
-            indicator.ChangeState(!indicator.State);
-            Message message = new Message(indicator.State);
+            bool state = !indicator.State;
+            indicator.ChangeState(state);
+            Message message = new Message(state);
             context.SendJson(message);
         }
     }
