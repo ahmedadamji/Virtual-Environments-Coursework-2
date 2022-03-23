@@ -13,6 +13,7 @@ public class StateLight : MonoBehaviour
     
     public void ChangeState(bool aState)
     {
+        Debug.Log(transform.GetSiblingIndex() +"state: " + aState);
         state = aState;
         GetComponent<MeshRenderer>().material = state ? green : red;
         if (collabAction != null)
