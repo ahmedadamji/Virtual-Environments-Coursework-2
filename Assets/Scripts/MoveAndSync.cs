@@ -83,8 +83,8 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         var msg = message.FromJson<Message>();
         if (!grasped)
         {
-            transform.localPosition = msg.Position;
-            transform.localRotation = msg.Rotation;
+            transform.position = msg.Position;
+            transform.rotation = msg.Rotation;
             //transform.localRotation = msg.Transform.rotation;
             isOwned = msg.IsOwned;
             Debug.Log(grasped);
