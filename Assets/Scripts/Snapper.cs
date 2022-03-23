@@ -43,14 +43,14 @@ public class Snapper : MonoBehaviour
 
     private void Update()
     {
-        if (brokenPart == null)
+        if (brokenPart != null)
         {
-            return;
+            if (Vector3.Distance(destination.transform.position, brokenPart.position) < 1.0f)
+            {
+                return;
+            }
         }
-        if (Vector3.Distance(destination.transform.position, brokenPart.position) < 1.0f)
-        {
-            return;
-        }
+        
         if (destination == null)
         {
             return;
@@ -65,13 +65,22 @@ public class Snapper : MonoBehaviour
                 if (isMotherboard)
                 {
                     var motherboard = FindObjectOfType<Motherboard>();
-
                     Debug.Log("mb part replaced");
                     motherboard.PartReplaced();
                 }
 
-                ChangeMaterials(GetComponent<MeshRenderer>().material);
-                gameObject.SetActive(false);
+                var mr = GetComponent<MeshRenderer>();
+                if (mr != null)
+                {
+                    ChangeMaterials(mr.material);
+                    gameObject.SetActive(false);
+                }
+                else
+                {
+                    GetComponent<AccessManager>().locked = true;
+                    GetComponent<MoveAndSync>().ForceRelease();
+                }
+
         }
         else if (distance < 10.0f)
         {

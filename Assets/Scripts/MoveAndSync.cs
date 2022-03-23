@@ -100,8 +100,12 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 
     public void ForceRelease()
     {
+        Debug.Log("force release");
         isOwned = false;
         grasped = null;
+        //GetComponent<Rigidbody>().isKinematic = true;
+        //GetComponent<Rigidbody>().useGravity = false;
+        //GetComponent<BoxCollider>().enabled = false;
         foreach (var handController in handControllers) handController.Vibrate(0.3f, 0.2f);
     }
 
