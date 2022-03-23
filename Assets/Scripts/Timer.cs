@@ -26,6 +26,8 @@ public class Timer : MonoBehaviour, INetworkComponent, INetworkObject
     void Start()
     {
         context = NetworkScene.Register(this);
+        PlayerSpawnManager.OnGameStart += OnGameStart;
+
     }
 
     struct Message
@@ -33,6 +35,10 @@ public class Timer : MonoBehaviour, INetworkComponent, INetworkObject
         public float time;
     }
 
+    private void OnGameStart()
+    {
+        StartTimer();
+    }
     public void StartTimer()
     {
         isStarted = true;

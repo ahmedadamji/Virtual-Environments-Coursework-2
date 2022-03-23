@@ -6,7 +6,6 @@ using PlayerNumber = System.Int32;
 
 public class moveGameboy : MonoBehaviour, IUseable, INetworkComponent, INetworkObject
 {
-    //public StateLight indicator;
     private AccessManager accessManager;
     public GameObject Gameboy;
 
@@ -21,8 +20,16 @@ public class moveGameboy : MonoBehaviour, IUseable, INetworkComponent, INetworkO
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
         var msg = message.FromJson<Message>();
-        position = msg.height;
-        //indicator.ChangeState(msg.State);
+        isUp = !isUp;
+
+        if (isUp)
+        {
+            Gameboy.transform.position = Gameboy.transform.position + new Vector3(0, 3, 0);
+        }
+        else
+        {
+            Gameboy.transform.position = Gameboy.transform.position - new Vector3(0, 3, 0);
+        }
     }
 
     private void Awake()
@@ -44,8 +51,6 @@ public class moveGameboy : MonoBehaviour, IUseable, INetworkComponent, INetworkO
     {
         if (accessManager.available && !accessManager.locked)
         {
-            //indicator.ChangeState(!indicator.State);
-
             isUp = !isUp;
 
             if (isUp)
