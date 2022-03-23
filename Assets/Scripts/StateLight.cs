@@ -8,19 +8,18 @@ public class StateLight : MonoBehaviour
     [SerializeField] private Material green;
 
     [SerializeField] private CollabAction collabAction;
-
-    private bool state;
     
+    public bool State;
+
     public void ChangeState(bool aState)
     {
         Debug.Log(transform.GetSiblingIndex() +"state: " + aState);
-        state = aState;
-        GetComponent<MeshRenderer>().material = state ? green : red;
+        State = aState;
+        GetComponent<MeshRenderer>().material = State ? green : red;
         if (collabAction != null)
         {
             collabAction.CheckAllButtons();
         }
     }
 
-    public bool State => state;
 }
