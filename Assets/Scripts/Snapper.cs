@@ -73,7 +73,7 @@ public class Snapper : MonoBehaviour
                 if (mr != null)
                 {
                     ChangeMaterials(mr.material);
-                    gameObject.SetActive(false);
+                    gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 }
                 else
                 {
