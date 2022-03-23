@@ -7,7 +7,7 @@ public class Motherboard : MonoBehaviour
     public int partsReplacedCount;
 
     public int totalPartsNumber = 10;
-
+    
     public void PartReplaced()
     {
         partsReplacedCount++;
@@ -21,6 +21,7 @@ public class Motherboard : MonoBehaviour
     {
         GetComponent<MoveAndSync>().enabled = true;
         GetComponent<AccessManager>().locked = false;
+        GetComponent<AccessManager>().available = true;
         //GetComponent<Rigidbody>().isKinematic = true;
         //GetComponent<Rigidbody>().useGravity = false;
         GetComponent<BoxCollider>().enabled = true;
