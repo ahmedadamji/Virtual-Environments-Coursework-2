@@ -12,6 +12,8 @@ public class AccessManager : MonoBehaviour
     
     public bool shareable;
 
+    public bool isMotherboard;
+
     //private PlayerSpawnManager playerSpawnManager;
     private Player player;
 
@@ -39,8 +41,13 @@ public class AccessManager : MonoBehaviour
         {
             available = false;
         }
+
+        if (!isMotherboard)
+        {
+            ChangeMaterials(FindObjectOfType<PlayerSpawnManager>().PlayerMaterials[playerNumber]);
+        }
         
-        ChangeMaterials(FindObjectOfType<PlayerSpawnManager>().PlayerMaterials[playerNumber]);
+        
         
         if (shareable)
         {

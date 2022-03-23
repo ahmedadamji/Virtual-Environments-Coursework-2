@@ -253,6 +253,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!114 &2760489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,6 +669,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!114 &66727098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,6 +828,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 0
+  isMotherboard: 0
 --- !u!114 &112196835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1963,6 +1966,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 0
+  isMotherboard: 0
 --- !u!114 &441067787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2521,6 +2525,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &523234209 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7839560384683937081, guid: 377c424e877b646499784f6b8b56bae1,
@@ -2580,6 +2585,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!23 &540703494
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2984,6 +2990,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!114 &592888031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3901,6 +3908,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &740817949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7839560385334914713, guid: 377c424e877b646499784f6b8b56bae1,
@@ -4233,6 +4241,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1001 &814113781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4470,6 +4479,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!54 &862413299
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4661,6 +4671,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &937422724
 GameObject:
   m_ObjectHideFlags: 0
@@ -4804,6 +4815,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &948710314
 GameObject:
   m_ObjectHideFlags: 0
@@ -4964,6 +4976,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &951469856
 GameObject:
   m_ObjectHideFlags: 0
@@ -6137,6 +6150,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &1114323495
 GameObject:
   m_ObjectHideFlags: 0
@@ -6735,6 +6749,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &1192212982
 GameObject:
   m_ObjectHideFlags: 0
@@ -7061,6 +7076,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &1272582013
 GameObject:
   m_ObjectHideFlags: 0
@@ -7366,6 +7382,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!114 &1282767437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7634,6 +7651,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &1311727041
 GameObject:
   m_ObjectHideFlags: 0
@@ -7735,6 +7753,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!114 &1311727046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8184,6 +8203,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!4 &1405663401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7839560385215766019, guid: 377c424e877b646499784f6b8b56bae1,
@@ -8542,6 +8562,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &1499474107
 GameObject:
   m_ObjectHideFlags: 0
@@ -9133,6 +9154,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &1623860791
 GameObject:
   m_ObjectHideFlags: 0
@@ -9574,6 +9596,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &1726859180 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7839560383828587333, guid: 377c424e877b646499784f6b8b56bae1,
@@ -9883,6 +9906,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &1813383823
 GameObject:
   m_ObjectHideFlags: 0
@@ -9934,6 +9958,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 0
+  isMotherboard: 0
 --- !u!114 &1813383826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10060,6 +10085,7 @@ MonoBehaviour:
   locked: 1
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!114 &1853830719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10072,7 +10098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3700897700da44e48a5cf120e183e7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partsReplacedCount: 14
+  partsReplacedCount: 0
   totalPartsNumber: 15
 --- !u!114 &1853830721
 MonoBehaviour:
@@ -10272,6 +10298,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 0
+  isMotherboard: 0
 --- !u!114 &1877817296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10461,6 +10488,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!65 &1879421104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10890,6 +10918,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &1953377994
 GameObject:
   m_ObjectHideFlags: 0
@@ -11112,6 +11141,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &1990067778
 GameObject:
   m_ObjectHideFlags: 0
@@ -11353,6 +11383,7 @@ MonoBehaviour:
   locked: 0
   available: 1
   shareable: 1
+  isMotherboard: 0
 --- !u!1 &2029827259
 GameObject:
   m_ObjectHideFlags: 0
