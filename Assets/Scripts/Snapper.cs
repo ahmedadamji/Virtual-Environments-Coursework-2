@@ -62,6 +62,8 @@ public class Snapper : MonoBehaviour
         distance = Vector3.Distance(transform.position, destination.transform.position);
         if (distance < .5f)
         {
+                destination.GetComponent<MeshRenderer>().enabled = false;
+                
                 if (isMotherboard)
                 {
                     var motherboard = FindObjectOfType<Motherboard>();
@@ -70,11 +72,13 @@ public class Snapper : MonoBehaviour
                 }
 
                 var mr = GetComponent<MeshRenderer>();
+                transform.position = destination.transform.position;
+                
                 if (mr != null)
                 {
-                    ChangeMaterials(mr.material);
-                    GetComponent<AccessManager>().locked = true;
+                    //ChangeMaterials(mr.material);
                     GetComponent<MoveAndSync>().ForceRelease();
+                    GetComponent<AccessManager>().locked = true;
                     gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 }
                 else
