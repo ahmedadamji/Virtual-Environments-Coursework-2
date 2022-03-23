@@ -2451,6 +2451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gameboy: {fileID: 1890784802}
+  Lid: {fileID: 1050308120}
   isUp: 0
   id: 1289934234
   position: {x: 0, y: 0, z: 0}
