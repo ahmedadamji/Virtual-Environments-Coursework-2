@@ -28,6 +28,10 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
 
     private void Update()
     {
+        if (accessManager.locked)
+        {
+            return;
+        }
         if (grasped)
         {
             transform.parent = grasped.transform;
@@ -92,6 +96,11 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
             {
                 GetComponent<Rigidbody>().velocity = msg.Velocity;
             }
+
+            if (msg.Locked)
+            {
+                accessManager.locked = true;
+            }
         }
     }
 
@@ -104,6 +113,7 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         grasped = null;
         transform.parent = null;
         foreach (var handController in handControllers) handController.Vibrate(0.3f, 0.2f);
+        context.SendJson(new Message(transform.position, transform.rotation, false, Vector3.zero, true));
     }
 
     public struct Message
@@ -112,13 +122,15 @@ public class MoveAndSync : MonoBehaviour, IGraspable, INetworkComponent, INetwor
         public Quaternion Rotation;
         public bool IsOwned;
         public Vector3 Velocity;
+        public bool Locked;
 
-        public Message(Vector3 position, Quaternion rotation, bool isOwned, Vector3 velocity)
+        public Message(Vector3 position, Quaternion rotation, bool isOwned, Vector3 velocity, bool locked=false)
         {
             Position = position;
             Rotation = rotation;
             IsOwned = isOwned;
             Velocity = velocity;
+            Locked = locked;
         }
     }
 }
