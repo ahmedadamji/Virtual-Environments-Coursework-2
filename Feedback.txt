@@ -1,0 +1,52 @@
+Grade	67.00 / 100.00
+
+Effectiveness of interaction of individual users with the environment (15%): 63
+Interaction with the environment and objects was confusing and felt incomplete. Teleportation was the only way to change elevation level and walking off objects allowed players to fly through the air. It was unclear which player could carry out some of the action, such as moving the motherboard (which did not work during the demo).
+
+This was a nice idea for a demonstration, but the individual interaction was a bit crude - collision volumes seemed a bit large on some pieces, and snapping was quite crude. Moving big objects was tricky as you could obscure your own views. Plus points for attempting a multi-person grab - unfortunately it couldn't be demonstrated.
+
+
+Interaction with objects in the environment was not intuitive and sometimes led to confusion. In general the type of interaction with the objects is quite trivial, only moving them. The part of moving the motherboard was not working during the demo.
+
+Visual style, consistency and comprehensibility of the environment (15%): 70
+The visual style of the game was consistent with the theme. The goal of the game was not comprehensible without an explanation from the project members.
+
+Simple style - had an asset of the gameboy components. I think the colouring of the shapes to label tasks was a bit hard to understand, especially when old and new parts mixed. This would have been an easy fix.
+
+I appreciated the style, some sort of retrogaming even if it did not help the clarity of the scenario. By the way storyline and textures were consistent.
+
+Code quality and project organisation (15%): 74
+Code architecture is very nicely thought through: good use of component based design principles, e.g. with the reusable synchronisation and access control scripts. The logic is generally easy to follow. The project is a little messy - there is some attempt to organise assets (by type) and the scene graph, but without following through. Fortunatley the 'flat' graph makes it possible to figure out what is going on anyway. There is a fair bit of commented out code, test scenes and unused variables left around - rely on source control to keep these safe and delete them from the head! It was not obvious how the overarching game state was managed. The coding style is generally very good though, with sensible naming, formatting and conventions used consistently. The code is written in a straightforward way that is self-documenting, though a few comments would still be helpful, e.g. to explain exactly the purpose of your new types. The netcode is minimalist and seems robust. I liked the approach to shared physics!
+
+The ability of users to collaborate on your task (15%): 65
+While players had to collaborate with each other, there was no coordination needed to complete the game.
+
+There was the nice idea of using multiple users to move large parts. The forcing of certain players to move certain pieces was OK, but we didn't really collaborate around this. It was a bit difficult to follow the state and there was some "hanging around" while we figure out what to do. With more work though this could be an interesting simple demo. Some sequencing of actions might have forced the collaboration (e.g. instructions owned by one user).
+
+This is a missing point of the scenario. The unique collaborative action is only motherboard moving (and did not work during demo), but in general each player was able individually to accomplish his task without collaborating with the others.
+
+
+Clarity and structure of report (5%): 70
+The report is clear, but does not contain much information on the design and implementation choices of the game.
+
+The report is claear in organisation and structure, and easy to read.
+
+Technical detail of report including illustrations (5%): 65
+The report contains little technical detail.
+
+The illustrations are good snapshots of the environment. More technical detail would have been written, also posting some code.
+
+Comprehensiveness of report (5%): 65
+The report does not seem to have received much attention and does not compressively or elaborately describe the game.
+
+Not so many details are disclosed in the report, such as how they overcome some difficulties. Some sections are quite short and were worth to be detailed more.
+
+Novelty and polish of environment (25%): 65
+The environment was reasonably well polished visually, but not in terms of interaction or gameplay. The environment showed little novelty.
+
+This was a nice idea, but in practice it wasn't really amenable to a group task and it felt a bit forced. However we were successful in doing most of the task.
+
+I appreciate the idea and the retrogaming context (even if the idea is not innovative). Also, effort was made in creating the environment. There is some improvement to do for the interaction.
+
+
+Total: 67
